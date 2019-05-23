@@ -4,60 +4,82 @@
     "attributes" => {
         "name" => {
             "type" => STRING,
-            "description" => "The name of the extension",
+            "description" => "The unique name of the extension.",
+            "nillable" => false
+        },
+        "title" => {
+            "type" => STRING,
+            "description" => "The human readable name of the extension.",
+            "nillable" => false
+        },
+        "description" => {
+            "type" => STRING,
+            "description" => "A description of the extension.",
             "nillable" => false
         },
         "version" => {
             "type" => STRING,
-            "description" => "The version of the extension",
-            "nillable" => true
-        },
-        "description" => {
-            "type" => STRING,
-            "description" => "A description of the extension",
-            "nillable" => true
-        },
-        "url" => {
-            "type" => STRING,
-            "description" => "The URL of the extension",
+            "description" => "The version of the extension.",
             "nillable" => false
         },
         "script" => {
             "type" => STRING,
-            "description" => "The script of the extension",
+            "description" => "The script of the extension.",
             "nillable" => false
         },
         "stylesheets" => {
             "type" => LIST,
             "value-type" => STRING,
-            "description" => "An optional list of stylesheets for the extension",
+            "description" => "An optional list of stylesheets for the extension.",
             "nillable" => true
+        },
+        "icon" => {
+            "type" => STRING,
+            "description" => "An URL to an icon shown in the extension panel. The icon should be 24x24 (SVG is prefered). If omitted a default icon will be used.",
+            "nillable" => false
+        },
+        "hal-version" => {
+            "type" => STRING,
+            "description" => "The required HAL version. If omitted the extension is expected to work with any HAL version.",
+            "nillable" => true
+        },
+        "operation-mode" => {
+            "type" => STRING,
+            "description" => "Specifies whether the extension only works in standalone or domain mode. If omitted the extension is expected to work in any mode.",
+            "nillable" => true,
+            "allowed" => [
+                "STANDALONE",
+                "DOMAIN"
+            ]
         },
         "extension-point" => {
             "type" => STRING,
-            "description" => "Specifies how the extension is added to the console",
+            "description" => "Specifies where the extension is added to the console.",
             "nillable" => false,
             "allowed" => [
                 "HEADER",
-                "FOOTER",
-                "FINDER_ITEM",
-                "CUSTOM"
+                "FOOTER"
             ]
         },
         "author" => {
             "type" => STRING,
-            "description" => "The author of the extension",
-            "nillable" => true
-        },
-        "homepage" => {
-            "type" => STRING,
-            "description" => "The homepage of the extension",
+            "description" => "The author of the extension.",
             "nillable" => true
         },
         "license" => {
             "type" => STRING,
-            "description" => "The license of the extension",
+            "description" => "The license of the extension.",
             "nillable" => true
+        },
+        "homepage" => {
+            "type" => STRING,
+            "description" => "The homepage of the extension.",
+            "nillable" => true
+        },
+        "url" => {
+            "type" => STRING,
+            "description" => "The URL of the extension.",
+            "nillable" => false
         }
     }
 }
