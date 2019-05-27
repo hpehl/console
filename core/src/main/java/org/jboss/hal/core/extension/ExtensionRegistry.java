@@ -106,7 +106,7 @@ public class ExtensionRegistry implements ApplicationReadyHandler {
 
     @JsIgnore
     public void inject(String script, List<String> stylesheets) {
-        jsInject(script, stylesheets.toArray(new String[stylesheets.size()]));
+        jsInject(script, stylesheets.toArray(new String[0]));
     }
 
     @Override
