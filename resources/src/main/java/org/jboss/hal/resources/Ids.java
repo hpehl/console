@@ -296,6 +296,8 @@ public interface Ids {
     String ENDPOINT_STORAGE = "hal-local-storage-endpoint";
     String EXTENSION = "extension";
     String EXTENSION_ADD = "extension-add";
+    String EXTENSION_LIST = "extension-list";
+    String EXTENSION_MANAGER_EMPTY = "extension-manager-empty";
     String EXTENSION_REVIEW_FORM = "extension-review-form";
     String EXTENSION_STORAGE = "hal-local-storage-extension";
     String EXTENSION_URL_FORM = "extension-url-form";

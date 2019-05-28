@@ -250,6 +250,7 @@ public interface Messages extends com.google.gwt.i18n.client.Messages {
     SafeHtml noDeploymentPermissions();
     SafeHtml noDeploymentsUploaded();
     SafeHtml noExecutions();
+    SafeHtml noExtensions();
     SafeHtml noItems();
     SafeHtml noLogFile();
     SafeHtml noMacrosDescription(String startMacro);

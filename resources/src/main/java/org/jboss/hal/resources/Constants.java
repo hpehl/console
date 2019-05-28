@@ -179,6 +179,7 @@ public interface Constants extends com.google.gwt.i18n.client.Constants {
     String expression();
     String expressionResolver();
     String extensionError();
+    String extensionManager();
     String extensionNotFound();
     String extensionProcessing();
     String failed();
@@ -331,6 +332,7 @@ public interface Constants extends com.google.gwt.i18n.client.Constants {
     String logout();
     String macroEditor();
     String mainAttributes();
+    String manageExtensions();
     String managed();
     String managementOperations();
     String managementVersion();
@@ -369,6 +371,7 @@ public interface Constants extends com.google.gwt.i18n.client.Constants {
     String noConfiguredMailServers();
     String noDetails();
     String noExecutions();
+    String noExtensions();
     String noHaPolicy();
     String noItems();
     String noMacros();

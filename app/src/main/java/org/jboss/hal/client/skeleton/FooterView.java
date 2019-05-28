@@ -66,6 +66,7 @@ public abstract class FooterView extends HalViewImpl implements FooterPresenter.
     @DataElement HTMLElement showVersion;
     @DataElement HTMLElement modelBrowser;
     @DataElement HTMLElement expressionResolver;
+    @DataElement HTMLElement manageExtensions;
     @DataElement HTMLElement macroRecorder;
     @DataElement HTMLElement macroEditor;
     @DataElement HTMLElement recordingContainer;
@@ -82,6 +83,7 @@ public abstract class FooterView extends HalViewImpl implements FooterPresenter.
         bind(showVersion, click, event -> presenter.onShowVersion());
         bind(modelBrowser, click, event -> presenter.onModelBrowser());
         bind(expressionResolver, click, event -> presenter.onExpressionResolver());
+        bind(manageExtensions, click, event -> presenter.onManageExtensions());
         bind(macroRecorder, click, event -> presenter.onMacroRecording());
         bind(macroEditor, click, event -> presenter.onMacroEditor());
         bind(settings, click, event -> presenter.onSettings());

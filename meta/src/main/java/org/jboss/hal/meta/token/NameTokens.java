@@ -53,6 +53,7 @@ public interface NameTokens {
     String EJB3_CONFIGURATION = ModelDescriptionConstants.EJB3 + CONFIGURATION_SUFFIX;
     String EJB3_RUNTIME = ModelDescriptionConstants.EJB3 + RUNTIME_SUFFIX;
     String EXPERT_MODE = "expert-mode";
+    String EXTENSION_MANAGER = "extension-manager";
     String GENERIC_SUBSYSTEM = "generic-subsystem";
     String HOMEPAGE = "home";
     String HOST_CONFIGURATION = "host-configuration";

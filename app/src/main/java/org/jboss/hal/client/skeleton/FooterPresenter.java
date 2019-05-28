@@ -113,6 +113,10 @@ public class FooterPresenter extends PresenterWidget<FooterPresenter.MyView>
         new ExpressionDialog(expressionResolver, environment, resources).show();
     }
 
+    void onManageExtensions() {
+        placeManager.revealPlace(new PlaceRequest.Builder().nameToken(NameTokens.EXTENSION_MANAGER).build());
+    }
+
     void onMacroRecording() {
         if (recording) {
             recording = false;
