@@ -129,6 +129,7 @@
         <module>parent-with-dependencies</module>
         <module>parent-with-gwt</module>
         <module>processors</module>
+        <module>quarkus</module>
         <module>resources</module>
         <module>spi</module>
         <module>standalone</module>

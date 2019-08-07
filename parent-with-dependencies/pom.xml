@@ -52,6 +52,7 @@
         <mockito.version>2.18.3</mockito.version>
         <node.version>v8.16.0</node.version>
         <npm.version>6.9.0</npm.version>
+        <quarkus.version>0.20.0</quarkus.version>
         <rx.gwt>0.4</rx.gwt>
         <slf4j.version>1.7.25</slf4j.version>
         <slf4j-gwt.version>1.7.7.1</slf4j-gwt.version>
@@ -177,6 +178,15 @@
                         <artifactId>javax.el-api</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+
+            <!-- Quarkus -->
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <!-- Undertow -->
