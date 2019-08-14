@@ -168,12 +168,18 @@
                     <extensions>true</extensions>
                 </plugin>
                 <plugin>
+                    <groupId>io.quarkus</groupId>
+                    <artifactId>quarkus-maven-plugin</artifactId>
+                    <version>${quarkus.version}</version>
+                </plugin>
+                <plugin>
                     <groupId>org.wildfly.swarm</groupId>
                     <artifactId>wildfly-swarm-fraction-plugin</artifactId>
                     <version>${plugin.swarm.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
+
         <plugins>
             <plugin>
                 <groupId>com.github.ferstl</groupId>

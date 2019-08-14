@@ -7,13 +7,6 @@
 .project
 .settings
 .vscode
-.wakatime-project
 dependency-reduced-pom.xml
-gwt-unitCache
-hs_err*
-js/.DS_Store
-js/mbui/
-js/mvp/
-out
 target
 yarn

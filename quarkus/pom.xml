@@ -19,23 +19,34 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!-- extending from hal-parent-with-dependencies causes NCDF errors!? -->
     <parent>
         <groupId>org.jboss.hal</groupId>
-        <artifactId>hal-parent-with-dependencies</artifactId>
+        <artifactId>hal-parent</artifactId>
         <version>3.2.1-SNAPSHOT</version>
-        <relativePath>../parent-with-dependencies/pom.xml</relativePath>
     </parent>
 
     <artifactId>hal-quarkus</artifactId>
     <name>HAL :: Quarkus</name>
-    <description>HAL as Quarkus application to run in standalone mode</description>
+    <description>Quarkus application to run HAL in standalone mode</description>
+
+    <properties>
+        <quarkus.version>0.20.0</quarkus.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.quarkus</groupId>
+                <artifactId>quarkus-bom</artifactId>
+                <version>${quarkus.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
-        <dependency>
-            <groupId>org.jboss.hal</groupId>
-            <artifactId>hal-console</artifactId>
-            <classifier>resources</classifier>
-        </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-undertow</artifactId>
@@ -45,6 +56,32 @@
 
     <build>
         <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>${project.groupId}</groupId>
+                                    <artifactId>hal-console</artifactId>
+                                    <classifier>resources</classifier>
+                                    <version>${project.version}</version>
+                                    <outputDirectory>
+                                        ${project.build.outputDirectory}/META-INF/resources
+                                    </outputDirectory>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>io.quarkus</groupId>
                 <artifactId>quarkus-maven-plugin</artifactId>
