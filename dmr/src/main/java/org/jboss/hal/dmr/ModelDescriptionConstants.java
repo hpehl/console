@@ -178,6 +178,7 @@ public interface ModelDescriptionConstants {
     String CONNECTOR_SERVICE = "connector-service";
     String CONNECTORS = "connectors";
     String CONSOLE_HANDLER = "console-handler";
+    String CONSTANT_HEADERS = "constant-headers";
     String CONSTANT_PERMISSION_MAPPER = "constant-permission-mapper";
     String CONSTANT_PRINCIPAL_DECODER = "constant-principal-decoder";
     String CONSTANT_PRINCIPAL_TRANSFORMER = "constant-principal-transformer";
@@ -381,6 +382,7 @@ public interface ModelDescriptionConstants {
     String HANDLERS = "handlers";
     String HASH = "hash";
     String HEADER_NAME = "header-name";
+    String HEADERS = "headers";
     String HIBERNATE_PERSISTENCE_UNIT = "hibernate-persistence-unit";
     String HOMEPAGE = "homepage";
     String HOST = "host";

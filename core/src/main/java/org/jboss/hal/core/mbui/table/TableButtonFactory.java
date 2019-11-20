@@ -41,7 +41,7 @@ public class TableButtonFactory {
     private final Resources resources;
 
     @Inject
-    public TableButtonFactory(final CrudOperations crud, final Resources resources) {
+    public TableButtonFactory(CrudOperations crud, Resources resources) {
         this.crud = crud;
         this.resources = resources;
     }

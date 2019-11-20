@@ -111,6 +111,13 @@ public interface Ids {
     String CONFIGURATION_SUBSYSTEM = "css";
     String CONNECTION_POOL_ITEM = "connection-pool-item";
     String CONNECTION_POOL_FORM = "connection-pool-form";
+    String CONSTANT_HEADERS = "constant-headers";
+    String CONSTANT_HEADERS_HEADERS_FORM = "constant-headers-headers-form";
+    String CONSTANT_HEADERS_HEADERS_TABLE = "constant-headers-headers-table";
+    String CONSTANT_HEADERS_ITEM = "constant-headers-item";
+    String CONSTANT_HEADERS_PATH_PAGE = "constant-headers-path-page";
+    String CONSTANT_HEADERS_PAGE = "constant-headers-page";
+    String CONSTANT_HEADERS_PAGES = "constant-headers-pages";
     String CONTENT = "content";
     String CONTENT_ADD = "content-add";
     String CONTENT_ADD_ACTIONS = "content-add-actions";

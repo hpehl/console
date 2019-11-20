@@ -33,6 +33,7 @@ import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.dialog.DialogFactory;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.SwitchItem;
+import org.jboss.hal.client.runtime.managementinterface.HttpManagementInterfacePresenter;
 import org.jboss.hal.client.shared.sslwizard.EnableSSLPresenter;
 import org.jboss.hal.client.shared.sslwizard.EnableSSLWizard;
 import org.jboss.hal.config.Environment;
@@ -79,7 +80,7 @@ import static org.jboss.hal.resources.Ids.FORM;
 
 public class HostPresenter
         extends MbuiPresenter<HostPresenter.MyView, HostPresenter.MyProxy>
-        implements SupportsExpertMode, EnableSSLPresenter {
+        implements SupportsExpertMode, EnableSSLPresenter, HttpManagementInterfacePresenter {
 
     private final FinderPathFactory finderPathFactory;
     private final StatementContext statementContext;
@@ -204,7 +205,8 @@ public class HostPresenter
         crud.resetSingleton(type, template, form, metadata, this::reloadView);
     }
 
-    void launchEnableSSLWizard() {
+    @Override
+    public void enableSslForManagementInterface() {
         // load some elytron resources in advance for later use in the wizard for form validation
         List<Task<FlowContext>> tasks = new ArrayList<>();
 
@@ -271,7 +273,8 @@ public class HostPresenter
         return task;
     }
 
-    void disableSSLWizard() {
+    @Override
+    public void disableSslForManagementInterface() {
         Constants constants = resources.constants();
         String serverName = environment.isStandalone() ? constants.standaloneServer() : constants.domainController();
         String label = constants.reload() + " " + serverName;
@@ -402,6 +405,17 @@ public class HostPresenter
         reloadBlocking(dispatcher, getEventBus(), operation, type, name, urlConsole, resources);
     }
 
+    @Override
+    public void saveManagementInterface(AddressTemplate template, Map<String, Object> changedValues) {
+        String type = resources.constants().httpManagementInterface();
+        save(type, template, changedValues);
+    }
+
+    @Override
+    public void resetManagementInterface(AddressTemplate template, Form<ModelNode> form, Metadata metadata) {
+        String type = resources.constants().httpManagementInterface();
+        reset(type, template, form, metadata);
+    }
 
     // @formatter:off
     @ProxyCodeSplit

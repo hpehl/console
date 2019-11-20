@@ -24,15 +24,19 @@ import java.util.stream.Collectors;
 import javax.inject.Inject;
 import javax.inject.Provider;
 
+import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import elemental2.dom.HTMLElement;
+import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.dialog.DialogFactory;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.SwitchItem;
+import org.jboss.hal.client.runtime.managementinterface.ConstantHeadersPresenter;
+import org.jboss.hal.client.runtime.managementinterface.HttpManagementInterfacePresenter;
 import org.jboss.hal.client.shared.sslwizard.EnableSSLPresenter;
 import org.jboss.hal.client.shared.sslwizard.EnableSSLWizard;
 import org.jboss.hal.config.Environment;
@@ -43,6 +47,7 @@ import org.jboss.hal.core.finder.FinderPath;
 import org.jboss.hal.core.finder.FinderPathFactory;
 import org.jboss.hal.core.mbui.MbuiPresenter;
 import org.jboss.hal.core.mbui.MbuiView;
+import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
 import org.jboss.hal.core.mvp.SupportsExpertMode;
 import org.jboss.hal.core.runtime.host.Host;
@@ -69,6 +74,7 @@ import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
 import static elemental2.dom.DomGlobal.window;
+import static java.util.Collections.emptyList;
 import static org.jboss.hal.client.shared.sslwizard.AbstractConfiguration.SOCKET_BINDING_GROUP_TEMPLATE;
 import static org.jboss.hal.core.runtime.TopologyTasks.reloadBlocking;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
@@ -77,7 +83,7 @@ import static org.jboss.hal.resources.Ids.FORM;
 
 public class StandaloneServerPresenter
         extends MbuiPresenter<StandaloneServerPresenter.MyView, StandaloneServerPresenter.MyProxy>
-        implements EnableSSLPresenter, SupportsExpertMode {
+        implements EnableSSLPresenter, HttpManagementInterfacePresenter, ConstantHeadersPresenter, SupportsExpertMode {
 
     static final String ROOT_ADDRESS = "/";
     static final AddressTemplate ROOT_TEMPLATE = AddressTemplate.of(ROOT_ADDRESS);
@@ -162,7 +168,8 @@ public class StandaloneServerPresenter
         crud.resetSingleton(type, template, form, metadata, this::reload);
     }
 
-    public void launchEnableSSLWizard() {
+    @Override
+    public void enableSslForManagementInterface() {
         // load some elytron resources in advance for later use in the wizard for form validation
         List<Task<FlowContext>> tasks = new ArrayList<>();
 
@@ -214,7 +221,8 @@ public class StandaloneServerPresenter
         return task;
     }
 
-    public void disableSSLWizard() {
+    @Override
+    public void disableSslForManagementInterface() {
         Constants constants = resources.constants();
         String serverName = environment.isStandalone() ? constants.standaloneServer() : constants.domainController();
         String label = constants.reload() + " " + serverName;
@@ -350,6 +358,82 @@ public class StandaloneServerPresenter
         String type = resources.constants().standaloneServer();
         String name = Server.STANDALONE.getName();
         reloadBlocking(dispatcher, getEventBus(), operation, type, name, urlConsole, resources);
+    }
+
+    @Override
+    public void saveManagementInterface(AddressTemplate template, Map<String, Object> changedValues) {
+        String type = resources.constants().httpManagementInterface();
+        save(type, template, changedValues);
+    }
+
+    @Override
+    public void resetManagementInterface(AddressTemplate template, Form<ModelNode> form, Metadata metadata) {
+        String type = resources.constants().httpManagementInterface();
+        reset(type, template, form, metadata);
+    }
+
+    @Override
+    public void addConstantHeaderPath(Metadata metadata) {
+        LabelBuilder labelBuilder = new LabelBuilder();
+        String type = labelBuilder.label(PATH);
+        Form<ModelNode> form = new ModelNodeForm.Builder<>(Ids.build(Ids.CONSTANT_HEADERS, Ids.ADD), metadata)
+                .addOnly()
+                .include(PATH)
+                .build();
+        AddResourceDialog dialog = new AddResourceDialog(resources.messages().addResourceTitle(type), form,
+                (name, model) -> {
+                    if (model != null) {
+                        model.get(HEADERS).set(emptyList());
+                        ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+                        Operation operation = new Operation.Builder(address, LIST_ADD_OPERATION)
+                                .param(NAME, CONSTANT_HEADERS)
+                                .param(VALUE, model)
+                                .build();
+                        dispatcher.execute(operation, result -> {
+                            reload();
+                            SafeHtml message = resources.messages().addSuccess(type,
+                                    model.get(PATH).asString(), labelBuilder.label(CONSTANT_HEADERS));
+                            MessageEvent.fire(getEventBus(), Message.success(message));
+                        });
+                    }
+                });
+        dialog.show();
+    }
+
+    @Override
+    public void saveConstantHeaderPath(String path, int index) {
+        ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+        Operation operation = new Operation.Builder(address, WRITE_ATTRIBUTE_OPERATION)
+                .param(NAME, CONSTANT_HEADERS + "[" + index + "]." + PATH)
+                .param(VALUE, path)
+                .build();
+        dispatcher.execute(operation, result -> {
+            reload();
+            LabelBuilder labelBuilder = new LabelBuilder();
+            String type = labelBuilder.label(PATH);
+            MessageEvent.fire(getEventBus(), Message.success(resources.messages().modifyResourceSuccess(type, path)));
+        });
+    }
+
+    @Override
+    public void removeConstantHeaderPath(String path, int index) {
+        LabelBuilder labelBuilder = new LabelBuilder();
+        String type = labelBuilder.label(PATH);
+        String title = resources.messages().removeConfirmationTitle(type);
+        SafeHtml question = resources.messages().removeConfirmationQuestion(path);
+        SafeHtml success = resources.messages().removeResourceSuccess(type, path);
+
+        DialogFactory.showConfirmation(title, question, () -> {
+            ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+            Operation operation = new Operation.Builder(address, LIST_REMOVE_OPERATION)
+                    .param(NAME, CONSTANT_HEADERS)
+                    .param(INDEX, index)
+                    .build();
+            dispatcher.execute(operation, result -> {
+                reload();
+                MessageEvent.fire(getEventBus(), Message.success(success));
+            });
+        });
     }
 
     // @formatter:off

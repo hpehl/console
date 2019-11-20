@@ -20,13 +20,12 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
 import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.hal.ballroom.Button;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.table.Table;
+import org.jboss.hal.client.runtime.managementinterface.HttpManagementInterfaceElement;
 import org.jboss.hal.core.mbui.MbuiContext;
 import org.jboss.hal.core.mbui.MbuiViewImpl;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
@@ -41,15 +40,21 @@ import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.gwt.elemento.core.Elements.div;
+import static org.jboss.gwt.elemento.core.Elements.h;
+import static org.jboss.gwt.elemento.core.Elements.p;
+import static org.jboss.gwt.elemento.core.Elements.section;
 import static org.jboss.hal.client.runtime.host.AddressTemplates.HTTP_INTERFACE_TEMPLATE;
 import static org.jboss.hal.client.runtime.host.AddressTemplates.NATIVE_INTERFACE_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.HTTP_INTERFACE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.MANAGEMENT_INTERFACE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.NATIVE_INTERFACE;
 import static org.jboss.hal.resources.CSS.pfIcon;
-import static org.jboss.hal.resources.CSS.pullRight;
-import static org.jboss.hal.resources.Ids.*;
+import static org.jboss.hal.resources.Ids.FORM;
+import static org.jboss.hal.resources.Ids.HTTP_INTERFACE_ITEM;
+import static org.jboss.hal.resources.Ids.ITEM;
+import static org.jboss.hal.resources.Ids.NATIVE_INTERFACE_ITEM;
 
 @MbuiView
 public abstract class HostView extends MbuiViewImpl<HostPresenter> implements HostPresenter.MyView {
@@ -70,46 +75,16 @@ public abstract class HostView extends MbuiViewImpl<HostPresenter> implements Ho
     @MbuiElement("host-socket-binding-group-form") Form<NamedNode> hostSocketBindingGroupForm;
     @MbuiElement("host-system-property-table") Table<NamedNode> hostSystemPropertyTable;
     @MbuiElement("host-system-property-form") Form<NamedNode> hostSystemPropertyForm;
-    private Form<ModelNode> httpInterfaceForm;
+    private HttpManagementInterfaceElement httpManagementInterfaceElement;
     private Form<ModelNode> nativeInterfaceForm;
-    private HTMLButtonElement enableSslButton;
-    private HTMLButtonElement disableSslButton;
-    private HTMLElement httpMgmtItemElement;
     private HTMLElement nativeMgmtItemElement;
 
     HostView(MbuiContext mbuiContext) {
         super(mbuiContext);
-
         Resources resources = mbuiContext.resources();
-        enableSslButton = button().id(ENABLE_SSL)
-                .textContent(resources.constants().enableSSL())
-                .css(Button.DEFAULT_CSS, pullRight)
-                .get();
-        bind(enableSslButton, click, ev -> presenter.launchEnableSSLWizard());
 
-        disableSslButton = button().id(DISABLE_SSL)
-                .textContent(resources.constants().disableSSL())
-                .css(Button.DEFAULT_CSS, pullRight)
-                .get();
-        bind(disableSslButton, click, ev -> presenter.disableSSLWizard());
-
-        String httpTitle = resources.constants().httpManagementInterface();
-        Metadata httpMetadata = mbuiContext.metadataRegistry().lookup(HTTP_INTERFACE_TEMPLATE);
-        String httpId = Ids.build(HTTP_INTERFACE, FORM);
-        httpInterfaceForm = new ModelNodeForm.Builder<>(httpId, httpMetadata)
-                .onSave((form, changedValues) -> presenter.save(httpTitle, HTTP_INTERFACE_TEMPLATE, changedValues))
-                .prepareReset(form -> presenter.reset(httpTitle, HTTP_INTERFACE_TEMPLATE, form, httpMetadata))
-                .unsorted()
-                .build();
-
-        httpMgmtItemElement = section()
-                .add(div()
-                        .add(h(1).textContent(httpTitle).get())
-                        .add(p().textContent(httpMetadata.getDescription().getDescription()).get())
-                        .add(enableSslButton)
-                        .add(disableSslButton))
-                .add(httpInterfaceForm)
-                .get();
+        httpManagementInterfaceElement = new HttpManagementInterfaceElement(mbuiContext.metadataRegistry(),
+                HTTP_INTERFACE_TEMPLATE, resources);
 
         String nativeTitle = resources.constants().nativeManagementInterface();
         Metadata nativeMetadata = mbuiContext.metadataRegistry().lookup(NATIVE_INTERFACE_TEMPLATE);
@@ -119,7 +94,6 @@ public abstract class HostView extends MbuiViewImpl<HostPresenter> implements Ho
                 .prepareReset(form -> presenter.reset(nativeTitle, NATIVE_INTERFACE_TEMPLATE, form, nativeMetadata))
                 .unsorted()
                 .build();
-
         nativeMgmtItemElement = section()
                 .add(div()
                         .add(h(1).textContent(nativeTitle).get())
@@ -132,11 +106,17 @@ public abstract class HostView extends MbuiViewImpl<HostPresenter> implements Ho
     void init() {
         String id = Ids.build(MANAGEMENT_INTERFACE, ITEM);
         navigation.insertPrimary(id, "host-path-item", Names.MANAGEMENT_INTERFACE, pfIcon("virtual-machine"));
-        navigation.insertSecondary(id, HTTP_INTERFACE_ITEM, null, "HTTP", httpMgmtItemElement);
+        navigation.insertSecondary(id, HTTP_INTERFACE_ITEM, null, "HTTP", httpManagementInterfaceElement.element());
         navigation.insertSecondary(id, NATIVE_INTERFACE_ITEM, null, "Native", nativeMgmtItemElement);
 
-        registerAttachable(httpInterfaceForm);
+        registerAttachable(httpManagementInterfaceElement);
         registerAttachable(nativeInterfaceForm);
+    }
+
+    @Override
+    public void setPresenter(HostPresenter presenter) {
+        super.setPresenter(presenter);
+        httpManagementInterfaceElement.setPresenter(presenter);
     }
 
     @Override
@@ -151,25 +131,18 @@ public abstract class HostView extends MbuiViewImpl<HostPresenter> implements Ho
             }
             if (named.getName().equals(HTTP_INTERFACE)) {
                 ModelNode model = named.asModelNode();
-                httpInterfaceForm.view(model);
-                boolean isSslEnabled = model.hasDefined(SSL_CONTEXT) && model.get(SSL_CONTEXT).asString() != null;
-                toggleSslButton(isSslEnabled);
+                httpManagementInterfaceElement.update(model);
                 httpExists = true;
             }
         }
         // slave host controller doesn't have an http-interface, but if the http-interface is currently displayed
         // for a domain controller and user switch to a slave host controller, display the native interface
-        if (Elements.isVisible(httpMgmtItemElement) && !httpExists) {
+        if (Elements.isVisible(httpManagementInterfaceElement.element()) && !httpExists) {
             navigation.show(NATIVE_INTERFACE_ITEM);
         }
         navigation.setVisible(NATIVE_INTERFACE_ITEM, nativeExists);
         navigation.setVisible(HTTP_INTERFACE_ITEM, httpExists);
 
-    }
-
-    private void toggleSslButton(boolean enable) {
-        Elements.setVisible(enableSslButton, !enable);
-        Elements.setVisible(disableSslButton, enable);
     }
 
     @Override

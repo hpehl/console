@@ -34,14 +34,14 @@ import static org.jboss.hal.resources.UIConstants.MEDIUM_TIMEOUT;
  */
 public class ItemMonitor {
 
-    public static void startProgress(final String itemId) {
+    public static void startProgress(String itemId) {
         elemental2.dom.Element element = document.getElementById(itemId);
         if (element != null) {
             element.classList.add(withProgress);
         }
     }
 
-    public static void stopProgress(final String itemId) {
+    public static void stopProgress(String itemId) {
         elemental2.dom.Element element = document.getElementById(itemId);
         if (element != null) {
             element.classList.remove(withProgress);
@@ -54,27 +54,26 @@ public class ItemMonitor {
     private HandlerRegistration handlerRegistration;
 
     @Inject
-    public ItemMonitor(final EventBus eventBus) {
+    public ItemMonitor(EventBus eventBus) {
         this.eventBus = eventBus;
     }
 
     /**
      * Wraps and monitors an item action which triggers a place request.
      */
-    public <T> ItemActionHandler<T> monitorPlaceRequest(final String itemId, final String nameToken,
-            final Callback callback) {
+    public <T> ItemActionHandler<T> monitorPlaceRequest(String itemId, String nameToken, Callback callback) {
         return itm -> {
             callback.execute();
-            startProgress(itemId);
-            timeoutHandle = setTimeout(whatever ->
-                    handlerRegistration = eventBus.addHandler(NavigationEvent.getType(),
-                            navigationEvent -> {
-                                if (nameToken.equals(navigationEvent.getRequest().getNameToken())) {
-                                    handlerRegistration.removeHandler();
-                                    clearTimeout(timeoutHandle);
-                                    stopProgress(itemId);
-                                }
-                            }), MEDIUM_TIMEOUT);
+            timeoutHandle = setTimeout(whatever -> {
+                startProgress(itemId);
+                handlerRegistration = eventBus.addHandler(NavigationEvent.getType(), navigationEvent -> {
+                    if (nameToken.equals(navigationEvent.getRequest().getNameToken())) {
+                        handlerRegistration.removeHandler();
+                        clearTimeout(timeoutHandle);
+                        stopProgress(itemId);
+                    }
+                });
+            }, MEDIUM_TIMEOUT);
         };
     }
 }
