@@ -15,6 +15,8 @@
  */
 package org.jboss.hal.client.runtime.server;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import elemental2.dom.HTMLElement;
@@ -108,9 +110,13 @@ public class StandaloneServerView extends HalViewImpl implements StandaloneServe
     }
 
     @Override
-    public void updateHttpInterface(ModelNode model) {
+    public void updateHttpInterface(ModelNode model, int pathIndex) {
         httpManagementInterfaceElement.update(model);
-        constantHeadersElement.update(failSafeList(model, CONSTANT_HEADERS));
+        List<ModelNode> constantHeaders = failSafeList(model, CONSTANT_HEADERS);
+        constantHeadersElement.update(constantHeaders);
+        if (pathIndex > 0 && pathIndex < constantHeaders.size()) {
+            constantHeadersElement.showHeaders(constantHeaders.get(pathIndex));
+        }
     }
 
     @Override

@@ -41,6 +41,7 @@ import org.jboss.hal.client.shared.sslwizard.EnableSSLPresenter;
 import org.jboss.hal.client.shared.sslwizard.EnableSSLWizard;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.CrudOperations;
+import org.jboss.hal.core.OperationFactory;
 import org.jboss.hal.core.SuccessfulOutcome;
 import org.jboss.hal.core.finder.Finder;
 import org.jboss.hal.core.finder.FinderPath;
@@ -72,6 +73,7 @@ import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
+import org.jetbrains.annotations.NotNull;
 
 import static elemental2.dom.DomGlobal.window;
 import static java.util.Collections.emptyList;
@@ -89,6 +91,7 @@ public class StandaloneServerPresenter
     static final AddressTemplate ROOT_TEMPLATE = AddressTemplate.of(ROOT_ADDRESS);
     static final String HTTP_INTERFACE_ADDRESS = "/core-service=management/management-interface=http-interface";
     static final AddressTemplate HTTP_INTERFACE_TEMPLATE = AddressTemplate.of(HTTP_INTERFACE_ADDRESS);
+    private static final String DOT = ".";
     private static final AddressTemplate ELYTRON_TEMPLATE = AddressTemplate.of("/subsystem=elytron");
 
     private final FinderPathFactory finderPathFactory;
@@ -138,7 +141,27 @@ public class StandaloneServerPresenter
     }
 
     @Override
+    public void reloadView() {
+        reload();
+    }
+
+    @Override
     protected void reload() {
+        dispatcher.execute(reloadComposite(), (CompositeResult result) -> {
+            getView().updateAttributes(result.step(0).get(RESULT));
+            getView().updateHttpInterface(result.step(1).get(RESULT), -1);
+        });
+    }
+
+    void reloadHeaders(int pathIndex) {
+        dispatcher.execute(reloadComposite(), (CompositeResult result) -> {
+            getView().updateAttributes(result.step(0).get(RESULT));
+            getView().updateHttpInterface(result.step(1).get(RESULT), pathIndex);
+        });
+    }
+
+    @NotNull
+    private Composite reloadComposite() {
         Operation attrOperation = new Operation.Builder(resourceAddress(), READ_RESOURCE_OPERATION)
                 .param(INCLUDE_RUNTIME, true)
                 .param(ATTRIBUTES_ONLY, true)
@@ -146,18 +169,7 @@ public class StandaloneServerPresenter
         ResourceAddress coreServiceAddress = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
         Operation mgmtInterfacesOp = new Operation.Builder(coreServiceAddress, READ_RESOURCE_OPERATION)
                 .build();
-
-        dispatcher.execute(
-                new Composite(attrOperation, mgmtInterfacesOp),
-                (CompositeResult result) -> {
-                    getView().updateAttributes(result.step(0).get(RESULT));
-                    getView().updateHttpInterface(result.step(1).get(RESULT));
-                });
-    }
-
-    @Override
-    public void reloadView() {
-        reload();
+        return new Composite(attrOperation, mgmtInterfacesOp);
     }
 
     public void save(String type, AddressTemplate template, Map<String, Object> changedValues) {
@@ -401,10 +413,10 @@ public class StandaloneServerPresenter
     }
 
     @Override
-    public void saveConstantHeaderPath(String path, int index) {
+    public void saveConstantHeaderPath(int index, String path) {
         ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
         Operation operation = new Operation.Builder(address, WRITE_ATTRIBUTE_OPERATION)
-                .param(NAME, CONSTANT_HEADERS + "[" + index + "]." + PATH)
+                .param(NAME, constantsHeadersIndex(index) + DOT + PATH)
                 .param(VALUE, path)
                 .build();
         dispatcher.execute(operation, result -> {
@@ -416,7 +428,7 @@ public class StandaloneServerPresenter
     }
 
     @Override
-    public void removeConstantHeaderPath(String path, int index) {
+    public void removeConstantHeaderPath(int index, String path) {
         LabelBuilder labelBuilder = new LabelBuilder();
         String type = labelBuilder.label(PATH);
         String title = resources.messages().removeConfirmationTitle(type);
@@ -436,6 +448,78 @@ public class StandaloneServerPresenter
         });
     }
 
+    @Override
+    public void addHeader(int pathIndex, Metadata metadata) {
+        LabelBuilder labelBuilder = new LabelBuilder();
+        String type = labelBuilder.label(HEADER);
+        Form<ModelNode> form = new ModelNodeForm.Builder<>(Ids.build(Ids.CONSTANT_HEADERS_HEADER, Ids.ADD), metadata)
+                .addOnly()
+                .include(NAME)
+                .include(VALUE)
+                .build();
+        AddResourceDialog dialog = new AddResourceDialog(resources.messages().addResourceTitle(type), form,
+                (name, model) -> {
+                    if (model != null) {
+                        ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+                        Operation operation = new Operation.Builder(address, LIST_ADD_OPERATION)
+                                .param(NAME, constantsHeadersIndex(pathIndex) + DOT + HEADERS)
+                                .param(VALUE, model)
+                                .build();
+                        dispatcher.execute(operation, result -> {
+                            reloadHeaders(pathIndex);
+                            SafeHtml message = resources.messages().addSuccess(type,
+                                    model.get(NAME).asString(), labelBuilder.label(HEADERS));
+                            MessageEvent.fire(getEventBus(), Message.success(message));
+                        });
+                    }
+                });
+        dialog.show();
+    }
+
+    @Override
+    public void saveHeader(int pathIndex, int index, String header, Metadata metadata,
+            Map<String, Object> changedValues) {
+        ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+        OperationFactory operationFactory = new OperationFactory(
+                name -> constantsHeadersIndex(pathIndex) + DOT + headersIndex(index) + DOT + name);
+        Composite composite = operationFactory.fromChangeSet(address, changedValues, metadata);
+        dispatcher.execute(composite, (CompositeResult result) -> {
+            reloadHeaders(pathIndex);
+            LabelBuilder labelBuilder = new LabelBuilder();
+            String type = labelBuilder.label(HEADER);
+            MessageEvent.fire(getEventBus(), Message.success(resources.messages().modifyResourceSuccess(type, header)));
+        });
+    }
+
+    @Override
+    public void removeHeader(int pathIndex, int index, String header) {
+        LabelBuilder labelBuilder = new LabelBuilder();
+        String type = labelBuilder.label(HEADER);
+        String title = resources.messages().removeConfirmationTitle(type);
+        SafeHtml question = resources.messages().removeConfirmationQuestion(header);
+        SafeHtml success = resources.messages().removeResourceSuccess(type, header);
+
+        DialogFactory.showConfirmation(title, question, () -> {
+            ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+            Operation operation = new Operation.Builder(address, LIST_REMOVE_OPERATION)
+                    .param(NAME, CONSTANT_HEADERS + "[" + pathIndex + "]." + HEADERS)
+                    .param(INDEX, index)
+                    .build();
+            dispatcher.execute(operation, result -> {
+                reloadHeaders(pathIndex);
+                MessageEvent.fire(getEventBus(), Message.success(success));
+            });
+        });
+    }
+
+    private String constantsHeadersIndex(int index) {
+        return CONSTANT_HEADERS + "[" + index + "]";
+    }
+
+    private String headersIndex(int index) {
+        return HEADERS + "[" + index + "]";
+    }
+
     // @formatter:off
     @ProxyCodeSplit
     @NameToken(NameTokens.STANDALONE_SERVER)
@@ -445,7 +529,7 @@ public class StandaloneServerPresenter
 
     public interface MyView extends MbuiView<StandaloneServerPresenter> {
         void updateAttributes(ModelNode attributes);
-        void updateHttpInterface(ModelNode httpModel);
+        void updateHttpInterface(ModelNode httpModel, int pathIndex);
     }
     // @formatter:on
 }

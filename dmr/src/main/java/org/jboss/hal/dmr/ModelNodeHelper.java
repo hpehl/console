@@ -151,9 +151,9 @@ public class ModelNodeHelper {
     }
 
     @JsIgnore
-    public static void storeIndex(List<ModelNode> modelNodes) {
+    public static <T extends ModelNode> void storeIndex(List<T> modelNodes) {
         int index = 0;
-        for (ModelNode modelNode : modelNodes) {
+        for (T modelNode : modelNodes) {
             modelNode.get(HAL_INDEX).set(index);
             index++;
         }

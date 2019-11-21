@@ -111,7 +111,8 @@ public class OperationFactory {
                 alternatives.forEach(alternative -> {
                     boolean alternativeDoesntExist = resourceDescription.findAttribute(ATTRIBUTES, alternative) == null;
                     if (resourceDescription.isDeprecated(ATTRIBUTES, alternative) || alternativeDoesntExist) {
-                        logger.debug("Skip undefine operations for deprecated or non-existent alternative {}", alternative);
+                        logger.debug("Skip undefine operations for deprecated or non-existent alternative {}",
+                                alternative);
                     } else {
                         logger.debug("Add undefine operations for alternative {}", alternative);
                         operations.putIfAbsent(alternative, undefineAttribute(address, alternative));
@@ -378,7 +379,8 @@ public class OperationFactory {
                                     }
                                 } else {
                                     valueNode = (ModelNode) value;
-                                    logger.warn("Unsupported value type {} for attribute {} of type {}. Will try to save anyway.",
+                                    logger.warn(
+                                            "Unsupported value type {} for attribute {} of type {}. Will try to save anyway.",
                                             valueType, name, type);
                                 }
                             } else if (typeOfValueType == ModelType.OBJECT) {

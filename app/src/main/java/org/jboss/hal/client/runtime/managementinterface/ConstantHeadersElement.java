@@ -40,6 +40,7 @@ public class ConstantHeadersElement
     private Pages pages;
     private ConstantHeadersPresenter presenter;
     private String selectedPath;
+    private int selectedIndex;
 
     public ConstantHeadersElement(MetadataRegistry metadataRegistry, AddressTemplate template,
             Resources resources) {
@@ -51,18 +52,11 @@ public class ConstantHeadersElement
                 .button(resources.constants().remove(),
                         t -> {
                             ModelNode row = t.selectedRow();
-                            presenter.removeConstantHeaderPath(row.get(PATH).asString(), row.get(HAL_INDEX).asInt());
+                            presenter.removeConstantHeaderPath(row.get(HAL_INDEX).asInt(), row.get(PATH).asString());
                         },
                         Scope.SELECTED, constraint)
                 .column(PATH)
-                .column(new InlineAction<>(labelBuilder.label(HEADERS), row -> {
-                    selectedPath = row.get(PATH).asString();
-                    List<NamedNode> headers = failSafeList(row, HEADERS).stream()
-                            .map(node -> new NamedNode(node.get(NAME).asString(), node))
-                            .collect(toList());
-                    headersElement.update(headers);
-                    pages.showPage(Ids.CONSTANT_HEADERS_PATH_PAGE);
-                }))
+                .column(new InlineAction<>(labelBuilder.label(HEADERS), this::showHeaders))
                 .build();
 
         form = new ModelNodeForm.Builder<>(Ids.build(Ids.CONSTANT_HEADERS, Ids.FORM), metadata)
@@ -70,7 +64,9 @@ public class ConstantHeadersElement
                 .onSave((f, changedValues) -> {
                     int index = f.getModel().get(HAL_INDEX).asInt();
                     String path = String.valueOf(changedValues.get(PATH));
-                    presenter.saveConstantHeaderPath(path, index);
+                    if (path != null) {
+                        presenter.saveConstantHeaderPath(index, path);
+                    }
                 })
                 .build();
 
@@ -81,11 +77,11 @@ public class ConstantHeadersElement
                 .add(form)
                 .get();
 
-        headersElement = new HeadersElement(metadata.forComplexAttribute(HEADERS), resources);
+        headersElement = new HeadersElement(metadata.forComplexAttribute(HEADERS), template, resources);
 
         pages = new Pages(Ids.CONSTANT_HEADERS_PAGES, Ids.CONSTANT_HEADERS_PAGE, section);
         pages.addPage(Ids.CONSTANT_HEADERS_PAGE, Ids.CONSTANT_HEADERS_PATH_PAGE,
-                () -> labelBuilder.label(PATH) + " " + selectedPath,
+                () -> labelBuilder.label(PATH) + ": " + selectedPath,
                 () -> labelBuilder.label(HEADERS),
                 headersElement);
     }
@@ -120,5 +116,15 @@ public class ConstantHeadersElement
         storeIndex(constantHeaders);
         form.clear();
         table.update(constantHeaders, modelNode -> modelNode.get(PATH).asString());
+    }
+
+    public void showHeaders(ModelNode modelNode) {
+        selectedPath = modelNode.get(PATH).asString();
+        selectedIndex = modelNode.get(HAL_INDEX).asInt();
+        List<NamedNode> headers = failSafeList(modelNode, HEADERS).stream()
+                .map(node -> new NamedNode(node.get(NAME).asString(), node))
+                .collect(toList());
+        headersElement.update(selectedIndex, headers);
+        pages.showPage(Ids.CONSTANT_HEADERS_PATH_PAGE);
     }
 }
