@@ -22,9 +22,11 @@ import javax.annotation.PostConstruct;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import elemental2.dom.HTMLElement;
 import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.table.Table;
+import org.jboss.hal.client.runtime.managementinterface.ConstantHeadersElement;
 import org.jboss.hal.client.runtime.managementinterface.HttpManagementInterfaceElement;
 import org.jboss.hal.core.mbui.MbuiContext;
 import org.jboss.hal.core.mbui.MbuiViewImpl;
@@ -46,15 +48,12 @@ import static org.jboss.gwt.elemento.core.Elements.p;
 import static org.jboss.gwt.elemento.core.Elements.section;
 import static org.jboss.hal.client.runtime.host.AddressTemplates.HTTP_INTERFACE_TEMPLATE;
 import static org.jboss.hal.client.runtime.host.AddressTemplates.NATIVE_INTERFACE_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.HTTP_INTERFACE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MANAGEMENT_INTERFACE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NATIVE_INTERFACE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.CONSTANT_HEADERS;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
+import static org.jboss.hal.dmr.ModelNodeHelper.failSafeList;
+import static org.jboss.hal.resources.CSS.fontAwesome;
 import static org.jboss.hal.resources.CSS.pfIcon;
-import static org.jboss.hal.resources.Ids.FORM;
-import static org.jboss.hal.resources.Ids.HTTP_INTERFACE_ITEM;
-import static org.jboss.hal.resources.Ids.ITEM;
-import static org.jboss.hal.resources.Ids.NATIVE_INTERFACE_ITEM;
+import static org.jboss.hal.resources.Ids.*;
 
 @MbuiView
 public abstract class HostView extends MbuiViewImpl<HostPresenter> implements HostPresenter.MyView {
@@ -76,6 +75,7 @@ public abstract class HostView extends MbuiViewImpl<HostPresenter> implements Ho
     @MbuiElement("host-system-property-table") Table<NamedNode> hostSystemPropertyTable;
     @MbuiElement("host-system-property-form") Form<NamedNode> hostSystemPropertyForm;
     private HttpManagementInterfaceElement httpManagementInterfaceElement;
+    private ConstantHeadersElement constantHeadersElement;
     private Form<ModelNode> nativeInterfaceForm;
     private HTMLElement nativeMgmtItemElement;
 
@@ -85,6 +85,8 @@ public abstract class HostView extends MbuiViewImpl<HostPresenter> implements Ho
 
         httpManagementInterfaceElement = new HttpManagementInterfaceElement(mbuiContext.metadataRegistry(),
                 HTTP_INTERFACE_TEMPLATE, resources);
+        constantHeadersElement = new ConstantHeadersElement(mbuiContext.metadataRegistry(), HTTP_INTERFACE_TEMPLATE,
+                resources);
 
         String nativeTitle = resources.constants().nativeManagementInterface();
         Metadata nativeMetadata = mbuiContext.metadataRegistry().lookup(NATIVE_INTERFACE_TEMPLATE);
@@ -104,23 +106,30 @@ public abstract class HostView extends MbuiViewImpl<HostPresenter> implements Ho
 
     @PostConstruct
     void init() {
-        String id = Ids.build(MANAGEMENT_INTERFACE, ITEM);
-        navigation.insertPrimary(id, "host-path-item", Names.MANAGEMENT_INTERFACE, pfIcon("virtual-machine"));
-        navigation.insertSecondary(id, HTTP_INTERFACE_ITEM, null, "HTTP", httpManagementInterfaceElement.element());
-        navigation.insertSecondary(id, NATIVE_INTERFACE_ITEM, null, "Native", nativeMgmtItemElement);
+        String managementInterfaceId = Ids.build(MANAGEMENT_INTERFACE, ITEM);
+        navigation.insertPrimary(managementInterfaceId, "host-path-item", Names.MANAGEMENT_INTERFACE,
+                pfIcon("virtual-machine"));
+        navigation.insertSecondary(managementInterfaceId, HTTP_INTERFACE_ITEM, null, "HTTP",
+                httpManagementInterfaceElement.element());
+        navigation.insertSecondary(managementInterfaceId, NATIVE_INTERFACE_ITEM, null, "Native", nativeMgmtItemElement);
+        navigation.insertPrimary(CONSTANT_HEADERS_ITEM, "host-path-item", new LabelBuilder().label(CONSTANT_HEADERS),
+                fontAwesome("bars"),
+                constantHeadersElement);
 
         registerAttachable(httpManagementInterfaceElement);
         registerAttachable(nativeInterfaceForm);
+        registerAttachable(constantHeadersElement);
     }
 
     @Override
     public void setPresenter(HostPresenter presenter) {
         super.setPresenter(presenter);
         httpManagementInterfaceElement.setPresenter(presenter);
+        constantHeadersElement.setPresenter(presenter);
     }
 
     @Override
-    public void updateManagementInterfaces(List<NamedNode> endpoints) {
+    public void updateManagementInterfaces(List<NamedNode> endpoints, int pathIndex) {
         boolean nativeExists = false;
         boolean httpExists = false;
         for (NamedNode named : endpoints) {
@@ -133,6 +142,12 @@ public abstract class HostView extends MbuiViewImpl<HostPresenter> implements Ho
                 ModelNode model = named.asModelNode();
                 httpManagementInterfaceElement.update(model);
                 httpExists = true;
+
+                List<ModelNode> constantHeaders = failSafeList(model, CONSTANT_HEADERS);
+                constantHeadersElement.update(constantHeaders);
+                if (pathIndex >= 0 && pathIndex < constantHeaders.size()) {
+                    constantHeadersElement.showHeaders(constantHeaders.get(pathIndex));
+                }
             }
         }
         // slave host controller doesn't have an http-interface, but if the http-interface is currently displayed

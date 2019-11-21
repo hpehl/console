@@ -20,6 +20,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import elemental2.dom.HTMLElement;
+import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.client.runtime.managementinterface.ConstantHeadersElement;
@@ -97,7 +98,8 @@ public class StandaloneServerView extends HalViewImpl implements StandaloneServe
 
         constantHeadersElement = new ConstantHeadersElement(metadataRegistry, HTTP_INTERFACE_TEMPLATE, resources);
         registerAttachable(constantHeadersElement);
-        navigation.addPrimary(CONSTANT_HEADERS_ITEM, "Constant Headers", fontAwesome("bars"), constantHeadersElement);
+        navigation.addPrimary(CONSTANT_HEADERS_ITEM, new LabelBuilder().label(CONSTANT_HEADERS), fontAwesome("bars"),
+                constantHeadersElement);
 
         initElement(row()
                 .add(column()
@@ -114,7 +116,7 @@ public class StandaloneServerView extends HalViewImpl implements StandaloneServe
         httpManagementInterfaceElement.update(model);
         List<ModelNode> constantHeaders = failSafeList(model, CONSTANT_HEADERS);
         constantHeadersElement.update(constantHeaders);
-        if (pathIndex > 0 && pathIndex < constantHeaders.size()) {
+        if (pathIndex >= 0 && pathIndex < constantHeaders.size()) {
             constantHeadersElement.showHeaders(constantHeaders.get(pathIndex));
         }
     }

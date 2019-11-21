@@ -24,26 +24,31 @@ import java.util.stream.Collectors;
 import javax.inject.Inject;
 import javax.inject.Provider;
 
+import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import elemental2.dom.HTMLElement;
+import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.dialog.DialogFactory;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.SwitchItem;
+import org.jboss.hal.client.runtime.managementinterface.ConstantHeadersPresenter;
 import org.jboss.hal.client.runtime.managementinterface.HttpManagementInterfacePresenter;
 import org.jboss.hal.client.shared.sslwizard.EnableSSLPresenter;
 import org.jboss.hal.client.shared.sslwizard.EnableSSLWizard;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.CrudOperations;
+import org.jboss.hal.core.OperationFactory;
 import org.jboss.hal.core.SuccessfulOutcome;
 import org.jboss.hal.core.finder.Finder;
 import org.jboss.hal.core.finder.FinderPath;
 import org.jboss.hal.core.finder.FinderPathFactory;
 import org.jboss.hal.core.mbui.MbuiPresenter;
 import org.jboss.hal.core.mbui.MbuiView;
+import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
 import org.jboss.hal.core.mvp.SupportsExpertMode;
 import org.jboss.hal.core.runtime.host.Host;
@@ -71,6 +76,7 @@ import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
 import static elemental2.dom.DomGlobal.window;
+import static java.util.Collections.emptyList;
 import static org.jboss.hal.client.runtime.host.AddressTemplates.*;
 import static org.jboss.hal.core.runtime.TopologyTasks.reloadBlocking;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
@@ -80,7 +86,9 @@ import static org.jboss.hal.resources.Ids.FORM;
 
 public class HostPresenter
         extends MbuiPresenter<HostPresenter.MyView, HostPresenter.MyProxy>
-        implements SupportsExpertMode, EnableSSLPresenter, HttpManagementInterfacePresenter {
+        implements SupportsExpertMode, EnableSSLPresenter, HttpManagementInterfacePresenter, ConstantHeadersPresenter {
+
+    private static final String DOT = ".";
 
     private final FinderPathFactory finderPathFactory;
     private final StatementContext statementContext;
@@ -160,18 +168,27 @@ public class HostPresenter
                 .param(INCLUDE_RUNTIME, true)
                 .build();
 
-        dispatcher.execute(
-                new Composite(hostOp, interfacesOp, jvmsOp, pathsOp, socketBindingGroupsOp, systemPropertiesOp,
-                        mgmtInterfacesOp),
-                (CompositeResult result) -> {
-                    getView().updateHost(new Host(result.step(0).get(RESULT)));
-                    getView().updateInterfaces(asNamedNodes(result.step(1).get(RESULT).asPropertyList()));
-                    getView().updateJvms(asNamedNodes(result.step(2).get(RESULT).asPropertyList()));
-                    getView().updatePaths(asNamedNodes(result.step(3).get(RESULT).asPropertyList()));
-                    getView().updateSocketBindingGroups(asNamedNodes(result.step(4).get(RESULT).asPropertyList()));
-                    getView().updateSystemProperties(asNamedNodes(result.step(5).get(RESULT).asPropertyList()));
-                    getView().updateManagementInterfaces(asNamedNodes(result.step(6).get(RESULT).asPropertyList()));
-                });
+        Composite composite = new Composite(hostOp, interfacesOp, jvmsOp, pathsOp, socketBindingGroupsOp,
+                systemPropertiesOp, mgmtInterfacesOp);
+        dispatcher.execute(composite, (CompositeResult result) -> {
+            getView().updateHost(new Host(result.step(0).get(RESULT)));
+            getView().updateInterfaces(asNamedNodes(result.step(1).get(RESULT).asPropertyList()));
+            getView().updateJvms(asNamedNodes(result.step(2).get(RESULT).asPropertyList()));
+            getView().updatePaths(asNamedNodes(result.step(3).get(RESULT).asPropertyList()));
+            getView().updateSocketBindingGroups(asNamedNodes(result.step(4).get(RESULT).asPropertyList()));
+            getView().updateSystemProperties(asNamedNodes(result.step(5).get(RESULT).asPropertyList()));
+            getView().updateManagementInterfaces(asNamedNodes(result.step(6).get(RESULT).asPropertyList()), -1);
+        });
+    }
+
+    void reloadHeaders(int pathIndex) {
+        ResourceAddress coreServiceAddress = resourceAddress().add(CORE_SERVICE, MANAGEMENT);
+        Operation operation = new Operation.Builder(coreServiceAddress, READ_CHILDREN_RESOURCES_OPERATION)
+                .param(CHILD_TYPE, MANAGEMENT_INTERFACE)
+                .param(INCLUDE_RUNTIME, true)
+                .build();
+        dispatcher.execute(operation,
+                result -> getView().updateManagementInterfaces(asNamedNodes(result.asPropertyList()), pathIndex));
     }
 
     @Override
@@ -182,7 +199,7 @@ public class HostPresenter
                 .param(INCLUDE_RUNTIME, true)
                 .build();
         dispatcher.execute(operation,
-                result -> getView().updateManagementInterfaces(asNamedNodes(result.asPropertyList())));
+                result -> getView().updateManagementInterfaces(asNamedNodes(result.asPropertyList()), -1));
     }
 
     void saveHost(Form<Host> form, Map<String, Object> changedValues) {
@@ -417,6 +434,142 @@ public class HostPresenter
         reset(type, template, form, metadata);
     }
 
+    @Override
+    public void addConstantHeaderPath(Metadata metadata) {
+        LabelBuilder labelBuilder = new LabelBuilder();
+        String type = labelBuilder.label(PATH);
+        Form<ModelNode> form = new ModelNodeForm.Builder<>(Ids.build(Ids.CONSTANT_HEADERS, Ids.ADD), metadata)
+                .addOnly()
+                .include(PATH)
+                .build();
+        AddResourceDialog dialog = new AddResourceDialog(resources.messages().addResourceTitle(type), form,
+                (name, model) -> {
+                    if (model != null) {
+                        model.get(HEADERS).set(emptyList());
+                        ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+                        Operation operation = new Operation.Builder(address, LIST_ADD_OPERATION)
+                                .param(NAME, CONSTANT_HEADERS)
+                                .param(VALUE, model)
+                                .build();
+                        dispatcher.execute(operation, result -> {
+                            reload();
+                            SafeHtml message = resources.messages().addSuccess(type,
+                                    model.get(PATH).asString(), labelBuilder.label(CONSTANT_HEADERS));
+                            MessageEvent.fire(getEventBus(), Message.success(message));
+                        });
+                    }
+                });
+        dialog.show();
+    }
+
+    @Override
+    public void saveConstantHeaderPath(int index, String path) {
+        ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+        Operation operation = new Operation.Builder(address, WRITE_ATTRIBUTE_OPERATION)
+                .param(NAME, constantsHeadersIndex(index) + DOT + PATH)
+                .param(VALUE, path)
+                .build();
+        dispatcher.execute(operation, result -> {
+            reload();
+            LabelBuilder labelBuilder = new LabelBuilder();
+            String type = labelBuilder.label(PATH);
+            MessageEvent.fire(getEventBus(), Message.success(resources.messages().modifyResourceSuccess(type, path)));
+        });
+    }
+
+    @Override
+    public void removeConstantHeaderPath(int index, String path) {
+        LabelBuilder labelBuilder = new LabelBuilder();
+        String type = labelBuilder.label(PATH);
+        String title = resources.messages().removeConfirmationTitle(type);
+        SafeHtml question = resources.messages().removeConfirmationQuestion(path);
+        SafeHtml success = resources.messages().removeResourceSuccess(type, path);
+
+        DialogFactory.showConfirmation(title, question, () -> {
+            ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+            Operation operation = new Operation.Builder(address, LIST_REMOVE_OPERATION)
+                    .param(NAME, CONSTANT_HEADERS)
+                    .param(INDEX, index)
+                    .build();
+            dispatcher.execute(operation, result -> {
+                reload();
+                MessageEvent.fire(getEventBus(), Message.success(success));
+            });
+        });
+    }
+
+    @Override
+    public void addHeader(int pathIndex, Metadata metadata) {
+        LabelBuilder labelBuilder = new LabelBuilder();
+        String type = labelBuilder.label(HEADER);
+        Form<ModelNode> form = new ModelNodeForm.Builder<>(Ids.build(Ids.CONSTANT_HEADERS_HEADER, Ids.ADD), metadata)
+                .addOnly()
+                .include(NAME)
+                .include(VALUE)
+                .build();
+        AddResourceDialog dialog = new AddResourceDialog(resources.messages().addResourceTitle(type), form,
+                (name, model) -> {
+                    if (model != null) {
+                        ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+                        Operation operation = new Operation.Builder(address, LIST_ADD_OPERATION)
+                                .param(NAME, constantsHeadersIndex(pathIndex) + DOT + HEADERS)
+                                .param(VALUE, model)
+                                .build();
+                        dispatcher.execute(operation, result -> {
+                            reloadHeaders(pathIndex);
+                            SafeHtml message = resources.messages().addSuccess(type,
+                                    model.get(NAME).asString(), labelBuilder.label(HEADERS));
+                            MessageEvent.fire(getEventBus(), Message.success(message));
+                        });
+                    }
+                });
+        dialog.show();
+    }
+
+    @Override
+    public void saveHeader(int pathIndex, int index, String header, Metadata metadata,
+            Map<String, Object> changedValues) {
+        ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+        OperationFactory operationFactory = new OperationFactory(
+                name -> constantsHeadersIndex(pathIndex) + DOT + headersIndex(index) + DOT + name);
+        Composite composite = operationFactory.fromChangeSet(address, changedValues, metadata);
+        dispatcher.execute(composite, (CompositeResult result) -> {
+            reloadHeaders(pathIndex);
+            LabelBuilder labelBuilder = new LabelBuilder();
+            String type = labelBuilder.label(HEADER);
+            MessageEvent.fire(getEventBus(), Message.success(resources.messages().modifyResourceSuccess(type, header)));
+        });
+    }
+
+    @Override
+    public void removeHeader(int pathIndex, int index, String header) {
+        LabelBuilder labelBuilder = new LabelBuilder();
+        String type = labelBuilder.label(HEADER);
+        String title = resources.messages().removeConfirmationTitle(type);
+        SafeHtml question = resources.messages().removeConfirmationQuestion(header);
+        SafeHtml success = resources.messages().removeResourceSuccess(type, header);
+
+        DialogFactory.showConfirmation(title, question, () -> {
+            ResourceAddress address = HTTP_INTERFACE_TEMPLATE.resolve(statementContext);
+            Operation operation = new Operation.Builder(address, LIST_REMOVE_OPERATION)
+                    .param(NAME, CONSTANT_HEADERS + "[" + pathIndex + "]." + HEADERS)
+                    .param(INDEX, index)
+                    .build();
+            dispatcher.execute(operation, result -> {
+                reloadHeaders(pathIndex);
+                MessageEvent.fire(getEventBus(), Message.success(success));
+            });
+        });
+    }
+
+    private String constantsHeadersIndex(int index) {
+        return CONSTANT_HEADERS + "[" + index + "]";
+    }
+
+    private String headersIndex(int index) {
+        return HEADERS + "[" + index + "]";
+    }
+
     // @formatter:off
     @ProxyCodeSplit
     @NameToken(NameTokens.HOST_CONFIGURATION)
@@ -427,7 +580,7 @@ public class HostPresenter
 
     public interface MyView extends MbuiView<HostPresenter> {
         void updateHost(Host host);
-        void updateManagementInterfaces(List<NamedNode> endpoints);
+        void updateManagementInterfaces(List<NamedNode> endpoints, int pathIndex);
         void updateInterfaces(List<NamedNode> interfaces);
         void updateJvms(List<NamedNode> interfaces);
         void updatePaths(List<NamedNode> paths);
