@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
-import javax.inject.Inject;
-
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import org.jboss.hal.config.Role;
 import org.jboss.hal.core.finder.FinderPath;
@@ -24,6 +22,8 @@ import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
 
 public class AccessControlTokens {
 

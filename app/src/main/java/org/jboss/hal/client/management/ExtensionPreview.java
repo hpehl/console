@@ -28,7 +28,7 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import static org.jboss.elemento.Elements.setVisible;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class ExtensionPreview extends PreviewContent<InstalledExtension> {

@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.form.Form;
@@ -28,12 +22,7 @@ import org.jboss.hal.ballroom.form.FormItem;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.CrudOperations;
 import org.jboss.hal.core.datasource.JdbcDriver;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
 import org.jboss.hal.core.runtime.TopologyTasks;
@@ -51,18 +40,19 @@ import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
-import org.jboss.hal.spi.AsyncColumn;
-import org.jboss.hal.spi.Footer;
-import org.jboss.hal.spi.Message;
-import org.jboss.hal.spi.MessageEvent;
-import org.jboss.hal.spi.Requires;
+import org.jboss.hal.spi.*;
 
-import static org.jboss.gwt.elemento.core.Elements.span;
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.span;
 import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.JDBC_DRIVER_ADDRESS;
 import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.JDBC_DRIVER_TEMPLATE;
 import static org.jboss.hal.core.datasource.JdbcDriver.Provider.DEPLOYMENT;
 import static org.jboss.hal.core.datasource.JdbcDriver.Provider.MODULE;
-import static org.jboss.hal.core.datasource.JdbcDriver.Provider.UNKNOWN;
+import static org.jboss.hal.core.datasource.JdbcDriver.Provider.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.properties;
 import static org.jboss.hal.flow.Flow.series;

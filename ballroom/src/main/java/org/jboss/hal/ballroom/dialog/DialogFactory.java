@@ -15,16 +15,14 @@
  */
 package org.jboss.hal.ballroom.dialog;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.spi.Callback;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.ballroom.dialog.Dialog.Size.SMALL;
-import static org.jboss.hal.resources.CSS.centerBlock;
-import static org.jboss.hal.resources.CSS.spinner;
-import static org.jboss.hal.resources.CSS.spinnerLg;
+import static org.jboss.hal.resources.CSS.*;
 
 public final class DialogFactory {
 

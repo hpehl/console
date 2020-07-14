@@ -15,11 +15,11 @@
  */
 package org.jboss.hal.client.runtime.subsystem.undertow;
 
-import java.util.Collections;
-
 import org.jboss.hal.core.finder.PreviewAttributes;
 import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.dmr.NamedNode;
+
+import java.util.Collections;
 
 class ApplicationSecurityDomainPreview extends PreviewContent<NamedNode> {
 

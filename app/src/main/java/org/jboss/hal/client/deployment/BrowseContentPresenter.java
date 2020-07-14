@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.deployment;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -36,10 +34,9 @@ import org.jboss.hal.meta.ManagementModel;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CONTENT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DEPLOYMENT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.INCLUDE_RUNTIME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.READ_RESOURCE_OPERATION;
+import javax.inject.Inject;
+
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 public class BrowseContentPresenter
         extends ApplicationFinderPresenter<BrowseContentPresenter.MyView, BrowseContentPresenter.MyProxy> {

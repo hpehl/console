@@ -15,20 +15,10 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.ballroom.autocomplete.ReadChildrenAutoComplete;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.core.CrudOperations;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mbui.dialog.NameItem;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
@@ -46,11 +36,12 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.util.Arrays.asList;
-import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.CONNECTION_FACTORY_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.JMS_BRIDGE_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.MESSAGING_SUBSYSTEM_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.POOLED_CONNECTION_FACTORY_TEMPLATE;
+import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.JMS_BRIDGE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;

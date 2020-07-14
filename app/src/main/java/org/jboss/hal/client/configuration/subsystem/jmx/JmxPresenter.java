@@ -15,13 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.jmx;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -49,9 +42,13 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.AUDIT_LOG_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.JMX_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.JMX_TEMPLATE;
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+
+import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.HANDLER;
 import static org.jboss.hal.flow.Flow.series;
 

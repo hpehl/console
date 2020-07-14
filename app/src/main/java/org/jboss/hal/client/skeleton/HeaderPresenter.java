@@ -15,24 +15,17 @@
  */
 package org.jboss.hal.client.skeleton;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.dialog.DialogFactory;
 import org.jboss.hal.client.bootstrap.endpoint.EndpointManager;
-import org.jboss.hal.config.Endpoints;
-import org.jboss.hal.config.Environment;
-import org.jboss.hal.config.RolesChangedEvent;
+import org.jboss.hal.config.*;
 import org.jboss.hal.config.RolesChangedEvent.RolesChangedHandler;
-import org.jboss.hal.config.Settings;
-import org.jboss.hal.config.User;
-import org.jboss.hal.config.UserChangedEvent;
 import org.jboss.hal.config.UserChangedEvent.UserChangedHandler;
 import org.jboss.hal.config.keycloak.KeycloakHolder;
 import org.jboss.hal.core.finder.FinderContext;
@@ -73,9 +66,11 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.MessageEvent.MessageHandler;
 
+import javax.inject.Inject;
+
 import static elemental2.dom.DomGlobal.location;
 import static elemental2.dom.DomGlobal.window;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.config.Settings.Key.RUN_AS;
 
 /**

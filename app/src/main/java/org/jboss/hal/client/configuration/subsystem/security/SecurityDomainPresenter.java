@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.security;
 
-import java.util.Map;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -37,19 +32,11 @@ import org.jboss.hal.core.mbui.MbuiPresenter;
 import org.jboss.hal.core.mbui.MbuiView;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mvp.SupportsExpertMode;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.NamedNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
-import org.jboss.hal.dmr.ResourceCheck;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.flow.Progress;
-import org.jboss.hal.meta.AddressTemplate;
-import org.jboss.hal.meta.Metadata;
-import org.jboss.hal.meta.MetadataRegistry;
-import org.jboss.hal.meta.SelectionAwareStatementContext;
-import org.jboss.hal.meta.StatementContext;
+import org.jboss.hal.meta.*;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
@@ -59,14 +46,12 @@ import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 import rx.Completable;
 
-import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.SECURITY_DOMAIN_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.SECURITY_DOMAIN_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.SELECTED_SECURITY_DOMAIN_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.TRUST_MODULE_ADDRESS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.ADD;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.READ_RESOURCE_OPERATION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SECURITY;
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.Map;
+
+import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.flow.Flow.series;
 import static org.jboss.hal.meta.token.NameTokens.SECURITY_DOMAIN;
 

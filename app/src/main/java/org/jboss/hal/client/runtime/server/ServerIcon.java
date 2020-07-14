@@ -15,12 +15,12 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.function.Function;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.core.runtime.server.Server;
 import org.jboss.hal.core.runtime.server.ServerActions;
 import org.jboss.hal.resources.Icons;
+
+import java.util.function.Function;
 
 class ServerIcon implements Function<Server, HTMLElement> {
 

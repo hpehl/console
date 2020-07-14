@@ -15,15 +15,12 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.deployment.Deployment;
@@ -37,8 +34,11 @@ import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeBoolean;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;

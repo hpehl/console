@@ -15,13 +15,7 @@
  */
 package org.jboss.hal.client.runtime.subsystem.undertow;
 
-import javax.inject.Inject;
-
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.FinderSegment;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.dmr.Operation;
 import org.jboss.hal.dmr.ResourceAddress;
@@ -30,6 +24,8 @@ import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.AsyncColumn;
+
+import javax.inject.Inject;
 
 import static java.util.Collections.emptyList;
 import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.MODCLUSTER_TEMPLATE;

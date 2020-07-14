@@ -15,20 +15,14 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Supplier;
-
 import com.google.common.collect.ImmutableMap;
 import org.jboss.hal.core.datasource.DataSource;
 import org.jboss.hal.core.datasource.JdbcDriver;
 
-import static org.jboss.hal.client.configuration.subsystem.datasource.DataSourceTemplate.Vendor.DB2;
-import static org.jboss.hal.client.configuration.subsystem.datasource.DataSourceTemplate.Vendor.POSTGRE_SQL;
-import static org.jboss.hal.client.configuration.subsystem.datasource.DataSourceTemplate.Vendor.SQL_SERVER;
+import java.util.*;
+import java.util.function.Supplier;
+
+import static org.jboss.hal.client.configuration.subsystem.datasource.DataSourceTemplate.Vendor.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 /** List of well known datasource templates */

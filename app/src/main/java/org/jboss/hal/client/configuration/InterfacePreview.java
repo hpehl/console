@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.configuration;
 
-import java.util.Iterator;
-import java.util.List;
-
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
@@ -34,8 +31,11 @@ import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 
+import java.util.Iterator;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import static org.jboss.elemento.Elements.span;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
 

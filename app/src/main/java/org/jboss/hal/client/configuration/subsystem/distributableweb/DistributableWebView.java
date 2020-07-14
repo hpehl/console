@@ -15,16 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.distributableweb;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.PostConstruct;
-
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLSelectElement;
-import org.jboss.gwt.elemento.core.EventType;
+import org.jboss.elemento.EventType;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.VerticalNavigation;
@@ -35,11 +28,7 @@ import org.jboss.hal.core.mbui.MbuiContext;
 import org.jboss.hal.core.mbui.MbuiViewImpl;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
 import org.jboss.hal.core.mbui.table.ModelNodeTable;
-import org.jboss.hal.dmr.ModelDescriptionConstants;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.ModelNodeHelper;
-import org.jboss.hal.dmr.NamedNode;
-import org.jboss.hal.dmr.Property;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Ids;
@@ -47,8 +36,14 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
+import javax.annotation.PostConstruct;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.JQuery.$;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.AFFINITY;
 import static org.jboss.hal.resources.CSS.pfIcon;

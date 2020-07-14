@@ -18,14 +18,15 @@ package org.jboss.hal.js;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.google.web.bindery.event.shared.HandlerRegistration;
-import com.google.web.bindery.event.shared.HandlerRegistrations;
 import elemental2.core.JsRegExp;
+import elemental2.core.RegExpResult;
 import elemental2.dom.DragEvent;
 import elemental2.dom.HTMLElement;
 import jsinterop.base.JsPropertyMap;
-import org.jboss.gwt.elemento.core.EventCallbackFn;
-import org.jboss.gwt.elemento.core.EventType;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.event.shared.HandlerRegistrations;
+import org.jboss.elemento.EventCallbackFn;
+import org.jboss.elemento.EventType;
 import org.jboss.hal.resources.CSS;
 
 import static elemental2.core.Global.decodeURIComponent;
@@ -48,14 +49,14 @@ public final class JsHelper {
     public static String requestParameter(String name) {
         String validName = name.replaceAll("[\\[\\]]", "\\$&");
         JsRegExp valueRegExp = new JsRegExp("[?&]" + validName + "(=([^&#]*)|&|#|$)");
-        String[] results = valueRegExp.exec(window.location.getSearch());
-        if (results == null || results.length < 2) {
+        RegExpResult results = valueRegExp.exec(window.location.search);
+        if (results == null || results.getLength() < 2) {
             return null;
         }
-        if (results[2] == null) {
+        if (results.getAt(2) == null) {
             return null;
         }
-        return decodeURIComponent(results[2].replace('+', ' '));
+        return decodeURIComponent(results.getAt(2).replace('+', ' '));
     }
 
     public static native boolean supportsAdvancedUpload() /*-{

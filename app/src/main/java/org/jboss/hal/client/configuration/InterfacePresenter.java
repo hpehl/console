@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration;
 
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -42,6 +38,9 @@ import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import java.util.Map;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
 

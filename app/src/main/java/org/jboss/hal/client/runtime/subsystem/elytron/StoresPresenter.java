@@ -15,23 +15,14 @@
  */
 package org.jboss.hal.client.runtime.subsystem.elytron;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.function.Consumer;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.user.datepicker.client.CalendarUtil;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import elemental2.dom.HTMLElement;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.ballroom.Format;
 import org.jboss.hal.ballroom.LabelBuilder;
@@ -50,12 +41,7 @@ import org.jboss.hal.core.mvp.ApplicationFinderPresenter;
 import org.jboss.hal.core.mvp.HalView;
 import org.jboss.hal.core.mvp.HasPresenter;
 import org.jboss.hal.core.mvp.SupportsExpertMode;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.NamedNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.flow.Progress;
@@ -73,8 +59,16 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
+import java.util.function.Consumer;
+
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;

@@ -15,11 +15,11 @@
  */
 package org.jboss.hal.ballroom.autocomplete;
 
-import java.util.List;
-
 import org.jboss.hal.dmr.CompositeResult;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.js.JsonObject;
+
+import java.util.List;
 
 /**
  * Abstract result processor which makes it easy to unit test the processor. If your result processor is really trivial

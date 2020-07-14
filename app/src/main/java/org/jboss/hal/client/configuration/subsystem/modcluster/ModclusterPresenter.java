@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.modcluster;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -35,11 +29,7 @@ import org.jboss.hal.core.finder.FinderPathFactory;
 import org.jboss.hal.core.mbui.MbuiPresenter;
 import org.jboss.hal.core.mbui.MbuiView;
 import org.jboss.hal.core.mvp.SupportsExpertMode;
-import org.jboss.hal.dmr.ModelDescriptionConstants;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.NamedNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.MetadataRegistry;
@@ -49,15 +39,17 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+
 import static org.jboss.hal.client.configuration.subsystem.modcluster.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.READ_RESOURCE_OPERATION;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
-import static org.jboss.hal.resources.Ids.ADD;
-import static org.jboss.hal.resources.Ids.CUSTOM_LOAD_METRIC;
-import static org.jboss.hal.resources.Ids.FORM;
-import static org.jboss.hal.resources.Ids.LOAD_METRIC;
+import static org.jboss.hal.resources.Ids.*;
 
 public class ModclusterPresenter
         extends MbuiPresenter<ModclusterPresenter.MyView, ModclusterPresenter.MyProxy>

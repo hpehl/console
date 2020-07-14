@@ -15,21 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.core.CrudOperations;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.FinderSegment;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.PreviewContent;
-import org.jboss.hal.core.finder.StaticItem;
-import org.jboss.hal.core.finder.StaticItemColumn;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.dmr.Property;
 import org.jboss.hal.dmr.ResourceAddress;
@@ -43,6 +31,10 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.SELECTED_SERVER_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.HA_POLICY;

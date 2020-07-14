@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
-import java.util.Arrays;
-import java.util.Collections;
-
-import javax.inject.Inject;
-
 import com.google.gwt.resources.client.ExternalTextResource;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.Alert;
@@ -35,8 +30,12 @@ import org.jboss.hal.resources.Previews;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import javax.inject.Inject;
+import java.util.Arrays;
+import java.util.Collections;
+
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.setVisible;
 
 @AsyncColumn(Ids.ACCESS_CONTROL_BROWSE_BY)
 public class BrowseByColumn extends StaticItemColumn {

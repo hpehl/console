@@ -15,13 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.undertow;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -36,13 +29,7 @@ import org.jboss.hal.core.mvp.ApplicationFinderPresenter;
 import org.jboss.hal.core.mvp.HalView;
 import org.jboss.hal.core.mvp.HasPresenter;
 import org.jboss.hal.core.mvp.SupportsExpertMode;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.NamedNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.flow.Progress;
@@ -58,11 +45,14 @@ import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 import rx.Completable;
 
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_DEPLOYMENT_ADDRESS;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_DEPLOYMENT_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_SUBDEPLOYMENT_ADDRESS;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_SUBDEPLOYMENT_TEMPLATE;
+import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;

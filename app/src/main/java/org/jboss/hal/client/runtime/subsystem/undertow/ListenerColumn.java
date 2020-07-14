@@ -15,25 +15,10 @@
  */
 package org.jboss.hal.client.runtime.subsystem.undertow;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.ballroom.dialog.DialogFactory;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.FinderSegment;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemDisplay;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.NamedNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.core.finder.*;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
@@ -46,11 +31,12 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.util.Collections.emptyList;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.AJP_LISTENER_ADDRESS;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.AJP_LISTENER_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_SERVER_ADDRESS;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_SERVER_TEMPLATE;
+import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.*;
 import static org.jboss.hal.core.finder.FinderColumn.RefreshMode.RESTORE_SELECTION;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;

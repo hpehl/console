@@ -15,19 +15,11 @@
  */
 package org.jboss.hal.client.runtime.subsystem.logging;
 
-import java.util.Date;
-
-import javax.inject.Inject;
-
 import com.google.common.base.Strings;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
-import org.jboss.hal.ballroom.Clipboard;
-import org.jboss.hal.ballroom.Format;
-import org.jboss.hal.ballroom.Search;
-import org.jboss.hal.ballroom.Skeleton;
-import org.jboss.hal.ballroom.Tooltip;
+import org.jboss.hal.ballroom.*;
 import org.jboss.hal.ballroom.editor.AceEditor;
 import org.jboss.hal.ballroom.editor.Options;
 import org.jboss.hal.ballroom.form.SwitchBridge;
@@ -35,20 +27,20 @@ import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.core.runtime.server.Server;
 import org.jboss.hal.meta.StatementContext;
-import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.resources.UIConstants;
 
-import static elemental2.dom.DomGlobal.document;
-import static elemental2.dom.DomGlobal.setTimeout;
-import static elemental2.dom.DomGlobal.window;
+import javax.inject.Inject;
+import java.util.Date;
+
+import static elemental2.dom.DomGlobal.*;
 import static java.lang.Math.max;
-import static org.jboss.gwt.elemento.core.Elements.i;
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
-import static org.jboss.gwt.elemento.core.InputType.checkbox;
+import static org.jboss.elemento.Elements.i;
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.elemento.InputType.checkbox;
 import static org.jboss.hal.ballroom.Skeleton.MARGIN_BIG;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.UIConstants.*;

@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.Map;
-
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.core.CrudOperations;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
@@ -31,6 +29,8 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Callback;
+
+import java.util.Map;
 
 import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.SELECTED_SERVER_TEMPLATE;
 

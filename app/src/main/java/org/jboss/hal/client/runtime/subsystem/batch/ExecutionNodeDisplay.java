@@ -15,31 +15,26 @@
  */
 package org.jboss.hal.client.runtime.subsystem.batch;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Function;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.ballroom.listview.ItemAction;
 import org.jboss.hal.ballroom.listview.ItemDisplay;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.collect;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Function;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.Format.humanReadableDuration;
 import static org.jboss.hal.ballroom.Format.mediumDateTime;
 import static org.jboss.hal.client.runtime.subsystem.batch.ExecutionNode.BatchStatus.STARTED;
 import static org.jboss.hal.client.runtime.subsystem.batch.ExecutionNode.BatchStatus.STOPPED;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.END_TIME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.EXECUTION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.LAST_UPDATED_TIME;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.FontAwesomeSize.x2;
 

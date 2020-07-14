@@ -15,28 +15,24 @@
  */
 package org.jboss.hal.ballroom.listview;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.google.common.base.Splitter;
 import com.google.gwt.core.client.GWT;
-import elemental2.dom.HTMLDivElement;
-import elemental2.dom.HTMLElement;
-import elemental2.dom.HTMLInputElement;
-import elemental2.dom.HTMLUListElement;
-import elemental2.dom.MouseEvent;
-import org.jboss.gwt.elemento.core.EventCallbackFn;
-import org.jboss.gwt.elemento.core.InputType;
-import org.jboss.gwt.elemento.core.IsElement;
+import elemental2.dom.*;
+import org.jboss.elemento.EventCallbackFn;
+import org.jboss.elemento.InputType;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.resources.Constants;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.UIConstants;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.UIConstants.HASH;
 

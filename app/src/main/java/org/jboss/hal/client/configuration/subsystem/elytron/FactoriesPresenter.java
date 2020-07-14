@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.elytron;
 
-import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -49,14 +43,34 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
+
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 import static org.jboss.hal.client.configuration.subsystem.elytron.AddressTemplates.*;
-import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.*;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MECHANISM_CONFIGURATIONS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MECHANISM_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MECHANISM_REALM_CONFIGURATIONS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RESULT;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.AGGREGATE_HTTP_SERVER_MECHANISM_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.AGGREGATE_PRINCIPAL_TRANSFORMER;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.AGGREGATE_SASL_SERVER_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.CHAINED_PRINCIPAL_TRANSFORMER;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.CONFIGURABLE_HTTP_SERVER_MECHANISM_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.CONFIGURABLE_SASL_SERVER_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.CONSTANT_PRINCIPAL_TRANSFORMER;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.CUSTOM_CREDENTIAL_SECURITY_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.CUSTOM_PRINCIPAL_TRANSFORMER;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.HTTP_AUTHENTICATION_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.KERBEROS_SECURITY_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.MECHANISM_PROVIDER_FILTERING_SASL_SERVER_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.PROVIDER_HTTP_SERVER_MECHANISM_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.PROVIDER_SASL_SERVER_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.REGEX_PRINCIPAL_TRANSFORMER;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.REGEX_VALIDATING_PRINCIPAL_TRANSFORMER;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.SASL_AUTHENTICATION_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.SERVICE_LOADER_HTTP_SERVER_MECHANISM_FACTORY;
+import static org.jboss.hal.client.configuration.subsystem.elytron.ElytronResource.SERVICE_LOADER_SASL_SERVER_FACTORY;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
 
 public class FactoriesPresenter extends MbuiPresenter<FactoriesPresenter.MyView, FactoriesPresenter.MyProxy>

@@ -22,13 +22,10 @@ import org.jboss.hal.core.finder.PreviewAttributes.PreviewAttribute;
 import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.p;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.core.datasource.JdbcDriver.Provider.DEPLOYMENT;
 import static org.jboss.hal.core.datasource.JdbcDriver.Provider.MODULE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DRIVER_CLASS_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DRIVER_DATASOURCE_CLASS_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DRIVER_VERSION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DRIVER_XA_DATASOURCE_CLASS_NAME;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class JdbcDriverPreview extends PreviewContent<JdbcDriver> {
 

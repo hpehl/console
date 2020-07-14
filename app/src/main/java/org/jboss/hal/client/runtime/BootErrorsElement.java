@@ -15,10 +15,8 @@
  */
 package org.jboss.hal.client.runtime;
 
-import java.util.List;
-
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.form.Form;
@@ -40,11 +38,10 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

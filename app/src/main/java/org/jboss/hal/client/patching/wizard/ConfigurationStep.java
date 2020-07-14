@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.patching.wizard;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.wizard.WizardStep;
@@ -27,10 +24,10 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.OVERRIDE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.OVERRIDE_ALL;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.OVERRIDE_MODULE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PRESERVE;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 public class ConfigurationStep extends WizardStep<PatchContext, PatchState> {
 

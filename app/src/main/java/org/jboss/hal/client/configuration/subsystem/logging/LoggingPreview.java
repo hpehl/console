@@ -15,11 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.logging;
 
-import java.util.function.Supplier;
-
 import com.google.gwt.resources.client.ExternalTextResource;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.core.finder.PreviewAttributes;
 import org.jboss.hal.core.finder.PreviewAttributes.PreviewAttribute;
@@ -30,10 +28,10 @@ import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import java.util.function.Supplier;
+
 import static java.util.stream.Collectors.joining;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.HANDLERS;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.LEVEL;
 import static org.jboss.hal.resources.Names.ROOT_LOGGER;

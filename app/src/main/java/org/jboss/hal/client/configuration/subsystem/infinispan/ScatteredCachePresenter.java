@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.infinispan;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -31,6 +29,8 @@ import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
 
 import static org.jboss.hal.client.configuration.subsystem.infinispan.AddressTemplates.SCATTERED_CACHE_ADDRESS;
 import static org.jboss.hal.client.configuration.subsystem.infinispan.CacheType.SCATTERED;

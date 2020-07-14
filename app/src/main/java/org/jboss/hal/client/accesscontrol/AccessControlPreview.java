@@ -25,8 +25,8 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Previews;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.section;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import static org.jboss.elemento.Elements.section;
+import static org.jboss.elemento.Elements.setVisible;
 
 class AccessControlPreview extends PreviewContent<Void> {
 

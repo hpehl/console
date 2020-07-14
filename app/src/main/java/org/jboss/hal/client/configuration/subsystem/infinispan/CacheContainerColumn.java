@@ -15,30 +15,13 @@
  */
 package org.jboss.hal.client.configuration.subsystem.infinispan;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.core.CrudOperations;
-import org.jboss.hal.core.finder.ColumnAction;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mvp.Places;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.NamedNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.MetadataRegistry;
@@ -53,6 +36,10 @@ import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.util.Arrays.asList;
 import static java.util.Comparator.comparing;

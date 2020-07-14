@@ -15,15 +15,8 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.common.collect.Sets;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.client.accesscontrol.AccessControlTasks.AddAssignment;
@@ -32,15 +25,7 @@ import org.jboss.hal.client.accesscontrol.AccessControlTasks.CheckRoleMapping;
 import org.jboss.hal.config.Role;
 import org.jboss.hal.config.User;
 import org.jboss.hal.config.UserChangedEvent;
-import org.jboss.hal.core.finder.ColumnAction;
-import org.jboss.hal.core.finder.ColumnActionHandler;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.FinderPath;
-import org.jboss.hal.core.finder.FinderSegment;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.dmr.Operation;
 import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
@@ -53,11 +38,17 @@ import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
 import static java.util.Collections.singletonList;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toSet;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import static org.jboss.elemento.Elements.span;
 import static org.jboss.hal.client.accesscontrol.AddressTemplates.EXCLUDE_TEMPLATE;
 import static org.jboss.hal.client.accesscontrol.AddressTemplates.INCLUDE_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.REMOVE;

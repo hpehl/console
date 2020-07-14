@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.rhcp;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import com.google.common.collect.Maps;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import elemental2.dom.HTMLElement;
@@ -41,8 +35,13 @@ import org.jboss.hal.meta.description.ResourceDescription;
 import org.jboss.hal.meta.description.StaticResourceDescription;
 import org.jboss.hal.resources.Ids;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import static org.jboss.elemento.Elements.h;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
 

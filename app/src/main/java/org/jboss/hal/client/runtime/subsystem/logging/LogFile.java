@@ -15,10 +15,10 @@
  */
 package org.jboss.hal.client.runtime.subsystem.logging;
 
-import java.util.Date;
-
 import org.jboss.hal.ballroom.Format;
 import org.jboss.hal.dmr.ModelNode;
+
+import java.util.Date;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.LOGGING_PROFILE;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeDate;

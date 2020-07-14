@@ -15,17 +15,17 @@
  */
 package org.jboss.hal.ballroom;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import org.jboss.hal.dmr.Property;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.HAL_LABEL;
 

@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import java.util.stream.Collectors;
-
-import javax.annotation.PostConstruct;
-
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.FormItem;
@@ -31,6 +27,9 @@ import org.jboss.hal.dmr.Operation;
 import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
+
+import javax.annotation.PostConstruct;
+import java.util.stream.Collectors;
 
 import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.HOST_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

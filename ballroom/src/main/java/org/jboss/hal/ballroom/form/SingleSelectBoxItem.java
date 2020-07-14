@@ -15,17 +15,15 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-import java.util.List;
-
 import com.google.common.base.Strings;
 import elemental2.dom.HTMLSelectElement;
 import org.jboss.hal.ballroom.form.SelectBoxBridge.Single;
 
-import static org.jboss.gwt.elemento.core.Elements.select;
-import static org.jboss.hal.ballroom.form.Decoration.DEFAULT;
-import static org.jboss.hal.ballroom.form.Decoration.DEPRECATED;
-import static org.jboss.hal.ballroom.form.Decoration.RESTRICTED;
+import java.util.EnumSet;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.select;
+import static org.jboss.hal.ballroom.form.Decoration.*;
 
 public class SingleSelectBoxItem extends AbstractFormItem<String> {
 

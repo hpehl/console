@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.patching.wizard;
 
-import javax.inject.Provider;
-
 import org.jboss.hal.ballroom.wizard.Wizard;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.runtime.server.Server;
@@ -35,6 +33,8 @@ import org.jboss.hal.resources.Messages;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Callback;
 import rx.Completable;
+
+import javax.inject.Provider;
 
 import static org.jboss.hal.client.patching.PatchesColumn.PATCHING_TEMPLATE;
 import static org.jboss.hal.client.patching.wizard.PatchState.CHECK_SERVERS;

@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.elytron;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.core.mbui.MbuiContext;
 import org.jboss.hal.core.mbui.ResourceElement;
@@ -29,6 +23,11 @@ import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
+
+import javax.inject.Inject;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;

@@ -17,11 +17,11 @@ package org.jboss.hal.ballroom.editor;
 
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLPreElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.resources.CSS;
 
-import static org.jboss.gwt.elemento.core.Elements.pre;
+import static org.jboss.elemento.Elements.pre;
 
 public class AceEditor implements IsElement, Attachable {
 

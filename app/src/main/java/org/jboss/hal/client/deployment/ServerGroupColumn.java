@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
@@ -39,6 +35,9 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import java.util.List;
 
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;

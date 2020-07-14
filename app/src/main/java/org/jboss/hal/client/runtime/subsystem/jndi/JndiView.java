@@ -15,11 +15,9 @@
  */
 package org.jboss.hal.client.runtime.subsystem.jndi;
 
-import javax.inject.Inject;
-
 import elemental2.core.JsArray;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Search;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.tree.Node;
@@ -32,14 +30,14 @@ import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.i;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import javax.inject.Inject;
+
+import static org.jboss.elemento.Elements.i;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
-import static org.jboss.hal.ballroom.Skeleton.MARGIN_BIG;
-import static org.jboss.hal.ballroom.Skeleton.MARGIN_SMALL;
-import static org.jboss.hal.ballroom.Skeleton.applicationOffset;
+import static org.jboss.hal.ballroom.Skeleton.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.CLASS_NAME;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.VALUE;
 import static org.jboss.hal.resources.CSS.*;

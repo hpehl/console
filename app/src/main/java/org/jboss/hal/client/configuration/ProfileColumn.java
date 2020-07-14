@@ -15,24 +15,13 @@
  */
 package org.jboss.hal.client.configuration;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.core.CrudOperations;
 import org.jboss.hal.core.configuration.ProfileSelectionEvent;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.FinderPathFactory;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mbui.dialog.NameItem;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
@@ -55,12 +44,13 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.util.Collections.singletonList;
 import static java.util.stream.Collectors.joining;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CLONE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.INCLUDES;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PROFILE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.TO_PROFILE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
 
 @Column(Ids.PROFILE)

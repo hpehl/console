@@ -28,7 +28,7 @@ import java.util.TreeSet;
 import com.google.common.base.Splitter;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import org.jboss.hal.ballroom.tree.DataFunction;
 import org.jboss.hal.ballroom.tree.Node;
 import org.jboss.hal.dmr.ModelNode;

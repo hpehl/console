@@ -15,15 +15,15 @@
  */
 package org.jboss.hal.ballroom;
 
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.i18n.shared.DateTimeFormat;
 import com.google.gwt.i18n.shared.DateTimeFormat.PredefinedFormat;
 import org.jboss.hal.resources.Constants;
 import org.jboss.hal.resources.Names;
+
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public final class Format {
 

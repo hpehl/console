@@ -15,11 +15,8 @@
  */
 package org.jboss.hal.client.configuration.subsystem.jca;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.table.Table;
@@ -35,16 +32,15 @@ import org.jboss.hal.meta.MetadataRegistry;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.util.Arrays.asList;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.jca.AddressTemplates.WORKMANAGER_LRT_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MAX_THREADS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.THREAD_FACTORY;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.Names.THREAD_POOLS;
 
 /**

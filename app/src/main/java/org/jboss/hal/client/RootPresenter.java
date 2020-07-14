@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
@@ -30,6 +28,8 @@ import org.jboss.hal.client.skeleton.HeaderPresenter;
 import org.jboss.hal.core.ApplicationReadyEvent;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.core.mvp.Slots;
+
+import javax.inject.Inject;
 
 /** Presenter which assembles the root layout: header, main content and footer. */
 public class RootPresenter extends Presenter<RootPresenter.MyView, RootPresenter.MyProxy> implements Slots {

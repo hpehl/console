@@ -15,10 +15,8 @@
  */
 package org.jboss.hal.client.runtime.subsystem.batch;
 
-import java.util.Map;
-
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.PatternFly;
 import org.jboss.hal.ballroom.chart.Donut;
@@ -31,10 +29,12 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import java.util.Map;
+
 import static java.util.stream.Collectors.counting;
 import static java.util.stream.Collectors.groupingBy;
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import static org.jboss.elemento.Elements.a;
+import static org.jboss.elemento.Elements.setVisible;
 import static org.jboss.hal.client.runtime.subsystem.batch.ExecutionNode.BatchStatus.*;
 import static org.jboss.hal.core.finder.FinderColumn.RefreshMode.RESTORE_SELECTION;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.INSTANCE_COUNT;

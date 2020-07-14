@@ -15,15 +15,6 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.common.collect.Iterables;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.web.bindery.event.shared.EventBus;
@@ -36,18 +27,7 @@ import org.jboss.hal.client.runtime.BrowseByColumn;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.CrudOperations;
 import org.jboss.hal.core.configuration.ProfileSelectionEvent;
-import org.jboss.hal.core.finder.ColumnAction;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.FinderPath;
-import org.jboss.hal.core.finder.FinderPathFactory;
-import org.jboss.hal.core.finder.FinderSegment;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
-import org.jboss.hal.core.finder.ItemMonitor;
-import org.jboss.hal.core.finder.ItemsProvider;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mbui.dialog.NameItem;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
@@ -55,13 +35,9 @@ import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.core.runtime.TopologyTasks;
 import org.jboss.hal.core.runtime.group.ServerGroupSelectionEvent;
 import org.jboss.hal.core.runtime.host.HostSelectionEvent;
-import org.jboss.hal.core.runtime.server.Server;
-import org.jboss.hal.core.runtime.server.ServerActionEvent;
+import org.jboss.hal.core.runtime.server.*;
 import org.jboss.hal.core.runtime.server.ServerActionEvent.ServerActionHandler;
-import org.jboss.hal.core.runtime.server.ServerActions;
-import org.jboss.hal.core.runtime.server.ServerResultEvent;
 import org.jboss.hal.core.runtime.server.ServerResultEvent.ServerResultHandler;
-import org.jboss.hal.core.runtime.server.ServerSelectionEvent;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.ModelNodeHelper;
 import org.jboss.hal.dmr.Operation;
@@ -88,6 +64,10 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Column;
 import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.*;
 
 import static elemental2.dom.DomGlobal.document;
 import static java.util.Arrays.asList;

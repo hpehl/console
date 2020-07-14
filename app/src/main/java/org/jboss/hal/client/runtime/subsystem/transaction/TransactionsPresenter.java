@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.transaction;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -41,9 +37,10 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.client.runtime.subsystem.transaction.AddressTemplates.LOGSTORE_RUNTIME_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.transaction.AddressTemplates.TRANSACTIONS_LOGSTORE_RUNTIME_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.transaction.AddressTemplates.TRANSACTION_RUNTIME_ADDRESS;
+import javax.inject.Inject;
+import java.util.List;
+
+import static org.jboss.hal.client.runtime.subsystem.transaction.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
 

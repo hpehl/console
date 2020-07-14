@@ -15,20 +15,16 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import javax.inject.Inject;
-
 import org.jboss.hal.core.CrudOperations;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.PreviewContent;
-import org.jboss.hal.core.finder.StaticItem;
-import org.jboss.hal.core.finder.StaticItemColumn;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
+
+import javax.inject.Inject;
 
 import static java.util.Arrays.asList;
 import static org.jboss.hal.resources.Ids.JMS_BRIDGE_ITEM;

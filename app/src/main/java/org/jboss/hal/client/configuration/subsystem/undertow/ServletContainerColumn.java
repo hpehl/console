@@ -15,18 +15,8 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.core.CrudOperations;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.meta.token.NameTokens;
@@ -34,6 +24,10 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.SERVLET_CONTAINER_TEMPLATE;
 import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.UNDERTOW_SUBSYSTEM_TEMPLATE;

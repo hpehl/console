@@ -15,25 +15,19 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.event.logical.shared.ValueChangeHandler;
-import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.event.shared.GwtEvent;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.event.shared.SimpleEventBus;
 import elemental2.dom.HTMLElement;
+import org.gwtproject.event.shared.EventBus;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.event.shared.SimpleEventBus;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.form.Form.State;
 import org.jboss.hal.ballroom.form.ResolveExpressionEvent.ResolveExpressionHandler;
 import org.jboss.hal.ballroom.wizard.Wizard;
 import org.jboss.hal.dmr.Deprecation;
+
+import java.util.*;
 
 import static java.util.Collections.singletonList;
 import static org.jboss.hal.ballroom.form.Decoration.*;
@@ -79,7 +73,7 @@ public abstract class AbstractFormItem<T> implements FormItem<T> {
     private final Map<State, Appearance<T>> appearances;
     private final List<FormItemValidation<T>> validationHandlers;
     private final List<ResolveExpressionHandler> resolveExpressionHandlers;
-    private final List<com.google.web.bindery.event.shared.HandlerRegistration> handlers;
+    private final List<HandlerRegistration> handlers;
 
     AbstractFormItem(String name, String label, String hint) {
         this.name = name;
@@ -115,7 +109,7 @@ public abstract class AbstractFormItem<T> implements FormItem<T> {
     }
 
     /** Store the event handler registration to remove them in {@link #detach()}. */
-    protected void remember(com.google.web.bindery.event.shared.HandlerRegistration handler) {
+    protected void remember(HandlerRegistration handler) {
         handlers.add(handler);
     }
 
@@ -164,7 +158,7 @@ public abstract class AbstractFormItem<T> implements FormItem<T> {
             ((Attachable) suggestHandler).detach();
         }
         appearances.values().forEach(Appearance::detach);
-        for (com.google.web.bindery.event.shared.HandlerRegistration handler : handlers) {
+        for (HandlerRegistration handler : handlers) {
             handler.removeHandler();
         }
         handlers.clear();
@@ -303,16 +297,6 @@ public abstract class AbstractFormItem<T> implements FormItem<T> {
 
     private void signalChange(T value) {
         ValueChangeEvent.fire(this, value);
-    }
-
-    @Override
-    public void fireEvent(GwtEvent<?> gwtEvent) {
-        eventBus.fireEvent(gwtEvent);
-    }
-
-    @Override
-    public HandlerRegistration addValueChangeHandler(ValueChangeHandler<T> valueChangeHandler) {
-        return eventBus.addHandler(ValueChangeEvent.getType(), valueChangeHandler);
     }
 
     @Override

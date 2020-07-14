@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.Iterator;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.core.deployment.Deployment;
@@ -26,13 +24,13 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Callback;
 
+import java.util.Iterator;
+
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import static org.jboss.elemento.Elements.setVisible;
 import static org.jboss.hal.core.deployment.Deployment.Status.OK;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.DEPLOYMENT;
-import static org.jboss.hal.resources.CSS.fontAwesome;
-import static org.jboss.hal.resources.CSS.marginTopLarge;
-import static org.jboss.hal.resources.CSS.stopCircleO;
+import static org.jboss.hal.resources.CSS.*;
 
 /**
  * UI element to show the management model of a deployment in the model browser. Shows an empty state element in case

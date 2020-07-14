@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.runtime.NonProgressingOperationEvent;
@@ -37,6 +31,11 @@ import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
 import rx.SingleEmitter;
 import rx.functions.Action1;
+
+import javax.inject.Provider;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

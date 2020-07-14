@@ -15,15 +15,6 @@
  */
 package org.jboss.hal.ballroom.dialog;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
-
 import com.google.common.collect.Iterables;
 import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLButtonElement;
@@ -32,8 +23,8 @@ import jsinterop.annotations.JsFunction;
 import jsinterop.annotations.JsIgnore;
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.JsCallback;
 import org.jboss.hal.ballroom.PatternFly;
@@ -43,10 +34,12 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.UIConstants;
 import org.jboss.hal.spi.Callback;
 
+import java.util.*;
+
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.ballroom.dialog.Modal.$;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.UIConstants.*;

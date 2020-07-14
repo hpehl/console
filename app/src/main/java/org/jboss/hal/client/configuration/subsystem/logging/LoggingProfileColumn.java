@@ -15,19 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.logging;
 
-import java.util.Arrays;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import org.jboss.hal.core.CrudOperations;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.dmr.Operation;
@@ -40,12 +30,12 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.client.configuration.subsystem.logging.AddressTemplates.LOGGING_PROFILE_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.logging.AddressTemplates.LOGGING_PROFILE_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.logging.AddressTemplates.LOGGING_SUBSYSTEM_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.LOGGING_PROFILE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.READ_RESOURCE_OPERATION;
+import javax.inject.Inject;
+import java.util.Arrays;
+import java.util.List;
+
+import static org.jboss.hal.client.configuration.subsystem.logging.AddressTemplates.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
 
 @AsyncColumn(Ids.LOGGING_PROFILE)

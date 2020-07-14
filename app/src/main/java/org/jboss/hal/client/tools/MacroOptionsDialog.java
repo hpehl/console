@@ -28,9 +28,7 @@ import org.jboss.hal.resources.Resources;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.DESCRIPTION;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.macro.MacroOptions.OMIT_READ_OPERATIONS;
-import static org.jboss.hal.dmr.macro.MacroOptions.OPEN_IN_EDITOR;
-import static org.jboss.hal.dmr.macro.MacroOptions.RESOURCES;
+import static org.jboss.hal.dmr.macro.MacroOptions.*;
 
 /** Dialog to record a new macro. */
 public class MacroOptionsDialog {

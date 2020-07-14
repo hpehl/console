@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.Operation;
@@ -27,10 +23,11 @@ import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
 import rx.Completable;
 
+import javax.inject.Inject;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CHILD_TYPE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.HOST;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.READ_CHILDREN_NAMES_OPERATION;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 /** Reads the domain controller. Only executed in domain mode. Depends on {@link ReadEnvironment}. */
 public class ReadHostNames implements BootstrapTask {

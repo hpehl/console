@@ -15,7 +15,7 @@
  */
 package org.jboss.hal.ballroom.table;
 
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 
 /**
  * Builder for a {@link Column}.

@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource.wizard;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import com.google.common.collect.Maps;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.autocomplete.StaticAutoComplete;
@@ -31,6 +27,10 @@ import org.jboss.hal.dmr.Property;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 

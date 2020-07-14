@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -24,15 +22,13 @@ import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import org.jboss.hal.core.header.HeaderModeEvent;
 import org.jboss.hal.core.header.PresenterType;
-import org.jboss.hal.core.mvp.ApplicationPresenter;
-import org.jboss.hal.core.mvp.HalView;
-import org.jboss.hal.core.mvp.Places;
-import org.jboss.hal.core.mvp.SupportsExpertMode;
-import org.jboss.hal.core.mvp.SupportsExternalMode;
+import org.jboss.hal.core.mvp.*;
 import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.token.NameTokens;
+
+import javax.inject.Inject;
 
 /**
  * Presenter which uses the {@link org.jboss.hal.core.modelbrowser.ModelBrowser} to view and modify a resource

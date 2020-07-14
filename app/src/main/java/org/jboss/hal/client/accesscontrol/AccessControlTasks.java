@@ -15,22 +15,18 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
-import java.util.List;
-import java.util.Map;
-import java.util.function.Predicate;
-
 import org.jboss.hal.config.Role;
 import org.jboss.hal.core.OperationFactory;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
-import org.jboss.hal.dmr.ResourceCheck;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.flow.Task;
 import org.jboss.hal.meta.Metadata;
 import rx.Completable;
+
+import java.util.List;
+import java.util.Map;
+import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toList;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

@@ -15,22 +15,13 @@
  */
 package org.jboss.hal.ballroom.wizard;
 
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import com.google.common.collect.Iterables;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.HandlerRegistrations;
-import elemental2.dom.HTMLButtonElement;
-import elemental2.dom.HTMLDivElement;
-import elemental2.dom.HTMLElement;
-import elemental2.dom.HTMLLIElement;
-import elemental2.dom.HTMLParagraphElement;
-import org.jboss.gwt.elemento.core.Elements;
+import elemental2.dom.*;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.PatternFly;
 import org.jboss.hal.ballroom.dialog.Modal.ModalOptions;
@@ -38,10 +29,15 @@ import org.jboss.hal.resources.Constants;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.UIConstants;
 
+import java.util.EnumSet;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.ballroom.dialog.Modal.$;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.UIConstants.*;

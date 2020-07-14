@@ -15,13 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
@@ -34,21 +27,11 @@ import org.jboss.hal.client.runtime.subsystem.undertow.UndertowPreview;
 import org.jboss.hal.client.runtime.subsystem.webservice.WebservicesPreview;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.config.Version;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
-import org.jboss.hal.core.finder.ItemsProvider;
-import org.jboss.hal.core.finder.PreviewContent;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.core.subsystem.SubsystemMetadata;
 import org.jboss.hal.core.subsystem.Subsystems;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.ManagementModel;
@@ -57,6 +40,12 @@ import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.util.Collections.singletonList;
 import static java.util.Comparator.comparing;

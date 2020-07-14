@@ -15,30 +15,30 @@
  */
 package org.jboss.hal.ballroom;
 
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
-import java.util.Map;
-
 import elemental2.dom.Element;
 import elemental2.dom.HTMLAnchorElement;
 import elemental2.dom.HTMLElement;
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.UIConstants;
 import org.jboss.hal.spi.Callback;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+
 import static elemental2.dom.DomGlobal.document;
 import static java.util.stream.Collectors.toList;
 import static jsinterop.annotations.JsPackage.GLOBAL;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.resources.CSS.*;
 
 /**

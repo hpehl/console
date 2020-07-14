@@ -15,12 +15,8 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.Arrays;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.core.finder.Finder;
 import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.core.finder.StaticItem;
@@ -30,6 +26,9 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Column;
+
+import javax.inject.Inject;
+import java.util.Arrays;
 
 import static elemental2.dom.DomGlobal.document;
 

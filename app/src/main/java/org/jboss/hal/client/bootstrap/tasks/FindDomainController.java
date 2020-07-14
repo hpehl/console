@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.Operation;
@@ -29,6 +25,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Completable;
 import rx.Single;
+
+import javax.inject.Inject;
+import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 import static org.jboss.hal.client.bootstrap.tasks.ReadHostNames.HOST_NAMES;

@@ -15,10 +15,10 @@
  */
 package org.jboss.hal.client.runtime.managementoperations;
 
-import java.util.Iterator;
-
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.dmr.Property;
+
+import java.util.Iterator;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 

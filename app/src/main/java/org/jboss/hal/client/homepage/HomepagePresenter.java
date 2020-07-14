@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.homepage;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -31,6 +29,8 @@ import org.jboss.hal.core.mvp.TopLevelPresenter;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
 
 public class HomepagePresenter extends TopLevelPresenter<HomepagePresenter.MyView, HomepagePresenter.MyProxy> {
 

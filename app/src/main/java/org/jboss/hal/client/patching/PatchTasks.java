@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.patching;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.runtime.TopologyTasks;
 import org.jboss.hal.core.runtime.host.Host;
@@ -29,6 +26,9 @@ import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.flow.Task;
 import rx.Completable;
 import rx.Single;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

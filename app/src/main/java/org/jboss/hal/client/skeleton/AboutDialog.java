@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.skeleton;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.common.collect.ImmutableMap;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.dialog.Modal.ModalOptions;
@@ -27,8 +24,11 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.dialog.Modal.$;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.UNDEFINED;
 import static org.jboss.hal.resources.CSS.*;

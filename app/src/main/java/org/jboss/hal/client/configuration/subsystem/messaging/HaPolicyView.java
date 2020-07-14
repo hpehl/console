@@ -15,13 +15,8 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.form.Form;
@@ -37,13 +32,14 @@ import org.jboss.hal.resources.Resources;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import javax.inject.Inject;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
-import static org.jboss.hal.resources.CSS.clearfix;
-import static org.jboss.hal.resources.CSS.clickable;
-import static org.jboss.hal.resources.CSS.marginTopLarge;
-import static org.jboss.hal.resources.CSS.pullRight;
+import static org.jboss.hal.resources.CSS.*;
 
 public class HaPolicyView extends HalViewImpl implements HaPolicyPresenter.MyView {
 

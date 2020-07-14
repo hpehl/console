@@ -15,15 +15,15 @@
  */
 package org.jboss.hal.ballroom.listview;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.HasTitle;
 import org.jboss.hal.ballroom.dataprovider.DataProvider;
 import org.jboss.hal.resources.Ids;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /** Controls the layout of a list view item. */
 public interface ItemDisplay<T> extends IsElement, HasTitle {

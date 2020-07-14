@@ -21,9 +21,7 @@ import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DEPENDENT_ADDRESS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SUGGEST_CAPABILITIES;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.meta.StatementContext.Expression.DOMAIN_CONTROLLER;
 
 public class SuggestCapabilitiesAutoComplete extends AutoComplete {

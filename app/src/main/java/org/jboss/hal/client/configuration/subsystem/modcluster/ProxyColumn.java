@@ -15,19 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.modcluster;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.HTMLElement;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.dmr.NamedNode;
@@ -46,10 +36,12 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.hal.client.configuration.subsystem.modcluster.AddressTemplates.MODCLUSTER_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.modcluster.AddressTemplates.PROXY_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.modcluster.AddressTemplates.PROXY_TEMPLATE;
+import static org.jboss.hal.client.configuration.subsystem.modcluster.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.Ids.FORM;
 import static org.jboss.hal.resources.Ids.build;

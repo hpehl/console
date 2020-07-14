@@ -15,7 +15,7 @@
  */
 package org.jboss.hal.core.mbui.form;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import org.jboss.hal.ballroom.form.FormItem;
 
 class UnboundFormItem {

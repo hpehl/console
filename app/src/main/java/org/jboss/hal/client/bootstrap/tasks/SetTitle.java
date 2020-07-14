@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.function.Supplier;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.config.Settings;
 import org.jboss.hal.flow.FlowContext;
@@ -28,6 +22,11 @@ import org.jboss.hal.resources.Names;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Completable;
+
+import javax.inject.Inject;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
 
 import static com.google.common.base.Strings.emptyToNull;
 import static elemental2.dom.DomGlobal.document;

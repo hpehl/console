@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.tools;
 
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.common.collect.Ordering;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -42,6 +37,10 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.List;
 
 import static elemental2.dom.DomGlobal.alert;
 import static java.util.stream.Collectors.toList;

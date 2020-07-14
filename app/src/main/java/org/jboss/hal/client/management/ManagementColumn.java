@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.management;
 
-import javax.inject.Inject;
-
 import org.jboss.hal.core.finder.Finder;
 import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.core.finder.StaticItem;
@@ -25,6 +23,8 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Column;
+
+import javax.inject.Inject;
 
 import static java.util.Arrays.asList;
 

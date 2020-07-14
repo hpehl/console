@@ -15,12 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.microprofile;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.RadioItem;
@@ -41,10 +38,11 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.microprofile.AddressTemplates.CONFIG_SOURCE_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.UIConstants.NAME;

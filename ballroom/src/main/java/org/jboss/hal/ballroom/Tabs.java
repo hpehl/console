@@ -15,26 +15,24 @@
  */
 package org.jboss.hal.ballroom;
 
+import elemental2.dom.Element;
+import elemental2.dom.HTMLElement;
+import jsinterop.annotations.JsMethod;
+import jsinterop.annotations.JsType;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
+import org.jboss.hal.resources.UIConstants;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import elemental2.dom.Element;
-import elemental2.dom.HTMLElement;
-import jsinterop.annotations.JsMethod;
-import jsinterop.annotations.JsType;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
-import org.jboss.hal.resources.UIConstants;
-
 import static java.util.Arrays.asList;
 import static jsinterop.annotations.JsPackage.GLOBAL;
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.li;
-import static org.jboss.gwt.elemento.core.Elements.ul;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.hal.resources.CSS.nav;
 import static org.jboss.hal.resources.CSS.*;
 
 public class Tabs implements IsElement<HTMLElement> {

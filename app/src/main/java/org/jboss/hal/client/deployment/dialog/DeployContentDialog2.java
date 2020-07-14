@@ -15,11 +15,9 @@
  */
 package org.jboss.hal.client.deployment.dialog;
 
-import java.util.List;
-
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.form.SwitchBridge;
@@ -33,10 +31,12 @@ import org.jboss.hal.resources.Icons;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
+import java.util.List;
+
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.InputType.checkbox;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.InputType.checkbox;
 import static org.jboss.hal.resources.CSS.marginTopLarge;
 
 /** Dialog used to deploy one or several one content items to one server group. */

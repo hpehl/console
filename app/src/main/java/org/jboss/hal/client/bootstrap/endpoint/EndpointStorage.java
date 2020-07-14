@@ -15,15 +15,15 @@
  */
 package org.jboss.hal.client.bootstrap.endpoint;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import elemental2.webstorage.Storage;
 import elemental2.webstorage.WebStorageWindow;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.resources.Ids;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static elemental2.dom.DomGlobal.window;
 

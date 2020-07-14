@@ -15,12 +15,12 @@
  */
 package org.jboss.hal.ballroom.wizard;
 
+import org.jboss.elemento.IsElement;
+import org.jboss.hal.ballroom.Attachable;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import org.jboss.gwt.elemento.core.IsElement;
-import org.jboss.hal.ballroom.Attachable;
 
 /**
  * A step in a wizard. The UI for the step should <string>not</string> contain a header. The header is part of the

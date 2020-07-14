@@ -15,13 +15,7 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import javax.inject.Provider;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.autocomplete.StaticAutoComplete;
@@ -36,11 +30,7 @@ import org.jboss.hal.client.accesscontrol.AccessControlTasks.CheckRoleMapping;
 import org.jboss.hal.config.Role;
 import org.jboss.hal.config.User;
 import org.jboss.hal.core.SuccessfulOutcome;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
 import org.jboss.hal.dmr.Composite;
@@ -56,6 +46,11 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
+
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 import static java.util.Collections.singletonList;
 import static java.util.Comparator.comparing;

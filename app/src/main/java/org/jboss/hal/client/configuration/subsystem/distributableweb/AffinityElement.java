@@ -15,14 +15,10 @@
  */
 package org.jboss.hal.client.configuration.subsystem.distributableweb;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLSelectElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.SelectBoxBridge;
@@ -37,15 +33,17 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.JQuery.$;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.AFFINITY;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.HASH;
-import static org.jboss.hal.resources.CSS.bootstrapSelect;
-import static org.jboss.hal.resources.CSS.btnGroup;
-import static org.jboss.hal.resources.CSS.selectpicker;
-import static org.jboss.hal.resources.CSS.width;
+import static org.jboss.hal.resources.CSS.*;
 
 /** Element to view and modify the {@code affinity=*} singletons of a session management */
 class AffinityElement implements IsElement<HTMLElement>, Attachable, HasPresenter<DistributableWebPresenter> {

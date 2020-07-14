@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration;
 
-import java.util.Iterator;
-
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import org.jboss.hal.core.finder.FinderPath;
@@ -29,6 +27,8 @@ import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
+
+import java.util.Iterator;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;

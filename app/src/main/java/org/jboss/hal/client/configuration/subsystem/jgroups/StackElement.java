@@ -15,11 +15,8 @@
  */
 package org.jboss.hal.client.configuration.subsystem.jgroups;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.Pages;
 import org.jboss.hal.ballroom.form.Form;
@@ -36,9 +33,10 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.jgroups.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
 

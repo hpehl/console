@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -51,10 +47,11 @@ import org.jboss.hal.spi.Requires;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+import java.util.Map;
+
 import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.*;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.HA_POLICY;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MESSAGING_ACTIVEMQ;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SERVER;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 public class HaPolicyPresenter
         extends ApplicationFinderPresenter<HaPolicyPresenter.MyView, HaPolicyPresenter.MyProxy>

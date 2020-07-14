@@ -15,12 +15,12 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource.wizard;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.jboss.hal.client.configuration.subsystem.datasource.DataSourceTemplate;
 import org.jboss.hal.core.datasource.DataSource;
 import org.jboss.hal.core.datasource.JdbcDriver;
+
+import java.util.HashMap;
+import java.util.Map;
 
 class Context {
 

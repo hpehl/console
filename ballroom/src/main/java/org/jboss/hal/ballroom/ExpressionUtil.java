@@ -1,14 +1,8 @@
 package org.jboss.hal.ballroom;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
-import elemental2.dom.Attr;
-import elemental2.dom.DomGlobal;
-import elemental2.dom.HTMLElement;
-import elemental2.dom.NamedNodeMap;
-import elemental2.dom.Node;
-import elemental2.dom.NodeFilter;
-import elemental2.dom.TreeWalker;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import elemental2.dom.*;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 
 public class ExpressionUtil {
 

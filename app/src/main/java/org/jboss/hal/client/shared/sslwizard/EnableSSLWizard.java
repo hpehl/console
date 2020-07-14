@@ -15,23 +15,13 @@
  */
 package org.jboss.hal.client.shared.sslwizard;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
-import javax.inject.Provider;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.ballroom.wizard.Wizard;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.SuccessfulOutcome;
 import org.jboss.hal.core.runtime.host.Host;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.ModelDescriptionConstants;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.flow.Progress;
@@ -43,6 +33,11 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
+
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import static elemental2.dom.DomGlobal.window;
 import static org.jboss.hal.client.shared.sslwizard.AbstractConfiguration.*;

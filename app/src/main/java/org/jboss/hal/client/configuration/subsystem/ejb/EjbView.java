@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.ejb;
 
-import javax.annotation.PostConstruct;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.autocomplete.ReadChildrenAutoComplete;
@@ -39,9 +37,9 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import javax.annotation.PostConstruct;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.ejb.AddressTemplates.*;
 import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.SECURITY_DOMAIN_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

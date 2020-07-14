@@ -21,7 +21,7 @@ import java.util.Optional;
 
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.table.DataTable;
 import org.jboss.hal.ballroom.table.InlineAction;
@@ -48,7 +48,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.h;
+import static org.jboss.elemento.Elements.h;
 import static org.jboss.hal.core.modelbrowser.ModelBrowser.asGenericTemplate;
 import static org.jboss.hal.core.modelbrowser.ReadChildren.uniqueId;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.ADD;

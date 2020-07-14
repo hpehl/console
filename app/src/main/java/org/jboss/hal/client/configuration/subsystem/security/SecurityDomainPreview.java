@@ -15,10 +15,10 @@
  */
 package org.jboss.hal.client.configuration.subsystem.security;
 
-import java.util.Collections;
-
 import org.jboss.hal.core.finder.PreviewAttributes;
 import org.jboss.hal.core.finder.PreviewContent;
+
+import java.util.Collections;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.CACHE_TYPE;
 

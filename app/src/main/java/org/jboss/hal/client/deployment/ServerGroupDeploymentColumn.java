@@ -15,24 +15,12 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.wizard.Wizard;
-import org.jboss.hal.client.deployment.DeploymentTasks.AddServerGroupDeployment;
-import org.jboss.hal.client.deployment.DeploymentTasks.AddUnmanagedDeployment;
-import org.jboss.hal.client.deployment.DeploymentTasks.CheckDeployment;
-import org.jboss.hal.client.deployment.DeploymentTasks.LoadContent;
-import org.jboss.hal.client.deployment.DeploymentTasks.LoadDeploymentsFromRunningServer;
-import org.jboss.hal.client.deployment.DeploymentTasks.ReadServerGroupDeployments;
-import org.jboss.hal.client.deployment.DeploymentTasks.UploadOrReplace;
+import org.jboss.hal.client.deployment.DeploymentTasks.*;
 import org.jboss.hal.client.deployment.dialog.AddUnmanagedDialog;
 import org.jboss.hal.client.deployment.dialog.DeployContentDialog2;
 import org.jboss.hal.client.deployment.wizard.NamesStep;
@@ -45,15 +33,7 @@ import org.jboss.hal.core.SuccessfulOutcome;
 import org.jboss.hal.core.deployment.Content;
 import org.jboss.hal.core.deployment.Deployment.Status;
 import org.jboss.hal.core.deployment.ServerGroupDeployment;
-import org.jboss.hal.core.finder.ColumnAction;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
-import org.jboss.hal.core.finder.ItemMonitor;
-import org.jboss.hal.core.finder.ItemsProvider;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.core.runtime.server.ServerActions;
 import org.jboss.hal.dmr.Composite;
@@ -76,11 +56,12 @@ import org.jboss.hal.resources.Icons;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
-import org.jboss.hal.spi.AsyncColumn;
-import org.jboss.hal.spi.Footer;
-import org.jboss.hal.spi.Message;
-import org.jboss.hal.spi.MessageEvent;
-import org.jboss.hal.spi.Requires;
+import org.jboss.hal.spi.*;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 import static org.jboss.hal.client.deployment.ContentColumn.CONTENT_ADDRESS;

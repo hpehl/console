@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.Tabs;
@@ -34,9 +29,11 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.JMS_BRIDGE_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 

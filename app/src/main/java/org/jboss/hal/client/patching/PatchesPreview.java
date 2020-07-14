@@ -20,9 +20,7 @@ import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.dmr.ModelNode;
 
 import static java.util.Arrays.asList;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.APPLIED_AT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PATCH_ID;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.TYPE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class PatchesPreview extends PreviewContent<ModelNode> {
 

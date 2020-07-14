@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.batch;
 
-import javax.inject.Inject;
-
 import org.jboss.hal.ballroom.Toolbar.Action;
 import org.jboss.hal.ballroom.Toolbar.Attribute;
 import org.jboss.hal.ballroom.dataprovider.DataProvider;
@@ -28,6 +26,8 @@ import org.jboss.hal.meta.MetadataRegistry;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
 
 import static elemental2.dom.DomGlobal.setTimeout;
 import static java.util.Comparator.comparing;

@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource.wizard;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.ballroom.wizard.Wizard;
 import org.jboss.hal.client.configuration.subsystem.datasource.DataSourceColumn;
@@ -28,11 +23,7 @@ import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.OperationFactory;
 import org.jboss.hal.core.datasource.DataSource;
 import org.jboss.hal.core.datasource.JdbcDriver;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.Progress;
 import org.jboss.hal.meta.AddressTemplate;
@@ -45,10 +36,11 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 
-import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.DATA_SOURCE_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.JDBC_DRIVER_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.XA_DATA_SOURCE_PROPERTIES_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.XA_DATA_SOURCE_TEMPLATE;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.*;
 import static org.jboss.hal.client.configuration.subsystem.datasource.wizard.State.*;
 import static org.jboss.hal.core.finder.FinderColumn.RefreshMode.RESTORE_SELECTION;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

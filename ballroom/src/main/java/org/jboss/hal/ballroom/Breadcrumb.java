@@ -16,16 +16,12 @@
 package org.jboss.hal.ballroom;
 
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.li;
-import static org.jboss.gwt.elemento.core.Elements.ol;
-import static org.jboss.gwt.elemento.core.EventType.click;
-import static org.jboss.hal.resources.CSS.active;
-import static org.jboss.hal.resources.CSS.breadcrumb;
-import static org.jboss.hal.resources.CSS.clickable;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.hal.resources.CSS.*;
 
 /**
  * Breadcrumb element as specified by <a href="https://www.patternfly.org/pattern-library/widgets/#breadcrumbs">PatternFly</a>

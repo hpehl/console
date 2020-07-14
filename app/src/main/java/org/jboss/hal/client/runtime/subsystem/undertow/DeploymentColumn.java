@@ -15,20 +15,9 @@
  */
 package org.jboss.hal.client.runtime.subsystem.undertow;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.deployment.DeploymentResource;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.FinderPathFactory;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.core.runtime.server.ServerActions;
 import org.jboss.hal.dmr.Composite;
@@ -44,9 +33,11 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_DEPLOYMENT_ADDRESS;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_DEPLOYMENT_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_SUBDEPLOYMENT_TEMPLATE;
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 @AsyncColumn(Ids.UNDERTOW_RUNTIME_DEPLOYMENT)

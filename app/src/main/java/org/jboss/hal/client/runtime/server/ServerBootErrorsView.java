@@ -15,16 +15,15 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.client.runtime.BootErrorsElement;
 import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.meta.MetadataRegistry;
 import org.jboss.hal.meta.capabilitiy.Capabilities;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
+import java.util.List;
 
 import static org.jboss.hal.client.runtime.server.ServerBootErrorsPresenter.MANAGEMENT_TEMPLATE;
 

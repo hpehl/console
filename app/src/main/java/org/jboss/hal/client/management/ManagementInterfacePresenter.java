@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.management;
 
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import org.jboss.hal.config.Environment;
@@ -38,6 +36,8 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Footer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.inject.Provider;
 
 public class ManagementInterfacePresenter
         extends MbuiPresenter<ManagementInterfacePresenter.MyView, ManagementInterfacePresenter.MyProxy>

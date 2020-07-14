@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.tools;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -28,6 +26,8 @@ import org.jboss.hal.core.mvp.SupportsExternalMode;
 import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
 
 /**
  * Presenter which uses the {@link org.jboss.hal.core.modelbrowser.ModelBrowser} to view and modify the management

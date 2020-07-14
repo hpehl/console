@@ -15,12 +15,12 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.function.Function;
-
 import org.jboss.hal.core.runtime.server.Server;
 import org.jboss.hal.core.runtime.server.ServerActions;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
+
+import java.util.function.Function;
 
 class ServerTooltip implements Function<Server, String> {
 

@@ -15,12 +15,8 @@
  */
 package org.jboss.hal.client.runtime.subsystem.undertow;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Format;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
@@ -38,19 +34,19 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.table;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import javax.inject.Inject;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.table;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_DEPLOYMENT_SERVLET_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_DEPLOYMENT_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.WEB_DEPLOYMENT_WEBSOCKETS_TEMPLATE;
+import static org.jboss.hal.client.runtime.subsystem.undertow.AddressTemplates.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.DEPLOYMENT;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.table;
 import static org.jboss.hal.resources.CSS.*;
-import static org.jboss.hal.resources.Ids.FORM;
-import static org.jboss.hal.resources.Ids.SESSION;
-import static org.jboss.hal.resources.Ids.UNDERTOW_RUNTIME;
+import static org.jboss.hal.resources.Ids.*;
 
 public class DeploymentView extends HalViewImpl implements DeploymentPresenter.MyView {
 

@@ -15,14 +15,11 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-
 import com.google.common.base.Strings;
 
-import static org.jboss.hal.ballroom.form.Decoration.DEFAULT;
-import static org.jboss.hal.ballroom.form.Decoration.DEPRECATED;
-import static org.jboss.hal.ballroom.form.Decoration.REQUIRED;
-import static org.jboss.hal.ballroom.form.Decoration.RESTRICTED;
+import java.util.EnumSet;
+
+import static org.jboss.hal.ballroom.form.Decoration.*;
 
 public class StaticItem extends AbstractFormItem<String> {
 

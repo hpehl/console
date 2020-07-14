@@ -18,9 +18,7 @@ package org.jboss.hal.client.configuration.subsystem.undertow;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.AJP_LISTENER;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.HTTPS_LISTENER;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.HTTP_LISTENER;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 enum Listener {
 

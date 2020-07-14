@@ -15,13 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.jmx;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.stream.Collectors;
-
 import com.google.common.collect.Sets;
 import org.jboss.hal.core.OperationFactory;
 import org.jboss.hal.dmr.Composite;
@@ -33,6 +26,9 @@ import org.jboss.hal.flow.Task;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.StatementContext;
 import rx.Completable;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.AUDIT_LOG_HANDLER_TEMPLATE;
 import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.AUDIT_LOG_TEMPLATE;

@@ -15,31 +15,16 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.web.bindery.event.shared.HandlerRegistration;
-import elemental2.dom.HTMLDivElement;
-import elemental2.dom.HTMLElement;
-import elemental2.dom.HTMLFieldSetElement;
-import elemental2.dom.HTMLHRElement;
-import elemental2.dom.HTMLLegendElement;
-import elemental2.dom.HTMLUListElement;
-import elemental2.dom.KeyboardEvent;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.EventCallbackFn;
-import org.jboss.gwt.elemento.core.LazyElement;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import elemental2.dom.*;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.EventCallbackFn;
+import org.jboss.elemento.LazyElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.resources.Constants;
@@ -47,16 +32,14 @@ import org.jboss.hal.resources.Icons;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Messages;
 
+import java.util.*;
+
 import static elemental2.dom.DomGlobal.setTimeout;
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
-import static org.jboss.gwt.elemento.core.EventType.keyup;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.*;
 import static org.jboss.hal.ballroom.form.Form.Operation.*;
-import static org.jboss.hal.ballroom.form.Form.State.EDITING;
-import static org.jboss.hal.ballroom.form.Form.State.EMPTY;
-import static org.jboss.hal.ballroom.form.Form.State.READONLY;
+import static org.jboss.hal.ballroom.form.Form.State.*;
 import static org.jboss.hal.resources.CSS.form;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.UIConstants.MEDIUM_TIMEOUT;

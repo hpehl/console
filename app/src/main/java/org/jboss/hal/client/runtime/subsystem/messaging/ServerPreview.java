@@ -15,7 +15,7 @@
  */
 package org.jboss.hal.client.runtime.subsystem.messaging;
 
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.core.finder.PreviewAttributes;
 import org.jboss.hal.core.finder.PreviewContent;
@@ -25,9 +25,7 @@ import org.jboss.hal.resources.Icons;
 import org.jboss.hal.resources.Resources;
 
 import static java.util.Arrays.asList;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.ACTIVE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.STARTED;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.VERSION;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class ServerPreview extends PreviewContent<NamedNode> {
 

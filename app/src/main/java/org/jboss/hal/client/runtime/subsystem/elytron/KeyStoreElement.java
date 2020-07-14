@@ -15,12 +15,8 @@
  */
 package org.jboss.hal.client.runtime.subsystem.elytron;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.Pages;
@@ -41,15 +37,15 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.KEY_STORE_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
-import static org.jboss.hal.resources.Ids.FORM;
-import static org.jboss.hal.resources.Ids.PAGE;
-import static org.jboss.hal.resources.Ids.PAGES;
 import static org.jboss.hal.resources.Ids.TABLE;
+import static org.jboss.hal.resources.Ids.*;
 
 public class KeyStoreElement implements IsElement<HTMLElement>, Attachable {
 

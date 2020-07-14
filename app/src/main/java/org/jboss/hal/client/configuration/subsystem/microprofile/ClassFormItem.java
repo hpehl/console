@@ -23,10 +23,7 @@ import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.resources.Ids;
 
 import static java.util.Arrays.asList;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CLASS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CLASS_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MODULE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 /**
  * Form item used in the microprofile-config subsystem to configure the complex attribute {@code class} defined as

@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -33,9 +31,9 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.client.accesscontrol.AddressTemplates.HOST_SCOPED_ROLE_ADDRESS;
-import static org.jboss.hal.client.accesscontrol.AddressTemplates.ROLE_MAPPING_ADDRESS;
-import static org.jboss.hal.client.accesscontrol.AddressTemplates.SERVER_GROUP_SCOPED_ROLE_ADDRESS;
+import javax.inject.Inject;
+
+import static org.jboss.hal.client.accesscontrol.AddressTemplates.*;
 
 public class AccessControlPresenter extends
         FinderPresenter<AccessControlPresenter.MyView, AccessControlPresenter.MyProxy> {

@@ -15,12 +15,10 @@
  */
 package org.jboss.hal.client.deployment;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.CSSProperties;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.deployment.Deployment;
@@ -34,7 +32,9 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
+import javax.inject.Inject;
+
+import static org.jboss.elemento.Elements.div;
 import static org.jboss.hal.resources.CSS.navTabsHal;
 
 public class StandaloneDeploymentView extends HalViewImpl implements StandaloneDeploymentPresenter.MyView {

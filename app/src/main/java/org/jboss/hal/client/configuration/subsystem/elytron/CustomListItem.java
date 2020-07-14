@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.elytron;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.regexp.shared.RegExp;
 import elemental2.dom.HTMLElement;
@@ -29,6 +25,10 @@ import org.jboss.hal.ballroom.form.TagsManager.Validator;
 import org.jboss.hal.ballroom.form.TagsMapping;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.resources.Messages;
+
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
 
 import static elemental2.dom.DomGlobal.document;
 import static java.util.Collections.emptyList;

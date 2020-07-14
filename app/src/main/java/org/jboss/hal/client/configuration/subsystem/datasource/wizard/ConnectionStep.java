@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource.wizard;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.wizard.WizardStep;
 import org.jboss.hal.core.datasource.DataSource;
@@ -26,11 +23,11 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.util.Arrays.asList;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CONNECTION_URL;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PASSWORD;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SECURITY_DOMAIN;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.USER_NAME;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class ConnectionStep extends WizardStep<Context, State> {
 

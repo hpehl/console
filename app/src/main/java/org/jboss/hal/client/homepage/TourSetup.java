@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.homepage;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.function.Consumer;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
@@ -28,16 +24,16 @@ import org.jboss.hal.core.accesscontrol.AccessControl;
 import org.jboss.hal.core.finder.FinderPath;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.core.runtime.server.Server;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 

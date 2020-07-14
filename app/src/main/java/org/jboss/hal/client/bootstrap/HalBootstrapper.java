@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap;
 
-import javax.inject.Inject;
-
 import com.gwtplatform.mvp.client.Bootstrapper;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import elemental2.dom.Event;
@@ -31,6 +29,8 @@ import org.jboss.hal.flow.Outcome;
 import org.jboss.hal.js.Browser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.inject.Inject;
 
 import static elemental2.dom.DomGlobal.window;
 

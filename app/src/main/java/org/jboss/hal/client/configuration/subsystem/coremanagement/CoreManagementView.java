@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.coremanagement;
 
-import java.util.List;
-
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.table.Table;
@@ -26,6 +24,8 @@ import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
+
+import java.util.List;
 
 @MbuiView
 public abstract class CoreManagementView extends MbuiViewImpl<CoreManagementPresenter> implements CoreManagementPresenter.MyView {

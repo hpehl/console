@@ -15,19 +15,19 @@
  */
 package org.jboss.hal.client.shared.sslwizard;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.InputType;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.HtmlContentBuilder;
+import org.jboss.elemento.InputType;
 import org.jboss.hal.ballroom.wizard.WizardStep;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.resources.UIConstants;
 
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.resources.CSS.*;
 
 public class DefineStrategyStep extends WizardStep<EnableSSLContext, EnableSSLState> {

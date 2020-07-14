@@ -15,13 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.jmx;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.autocomplete.ReadChildrenAutoComplete;
@@ -43,17 +39,15 @@ import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 
+import javax.inject.Inject;
+import java.util.List;
+
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
-import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.AUDIT_LOG_HANDLER_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.AUDIT_LOG_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.JMX_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.REMOTING_CONNECTOR_TEMPLATE;
+import static org.jboss.hal.client.configuration.subsystem.jmx.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.HANDLER;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.READ_RESOURCE_OPERATION;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;

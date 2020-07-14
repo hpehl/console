@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.XMLHttpRequest;
 import org.jboss.hal.config.Build;
@@ -24,6 +22,8 @@ import org.jboss.hal.config.Environment;
 import org.jboss.hal.config.Version;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.inject.Inject;
 
 import static org.jboss.hal.dmr.dispatch.Dispatcher.HttpMethod.GET;
 

@@ -15,7 +15,7 @@
  */
 package org.jboss.hal.client.deployment.wizard;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.wizard.WizardStep;
 

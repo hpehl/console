@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.jaxrs;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import com.google.common.base.Splitter;
 import com.google.common.base.Strings;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -26,8 +22,8 @@ import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.core.JsRegExp;
 import elemental2.dom.CSSProperties.MarginBottomUnionType;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.ballroom.PatternFly;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.form.Form;
@@ -51,14 +47,16 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import static com.google.gwt.safehtml.shared.SafeHtmlUtils.fromSafeConstant;
 import static elemental2.dom.DomGlobal.document;
 import static elemental2.dom.DomGlobal.window;
-import static java.util.stream.Collectors.groupingBy;
-import static java.util.stream.Collectors.joining;
-import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static java.util.stream.Collectors.*;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeList;
 import static org.jboss.hal.dmr.dispatch.Dispatcher.HttpMethod.GET;

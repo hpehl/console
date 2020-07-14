@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.configurationchanges;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.Toolbar;
 import org.jboss.hal.ballroom.dataprovider.DataProvider;
@@ -27,11 +23,10 @@ import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.MetadataRegistry;
-import org.jboss.hal.resources.Constants;
-import org.jboss.hal.resources.Icons;
-import org.jboss.hal.resources.Ids;
-import org.jboss.hal.resources.Messages;
-import org.jboss.hal.resources.Resources;
+import org.jboss.hal.resources.*;
+
+import javax.inject.Inject;
+import java.util.List;
 
 import static java.util.Collections.emptyList;
 import static java.util.Comparator.comparing;

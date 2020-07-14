@@ -17,8 +17,8 @@ package org.jboss.hal.core;
 
 import javax.inject.Inject;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import com.google.web.bindery.event.shared.EventBus;
 import jsinterop.annotations.JsIgnore;
 import jsinterop.annotations.JsMethod;

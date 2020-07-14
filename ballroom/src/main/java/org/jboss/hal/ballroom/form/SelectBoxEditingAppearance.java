@@ -15,24 +15,23 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.List;
-
 import com.google.common.base.Strings;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
 import elemental2.dom.HTMLOptionElement;
 import elemental2.dom.HTMLSelectElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.dmr.Deprecation;
 import org.jboss.hal.resources.Ids;
 
+import java.util.ArrayList;
+import java.util.EnumSet;
+import java.util.List;
+
 import static com.google.common.base.Strings.emptyToNull;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.input;
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.InputType.text;
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.InputType.text;
 import static org.jboss.hal.ballroom.form.Decoration.*;
 import static org.jboss.hal.ballroom.form.Form.State.EDITING;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.UNDEFINED;

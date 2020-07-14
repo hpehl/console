@@ -15,19 +15,15 @@
  */
 package org.jboss.hal.ballroom.autocomplete;
 
-import java.util.List;
-
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.js.JsonObject;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
+
+import java.util.List;
 
 import static java.util.Collections.singleton;
 import static java.util.stream.Collectors.toList;

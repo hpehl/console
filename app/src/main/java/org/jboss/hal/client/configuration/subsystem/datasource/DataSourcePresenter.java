@@ -15,13 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource;
 
-import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -61,10 +54,13 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.DATA_SOURCE_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.DATA_SOURCE_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.XA_DATA_SOURCE_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.XA_DATA_SOURCE_TEMPLATE;
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
+
+import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.*;
 import static org.jboss.hal.client.configuration.subsystem.datasource.JdbcDriverTasks.jdbcDriverProperties;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.flow.Flow.series;

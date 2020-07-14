@@ -15,42 +15,33 @@
  */
 package org.jboss.hal.ballroom;
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
-
 import com.google.common.base.Strings;
 import com.google.gwt.core.client.GWT;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
-import org.jboss.hal.ballroom.dataprovider.DataProvider;
-import org.jboss.hal.ballroom.dataprovider.Display;
-import org.jboss.hal.ballroom.dataprovider.Filter;
-import org.jboss.hal.ballroom.dataprovider.FilterValue;
-import org.jboss.hal.ballroom.dataprovider.PageInfo;
-import org.jboss.hal.ballroom.dataprovider.SelectionInfo;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
+import org.jboss.hal.ballroom.dataprovider.*;
 import org.jboss.hal.meta.security.Constraint;
 import org.jboss.hal.meta.security.Constraints;
-import org.jboss.hal.resources.CSS;
-import org.jboss.hal.resources.Constants;
-import org.jboss.hal.resources.Ids;
-import org.jboss.hal.resources.Messages;
-import org.jboss.hal.resources.UIConstants;
+import org.jboss.hal.resources.*;
 import org.jboss.hal.spi.Callback;
 import rx.Subscription;
+
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
 
 import static com.intendia.rxgwt.elemento.RxElemento.fromEvent;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.form;
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
-import static org.jboss.gwt.elemento.core.EventType.keyup;
-import static org.jboss.gwt.elemento.core.InputType.text;
+import static org.jboss.elemento.Elements.form;
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.elemento.EventType.keyup;
+import static org.jboss.elemento.InputType.text;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.resources.CSS.label;
 import static org.jboss.hal.resources.CSS.*;

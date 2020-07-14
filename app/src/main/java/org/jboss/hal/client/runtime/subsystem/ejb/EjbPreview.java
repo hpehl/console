@@ -15,13 +15,10 @@
  */
 package org.jboss.hal.client.runtime.subsystem.ejb;
 
-import java.util.Date;
-import java.util.List;
-
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.CSSProperties.MarginBottomUnionType;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Format;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.ProgressElement;
@@ -41,20 +38,16 @@ import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static elemental2.dom.DomGlobal.clearInterval;
-import static elemental2.dom.DomGlobal.document;
-import static elemental2.dom.DomGlobal.setInterval;
+import java.util.Date;
+import java.util.List;
+
+import static elemental2.dom.DomGlobal.*;
 import static java.lang.Math.round;
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.section;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.ProgressElement.Label.INLINE;
 import static org.jboss.hal.ballroom.ProgressElement.Size.NORMAL;
-import static org.jboss.hal.client.runtime.subsystem.ejb.EjbNode.Type.MDB;
-import static org.jboss.hal.client.runtime.subsystem.ejb.EjbNode.Type.STATEFUL;
-import static org.jboss.hal.client.runtime.subsystem.ejb.EjbNode.Type.STATELESS;
+import static org.jboss.hal.client.runtime.subsystem.ejb.EjbNode.Type.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class EjbPreview extends PreviewContent<EjbNode> {

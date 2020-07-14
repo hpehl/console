@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.transaction;
 
-import java.util.Collections;
-
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.FormItem;
@@ -27,6 +25,8 @@ import org.jboss.hal.core.mbui.form.RequiredByValidation;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
+
+import java.util.Collections;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.PROCESS_ID_SOCKET_BINDING;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.PROCESS_ID_SOCKET_MAX_PORTS;

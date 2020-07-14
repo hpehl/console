@@ -16,7 +16,7 @@
 package org.jboss.hal.client.patching;
 
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.client.runtime.RuntimePreview;
 import org.jboss.hal.core.finder.PreviewAttributes;
 import org.jboss.hal.core.runtime.host.Host;
@@ -26,18 +26,12 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.resources.UIConstants;
 
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.span;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.client.patching.HostPatchesColumn.hostTemplate;
 import static org.jboss.hal.client.patching.HostPatchesColumn.namedNodeToHost;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CORE_SERVICE_PATCHING;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MASTER;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RESTART;
-import static org.jboss.hal.resources.CSS.alertLink;
-import static org.jboss.hal.resources.CSS.clickable;
-import static org.jboss.hal.resources.CSS.hidden;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
+import static org.jboss.hal.resources.CSS.*;
 
 class HostPatchesPreview extends RuntimePreview<Host> {
 

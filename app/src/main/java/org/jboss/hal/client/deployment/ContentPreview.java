@@ -17,7 +17,7 @@ package org.jboss.hal.client.deployment;
 
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.config.Environment;
@@ -37,14 +37,12 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.client.deployment.ServerGroupDeploymentColumn.SERVER_GROUP_DEPLOYMENT_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeBoolean;
-import static org.jboss.hal.resources.CSS.clickable;
-import static org.jboss.hal.resources.CSS.marginLeft5;
-import static org.jboss.hal.resources.CSS.marginRight5;
+import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.Icons.flag;
 
 class ContentPreview extends PreviewContent<Content> {

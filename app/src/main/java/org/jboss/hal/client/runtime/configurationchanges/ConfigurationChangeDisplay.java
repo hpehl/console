@@ -15,15 +15,12 @@
  */
 package org.jboss.hal.client.runtime.configurationchanges;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLPreElement;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.ballroom.Format;
 import org.jboss.hal.ballroom.listview.ItemAction;
 import org.jboss.hal.ballroom.listview.ItemDisplay;
@@ -31,10 +28,11 @@ import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.ADDRESS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.OPERATION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.OPERATION_HEADERS;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.Ids.CONFIGURATION_CHANGES;
 

@@ -15,12 +15,7 @@
  */
 package org.jboss.hal.client.runtime.subsystem.messaging;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import org.jboss.hal.ballroom.Format;
 import org.jboss.hal.ballroom.listview.ItemAction;
@@ -28,6 +23,11 @@ import org.jboss.hal.ballroom.listview.ItemDisplay;
 import org.jboss.hal.meta.security.Constraint;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.List;
 
 import static org.jboss.hal.client.runtime.subsystem.messaging.AddressTemplates.MESSAGING_CORE_QUEUE_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

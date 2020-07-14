@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.shared.sslwizard;
 
-import java.util.List;
-import java.util.Map;
-import java.util.function.BooleanSupplier;
-
 import org.jboss.hal.ballroom.form.FormItem;
 import org.jboss.hal.ballroom.form.ValidationResult;
 import org.jboss.hal.config.Environment;
@@ -26,6 +22,10 @@ import org.jboss.hal.core.configuration.PathsAutoComplete;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.resources.Resources;
+
+import java.util.List;
+import java.util.Map;
+import java.util.function.BooleanSupplier;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 

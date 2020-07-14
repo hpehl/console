@@ -15,20 +15,15 @@
  */
 package org.jboss.hal.ballroom.dataprovider;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import com.google.common.collect.Lists;
+import org.jboss.hal.ballroom.listview.ListView;
+import org.jboss.hal.config.Settings;
+
+import java.util.*;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collector;
 import java.util.stream.Stream;
-
-import com.google.common.collect.Lists;
-import org.jboss.hal.ballroom.listview.ListView;
-import org.jboss.hal.config.Settings;
 
 import static java.lang.Math.min;
 import static java.util.function.Function.identity;

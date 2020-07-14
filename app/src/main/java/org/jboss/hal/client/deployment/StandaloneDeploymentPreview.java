@@ -28,10 +28,7 @@ import org.jboss.hal.resources.Resources;
 
 import static java.util.Arrays.asList;
 import static org.jboss.hal.client.deployment.StandaloneDeploymentColumn.DEPLOYMENT_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DEPLOY;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RUNTIME_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.UNDEPLOY;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class StandaloneDeploymentPreview extends DeploymentPreview<Deployment> {
 

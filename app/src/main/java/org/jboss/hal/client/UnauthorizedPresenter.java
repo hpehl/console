@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.annotations.NameToken;
@@ -25,6 +23,8 @@ import com.gwtplatform.mvp.client.annotations.ProxyStandard;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import org.jboss.hal.core.mvp.HalView;
 import org.jboss.hal.meta.token.NameTokens;
+
+import javax.inject.Inject;
 
 public class UnauthorizedPresenter extends Presenter<UnauthorizedPresenter.MyView, UnauthorizedPresenter.MyProxy> {
 

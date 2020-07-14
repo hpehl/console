@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.homepage;
 
-import java.util.Arrays;
-import java.util.Collections;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.config.Build;
 import org.jboss.hal.config.Environment;
@@ -31,11 +26,13 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
-import static org.jboss.hal.resources.CSS.clickable;
-import static org.jboss.hal.resources.CSS.eapHomeRow;
-import static org.jboss.hal.resources.CSS.eapHomeTitle;
+import javax.inject.Inject;
+import java.util.Arrays;
+import java.util.Collections;
+
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.hal.resources.CSS.*;
 
 public class HomepageView extends HalViewImpl implements HomepagePresenter.MyView {
 

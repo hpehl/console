@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import java.util.Map;
-import java.util.function.Consumer;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -42,23 +37,20 @@ import org.jboss.hal.core.mvp.SupportsExpertMode;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.Operation;
 import org.jboss.hal.dmr.ResourceAddress;
-import org.jboss.hal.meta.AddressTemplate;
-import org.jboss.hal.meta.FilteringStatementContext;
+import org.jboss.hal.meta.*;
 import org.jboss.hal.meta.FilteringStatementContext.Filter;
-import org.jboss.hal.meta.Metadata;
-import org.jboss.hal.meta.MetadataRegistry;
-import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.Map;
+import java.util.function.Consumer;
+
 import static java.util.Arrays.asList;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.APPLICATION_SECURITY_DOMAIN_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.APPLICATION_SECURITY_DOMAIN_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.SELECTED_APPLICATION_SECURITY_DOMAIN_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.SELECTED_SINGLE_SIGN_ON_TEMPLATE;
+import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.move;
 import static org.jboss.hal.meta.SelectionAwareStatementContext.SELECTION_KEY;

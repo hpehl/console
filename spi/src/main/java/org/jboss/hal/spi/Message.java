@@ -18,7 +18,7 @@ package org.jboss.hal.spi;
 import java.util.Date;
 
 import com.google.gwt.i18n.shared.DateTimeFormat;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 
 import static com.google.gwt.i18n.shared.DateTimeFormat.PredefinedFormat.DATE_SHORT;
 import static com.google.gwt.i18n.shared.DateTimeFormat.PredefinedFormat.DATE_TIME_LONG;

@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -32,6 +30,8 @@ import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.token.NameTokens;
+
+import javax.inject.Inject;
 
 import static org.jboss.hal.core.mvp.Places.ADDRESS_PARAM;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.PROFILE;

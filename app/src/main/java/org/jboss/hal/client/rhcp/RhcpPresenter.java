@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.rhcp;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -28,9 +26,10 @@ import org.jboss.hal.core.mvp.FinderPresenter;
 import org.jboss.hal.core.mvp.FinderView;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.collect;
-import static org.jboss.gwt.elemento.core.Elements.img;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import javax.inject.Inject;
+
+import static org.jboss.elemento.Elements.img;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.resources.CSS.preview;
 
 @SuppressWarnings("HardCodedStringLiteral")

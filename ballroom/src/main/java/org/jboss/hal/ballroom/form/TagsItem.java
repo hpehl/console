@@ -15,10 +15,7 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-import java.util.Set;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
 import org.jboss.hal.ballroom.form.TagsManager.Defaults;
@@ -26,13 +23,13 @@ import org.jboss.hal.ballroom.form.TagsManager.Options;
 import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Ids;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.input;
-import static org.jboss.gwt.elemento.core.InputType.text;
-import static org.jboss.hal.ballroom.form.Decoration.DEFAULT;
-import static org.jboss.hal.ballroom.form.Decoration.DEPRECATED;
-import static org.jboss.hal.ballroom.form.Decoration.RESTRICTED;
-import static org.jboss.hal.ballroom.form.Decoration.SUGGESTIONS;
+import java.util.EnumSet;
+import java.util.Set;
+
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.input;
+import static org.jboss.elemento.InputType.text;
+import static org.jboss.hal.ballroom.form.Decoration.*;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.Ids.uniqueId;
 import static org.jboss.hal.resources.UIConstants.HASH;

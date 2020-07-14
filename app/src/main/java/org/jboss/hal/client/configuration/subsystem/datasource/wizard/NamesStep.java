@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource.wizard;
 
-import java.util.List;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.form.FormItem;
 import org.jboss.hal.ballroom.form.PatternValidation.JndiNameValidation;
@@ -29,6 +27,8 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
+
+import java.util.List;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.JNDI_NAME;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;

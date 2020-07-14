@@ -15,13 +15,9 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.ArrayList;
-
-import javax.inject.Inject;
-
 import com.google.common.collect.Lists;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.core.deployment.Deployment;
 import org.jboss.hal.core.deployment.ServerGroupDeployment;
@@ -31,6 +27,9 @@ import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
 
 import static org.jboss.hal.resources.CSS.marginTopLarge;
 

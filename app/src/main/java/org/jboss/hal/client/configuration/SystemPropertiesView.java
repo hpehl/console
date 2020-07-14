@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.table.Table;
@@ -35,14 +31,15 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import javax.inject.Inject;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.h;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
 import static org.jboss.hal.client.configuration.SystemPropertiesPresenter.ROOT_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.BOOT_TIME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.VALUE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 public class SystemPropertiesView extends HalViewImpl implements SystemPropertiesPresenter.MyView {
 

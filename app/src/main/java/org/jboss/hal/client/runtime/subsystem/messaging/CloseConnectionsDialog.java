@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.messaging;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.dialog.Dialog.Size;
@@ -29,10 +26,11 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CLOSE_CONNECTIONS_FOR_ADDRESS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CLOSE_CONNECTIONS_FOR_USER;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CLOSE_CONSUMER_CONNECTIONS_FOR_ADDRESS;
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.jboss.elemento.Elements.p;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class CloseConnectionsDialog implements HasPresenter<ServerPresenter> {
 

@@ -15,25 +15,21 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-
 import com.google.gwt.core.client.GWT;
 import elemental2.dom.File;
 import elemental2.dom.HTMLInputElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.resources.Constants;
 import org.jboss.hal.resources.UIConstants;
 
-import static org.jboss.gwt.elemento.core.Elements.input;
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.Elements.span;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.change;
-import static org.jboss.gwt.elemento.core.InputType.file;
-import static org.jboss.hal.ballroom.form.Decoration.ENABLED;
-import static org.jboss.hal.ballroom.form.Decoration.HINT;
-import static org.jboss.hal.ballroom.form.Decoration.INVALID;
-import static org.jboss.hal.ballroom.form.Decoration.REQUIRED;
+import java.util.EnumSet;
+
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.change;
+import static org.jboss.elemento.InputType.file;
+import static org.jboss.hal.ballroom.form.Decoration.*;
 import static org.jboss.hal.resources.CSS.*;
 
 public class FileItem extends AbstractFormItem<File> {

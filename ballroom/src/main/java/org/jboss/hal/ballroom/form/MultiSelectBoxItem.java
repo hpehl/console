@@ -15,17 +15,15 @@
  */
 package org.jboss.hal.ballroom.form;
 
+import elemental2.dom.HTMLSelectElement;
+import org.jboss.hal.ballroom.form.SelectBoxBridge.Multi;
+
 import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 
-import elemental2.dom.HTMLSelectElement;
-import org.jboss.hal.ballroom.form.SelectBoxBridge.Multi;
-
-import static org.jboss.gwt.elemento.core.Elements.select;
-import static org.jboss.hal.ballroom.form.Decoration.DEFAULT;
-import static org.jboss.hal.ballroom.form.Decoration.DEPRECATED;
-import static org.jboss.hal.ballroom.form.Decoration.RESTRICTED;
+import static org.jboss.elemento.Elements.select;
+import static org.jboss.hal.ballroom.form.Decoration.*;
 
 public class MultiSelectBoxItem extends AbstractFormItem<List<String>> {
 

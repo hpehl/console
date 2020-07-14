@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.deployment.dialog;
 
-import java.util.function.Consumer;
-
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.FormItemValidation;
@@ -27,7 +25,9 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.p;
+import java.util.function.Consumer;
+
+import static org.jboss.elemento.Elements.p;
 
 public class CreateEmptyDialog {
 

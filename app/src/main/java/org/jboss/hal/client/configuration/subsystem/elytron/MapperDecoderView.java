@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.elytron;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.VerticalNavigation;
@@ -37,16 +33,16 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
+import javax.annotation.PostConstruct;
+import java.util.List;
+
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.elytron.AddressTemplates.CONSTANT_PERMISSION_MAPPER_TEMPLATE;
 import static org.jboss.hal.client.configuration.subsystem.elytron.AddressTemplates.MAPPED_ROLE_MAPPER_TEMPLATE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.TABLE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
-import static org.jboss.hal.resources.Ids.FORM;
-import static org.jboss.hal.resources.Ids.ITEM;
-import static org.jboss.hal.resources.Ids.build;
+import static org.jboss.hal.resources.Ids.*;
 
 @MbuiView
 @SuppressWarnings({"DuplicateStringLiteralInspection", "HardCodedStringLiteral", "WeakerAccess"})

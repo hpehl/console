@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.webservice;
 
-import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -40,24 +34,23 @@ import org.jboss.hal.core.mvp.SupportsExpertMode;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.dmr.ResourceAddress;
-import org.jboss.hal.meta.AddressTemplate;
-import org.jboss.hal.meta.FilteringStatementContext;
+import org.jboss.hal.meta.*;
 import org.jboss.hal.meta.FilteringStatementContext.Filter;
-import org.jboss.hal.meta.Metadata;
-import org.jboss.hal.meta.MetadataRegistry;
-import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Consumer;
+
 import static org.jboss.hal.client.configuration.subsystem.webservice.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.HANDLER;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.WEBSERVICES;
-import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
-import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
-import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;
+import static org.jboss.hal.dmr.ModelNodeHelper.*;
 
 public class WebservicePresenter
         extends ApplicationFinderPresenter<WebservicePresenter.MyView, WebservicePresenter.MyProxy>

@@ -15,11 +15,11 @@
  */
 package org.jboss.hal.client.configuration.subsystem.infinispan;
 
-import javax.inject.Inject;
-
 import org.jboss.hal.core.mbui.table.TableButtonFactory;
 import org.jboss.hal.meta.MetadataRegistry;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
 
 import static org.jboss.hal.client.configuration.subsystem.infinispan.CacheType.REPLICATED;
 

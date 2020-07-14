@@ -15,14 +15,10 @@
  */
 package org.jboss.hal.client.configuration;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.core.finder.FinderPathFactory;
 import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.core.mvp.Places;
@@ -34,8 +30,12 @@ import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Resources;
 
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 import static java.util.stream.Collectors.joining;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class ProfilePreview extends PreviewContent<NamedNode> {

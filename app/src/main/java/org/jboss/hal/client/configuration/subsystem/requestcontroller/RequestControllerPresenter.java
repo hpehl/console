@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.requestcontroller;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -34,6 +32,8 @@ import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.REQUEST_CONTROLLER;
 

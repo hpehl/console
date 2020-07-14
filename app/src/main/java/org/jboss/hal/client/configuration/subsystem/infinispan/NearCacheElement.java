@@ -16,8 +16,8 @@
 package org.jboss.hal.client.configuration.subsystem.infinispan;
 
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
@@ -28,18 +28,13 @@ import org.jboss.hal.meta.MetadataRegistry;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.button;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.client.configuration.subsystem.infinispan.AddressTemplates.REMOTE_CACHE_CONTAINER_TEMPLATE;
 import static org.jboss.hal.client.configuration.subsystem.infinispan.NearCache.INVALIDATION;
 import static org.jboss.hal.client.configuration.subsystem.infinispan.NearCache.NONE;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
-import static org.jboss.hal.resources.CSS.btn;
-import static org.jboss.hal.resources.CSS.btnDefault;
-import static org.jboss.hal.resources.CSS.marginTopLarge;
+import static org.jboss.hal.resources.CSS.*;
 
 class NearCacheElement implements IsElement<HTMLElement>, Attachable, HasPresenter<RemoteCacheContainerPresenter> {
 

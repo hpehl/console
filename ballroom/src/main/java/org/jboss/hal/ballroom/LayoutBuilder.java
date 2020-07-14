@@ -16,10 +16,10 @@
 package org.jboss.hal.ballroom;
 
 import elemental2.dom.HTMLDivElement;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.resources.CSS;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
+import static org.jboss.elemento.Elements.div;
 import static org.jboss.hal.resources.CSS.*;
 
 /** Helper methods to create {@code <div/>} elements for bootstrap grids. */

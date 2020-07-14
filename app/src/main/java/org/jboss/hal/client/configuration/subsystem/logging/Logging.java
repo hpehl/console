@@ -19,9 +19,7 @@ import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.resources.Names;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.FILE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PATH;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RELATIVE_TO;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 /** Common code used by both the general logging configuration and the logging profile configuration. */
 final class Logging {

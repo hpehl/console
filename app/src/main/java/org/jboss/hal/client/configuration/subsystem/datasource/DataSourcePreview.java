@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource;
 
-import java.util.List;
-
 import com.google.common.collect.Lists;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.core.datasource.DataSource;
@@ -26,6 +24,8 @@ import org.jboss.hal.meta.security.Constraint;
 import org.jboss.hal.resources.Icons;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
+
+import java.util.List;
 
 import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.DATA_SOURCE_TEMPLATE;
 import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.XA_DATA_SOURCE_TEMPLATE;

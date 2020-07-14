@@ -15,13 +15,10 @@
  */
 package org.jboss.hal.client.skeleton;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
@@ -29,13 +26,12 @@ import org.jboss.hal.spi.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static elemental2.dom.DomGlobal.clearTimeout;
-import static elemental2.dom.DomGlobal.document;
-import static elemental2.dom.DomGlobal.setTimeout;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.mouseout;
-import static org.jboss.gwt.elemento.core.EventType.mouseover;
+import java.util.HashMap;
+import java.util.Map;
+
+import static elemental2.dom.DomGlobal.*;
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.EventType.*;
 import static org.jboss.hal.resources.CSS.toastNotificationsListPf;
 import static org.jboss.hal.resources.UIConstants.MESSAGE_TIMEOUT;
 

@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.runtime;
 
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
@@ -53,10 +50,11 @@ import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 
+import javax.inject.Inject;
+import javax.inject.Provider;
+
 import static org.jboss.hal.core.finder.FinderColumn.RefreshMode.RESTORE_SELECTION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RELOAD_REQUIRED;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RESTART_REQUIRED;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SERVER_STATE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 /**
  * Handles {@link org.jboss.hal.dmr.dispatch.ProcessState} events and emits {@linkplain org.jboss.hal.spi.Message

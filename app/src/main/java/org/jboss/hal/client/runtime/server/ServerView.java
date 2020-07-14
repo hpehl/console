@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.table.Table;
@@ -28,6 +24,9 @@ import org.jboss.hal.core.runtime.server.Server;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
+
+import javax.annotation.PostConstruct;
+import java.util.List;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.HOST;
 

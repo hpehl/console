@@ -15,18 +15,18 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Function;
-
 import com.google.common.base.Splitter;
 import com.google.common.collect.Iterables;
 import elemental2.core.JsArray;
 import org.jboss.hal.ballroom.tree.Node;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.resources.Ids;
+
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.PATH;
 import static org.jboss.hal.resources.CSS.fontAwesome;

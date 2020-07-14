@@ -15,14 +15,14 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.Map;
-
 import jsinterop.annotations.JsIgnore;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.spi.Callback;
+
+import java.util.Map;
 
 /**
  * A form bound to a model using well defined states and operations. The form contains a list of form items which are

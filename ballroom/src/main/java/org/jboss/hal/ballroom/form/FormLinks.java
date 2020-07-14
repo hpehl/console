@@ -15,32 +15,26 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.safehtml.shared.SafeHtml;
-import elemental2.dom.HTMLDivElement;
-import elemental2.dom.HTMLElement;
-import elemental2.dom.HTMLLIElement;
-import elemental2.dom.HTMLUListElement;
-import elemental2.dom.MouseEvent;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.EventCallbackFn;
-import org.jboss.gwt.elemento.core.IsElement;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import elemental2.dom.*;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.EventCallbackFn;
+import org.jboss.elemento.HtmlContentBuilder;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Constants;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.UIConstants;
 
-import static org.jboss.gwt.elemento.core.Elements.i;
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
-import static org.jboss.hal.ballroom.form.Form.Operation.EDIT;
-import static org.jboss.hal.ballroom.form.Form.Operation.REMOVE;
-import static org.jboss.hal.ballroom.form.Form.Operation.RESET;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import static org.jboss.elemento.Elements.i;
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.hal.ballroom.form.Form.Operation.*;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.UIConstants.HASH;
 

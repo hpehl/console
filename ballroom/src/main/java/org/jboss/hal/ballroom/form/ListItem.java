@@ -15,13 +15,13 @@
  */
 package org.jboss.hal.ballroom.form;
 
+import com.google.gwt.core.client.GWT;
+import org.jboss.hal.resources.Messages;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.List;
-
-import com.google.gwt.core.client.GWT;
-import org.jboss.hal.resources.Messages;
 
 import static org.jboss.hal.ballroom.form.Decoration.*;
 

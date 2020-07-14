@@ -15,6 +15,13 @@
  */
 package org.jboss.hal.client.rhcp;
 
+import com.google.common.collect.Iterators;
+import elemental2.dom.HTMLElement;
+import org.jboss.hal.core.finder.*;
+import org.jboss.hal.js.JsonObject;
+import org.jboss.hal.spi.AsyncColumn;
+
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -22,25 +29,10 @@ import java.util.Map;
 import java.util.function.Predicate;
 import java.util.stream.StreamSupport;
 
-import javax.inject.Inject;
-
-import com.google.common.collect.Iterators;
-import elemental2.dom.HTMLElement;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
-import org.jboss.hal.core.finder.PreviewContent;
-import org.jboss.hal.core.finder.StaticItem;
-import org.jboss.hal.core.finder.StaticItemColumn;
-import org.jboss.hal.js.JsonObject;
-import org.jboss.hal.spi.AsyncColumn;
-
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.rhcp.RhcpColumns.Decade.DECADES;
 import static org.jboss.hal.resources.CSS.listGroupItem;
 import static org.jboss.hal.resources.CSS.preview;

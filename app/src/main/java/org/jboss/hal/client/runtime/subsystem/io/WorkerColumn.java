@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.io;
 
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.core.finder.Finder;
@@ -33,8 +31,10 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.gwt.elemento.core.Elements.small;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import javax.inject.Inject;
+
+import static org.jboss.elemento.Elements.small;
+import static org.jboss.elemento.Elements.span;
 import static org.jboss.hal.client.runtime.subsystem.io.AddressTemplates.WORKER_ADDRESS;
 import static org.jboss.hal.client.runtime.subsystem.io.AddressTemplates.WORKER_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

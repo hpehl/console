@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -49,10 +45,11 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.Map;
+
 import static java.util.Collections.emptyMap;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.SELECTED_SERVLET_CONTAINER_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.SERVLET_CONTAINER_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.SERVLET_CONTAINER_TEMPLATE;
+import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 public class ServletContainerPresenter

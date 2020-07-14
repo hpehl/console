@@ -28,13 +28,8 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.ATTRIBUTES;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SALT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SET_PASSWORD;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.TYPE;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.Ids.FORM;
 
 public class ReviewPasswordStep extends WizardStep<PasswordContext, PasswordState> {

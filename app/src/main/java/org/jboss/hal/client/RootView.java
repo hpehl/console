@@ -15,22 +15,22 @@
  */
 package org.jboss.hal.client;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import com.google.gwt.user.client.ui.IsWidget;
 import com.gwtplatform.mvp.client.ViewImpl;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
-import org.jboss.gwt.elemento.core.Widgets;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
+import org.jboss.elemento.Widgets;
 import org.jboss.hal.core.mvp.Slots;
 import org.jboss.hal.resources.Ids;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.div;
+import static org.jboss.elemento.Elements.div;
 import static org.jboss.hal.client.RootPresenter.SLOT_FOOTER_CONTENT;
 import static org.jboss.hal.client.RootPresenter.SLOT_HEADER_CONTENT;
 import static org.jboss.hal.resources.CSS.containerFluid;

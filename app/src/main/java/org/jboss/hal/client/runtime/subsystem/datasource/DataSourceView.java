@@ -15,10 +15,8 @@
  */
 package org.jboss.hal.client.runtime.subsystem.datasource;
 
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.core.datasource.DataSource;
@@ -31,18 +29,14 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import javax.inject.Inject;
+
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.span;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
-import static org.jboss.hal.client.runtime.subsystem.datasource.AddressTemplates.DATA_SOURCE_JDBC_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.datasource.AddressTemplates.DATA_SOURCE_POOL_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.datasource.AddressTemplates.XA_DATA_SOURCE_JDBC_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.datasource.AddressTemplates.XA_DATA_SOURCE_POOL_TEMPLATE;
+import static org.jboss.hal.client.runtime.subsystem.datasource.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.STATISTICS_ENABLED;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
 import static org.jboss.hal.resources.CSS.*;

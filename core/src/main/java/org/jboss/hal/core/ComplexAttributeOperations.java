@@ -23,7 +23,7 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 
 import com.google.common.collect.Iterables;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import jsinterop.annotations.JsIgnore;
 import org.jboss.hal.ballroom.dialog.DialogFactory;

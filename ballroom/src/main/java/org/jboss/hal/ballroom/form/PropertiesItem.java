@@ -15,18 +15,14 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.ArrayList;
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.regexp.shared.RegExp;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.resources.Messages;
+
+import java.util.*;
 
 import static elemental2.dom.DomGlobal.document;
 import static java.util.Collections.emptyList;

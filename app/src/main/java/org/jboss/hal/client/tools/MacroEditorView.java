@@ -15,13 +15,9 @@
  */
 package org.jboss.hal.client.tools;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Clipboard;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.Skeleton;
@@ -41,14 +37,14 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.resources.UIConstants;
 
+import javax.inject.Inject;
+import java.util.List;
+
 import static elemental2.dom.DomGlobal.setTimeout;
 import static elemental2.dom.DomGlobal.window;
 import static java.lang.Math.max;
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.button;
-import static org.jboss.gwt.elemento.core.Elements.collect;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
 import static org.jboss.hal.ballroom.Skeleton.MARGIN_BIG;

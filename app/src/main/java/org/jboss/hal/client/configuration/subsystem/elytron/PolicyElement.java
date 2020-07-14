@@ -18,8 +18,8 @@ package org.jboss.hal.client.configuration.subsystem.elytron;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLLIElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.form.Form;
@@ -34,15 +34,11 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Callback;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CUSTOM_POLICY;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.JACC_POLICY;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.OPERATION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.REMOVE;
-import static org.jboss.hal.resources.CSS.clickable;
-import static org.jboss.hal.resources.CSS.formLinkLabel;
-import static org.jboss.hal.resources.CSS.pfIcon;
+import static org.jboss.elemento.Elements.i;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
+import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.UIConstants.HASH;
 
 class PolicyElement implements IsElement<HTMLElement>, Attachable, HasPresenter<OtherSettingsPresenter> {

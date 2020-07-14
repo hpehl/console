@@ -15,15 +15,13 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-
 import org.jboss.hal.ballroom.form.Form.Operation;
 import org.jboss.hal.ballroom.form.Form.State;
 
+import java.util.EnumSet;
+
 import static org.jboss.hal.ballroom.form.Form.Operation.VIEW;
-import static org.jboss.hal.ballroom.form.Form.State.EDITING;
-import static org.jboss.hal.ballroom.form.Form.State.EMPTY;
-import static org.jboss.hal.ballroom.form.Form.State.READONLY;
+import static org.jboss.hal.ballroom.form.Form.State.*;
 
 /**
  * A state machine for singleton resources. Supports all {@link State states} and {@linkplain Operation

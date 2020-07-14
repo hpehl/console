@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.management;
 
-import java.util.Collections;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.dialog.DialogFactory;
@@ -27,12 +22,7 @@ import org.jboss.hal.core.extension.Extension;
 import org.jboss.hal.core.extension.ExtensionRegistry;
 import org.jboss.hal.core.extension.ExtensionStorage;
 import org.jboss.hal.core.extension.InstalledExtension;
-import org.jboss.hal.core.finder.ColumnAction;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.dmr.ModelNodeHelper;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.resources.Ids;
@@ -42,13 +32,15 @@ import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 
+import javax.inject.Inject;
+import java.util.Collections;
+import java.util.List;
+
 import static elemental2.dom.DomGlobal.window;
 import static java.util.Collections.singletonList;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import static org.jboss.elemento.Elements.span;
 import static org.jboss.hal.core.extension.Extension.Point.CUSTOM;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.BUNDLED;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.EXTENSION_POINT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.STANDALONE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.fontAwesome;
 
 @AsyncColumn(Ids.EXTENSION)

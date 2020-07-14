@@ -15,20 +15,10 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import java.util.Collections;
-import java.util.Set;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.config.AccessControlProvider;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.config.Role;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.DispatchFailure;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
@@ -39,6 +29,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Completable;
 import rx.Single;
+
+import javax.inject.Inject;
+import java.util.Collections;
+import java.util.Set;
 
 import static java.util.stream.Collectors.toSet;
 import static org.jboss.hal.config.AccessControlProvider.RBAC;

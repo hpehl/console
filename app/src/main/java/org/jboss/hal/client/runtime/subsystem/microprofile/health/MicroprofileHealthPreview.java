@@ -15,18 +15,12 @@
  */
 package org.jboss.hal.client.runtime.subsystem.microprofile.health;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLHeadingElement;
 import elemental2.dom.HTMLLIElement;
 import elemental2.dom.HTMLUListElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.core.subsystem.SubsystemMetadata;
@@ -35,18 +29,14 @@ import org.jboss.hal.dmr.Operation;
 import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.StatementContext;
-import org.jboss.hal.resources.CSS;
-import org.jboss.hal.resources.Icons;
-import org.jboss.hal.resources.Ids;
-import org.jboss.hal.resources.Names;
-import org.jboss.hal.resources.Resources;
+import org.jboss.hal.resources.*;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
+import java.util.*;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.runtime.subsystem.microprofile.health.AddressTemplates.MICROPROFILE_HEALTH_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
-import static org.jboss.hal.resources.CSS.key;
-import static org.jboss.hal.resources.CSS.listGroup;
-import static org.jboss.hal.resources.CSS.listGroupItem;
+import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.Names.STATE;
 
 public class MicroprofileHealthPreview extends PreviewContent<SubsystemMetadata> {

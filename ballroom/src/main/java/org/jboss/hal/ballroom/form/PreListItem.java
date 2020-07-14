@@ -15,9 +15,9 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.List;
-
 import org.jboss.hal.ballroom.LabelBuilder;
+
+import java.util.List;
 
 public class PreListItem extends ListItem {
 

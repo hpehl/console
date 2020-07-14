@@ -15,11 +15,11 @@
  */
 package org.jboss.hal.client.tools;
 
-import javax.inject.Inject;
-
 import org.jboss.hal.core.modelbrowser.ModelBrowser;
 import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.dmr.ResourceAddress;
+
+import javax.inject.Inject;
 
 public class ModelBrowserView extends HalViewImpl implements ModelBrowserPresenter.MyView {
 

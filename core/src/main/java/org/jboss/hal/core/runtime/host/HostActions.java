@@ -22,7 +22,7 @@ import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Provider;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.ballroom.dialog.BlockingDialog;
 import org.jboss.hal.ballroom.dialog.Dialog;

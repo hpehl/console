@@ -15,32 +15,15 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.FinderPath;
-import org.jboss.hal.core.finder.FinderPathFactory;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
-import org.jboss.hal.core.finder.ItemMonitor;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
-import org.jboss.hal.core.runtime.server.Server;
-import org.jboss.hal.core.runtime.server.ServerActionEvent;
+import org.jboss.hal.core.runtime.server.*;
 import org.jboss.hal.core.runtime.server.ServerActionEvent.ServerActionHandler;
-import org.jboss.hal.core.runtime.server.ServerActions;
-import org.jboss.hal.core.runtime.server.ServerResultEvent;
 import org.jboss.hal.core.runtime.server.ServerResultEvent.ServerResultHandler;
-import org.jboss.hal.core.runtime.server.ServerSelectionEvent;
 import org.jboss.hal.dmr.Composite;
 import org.jboss.hal.dmr.CompositeResult;
 import org.jboss.hal.dmr.Operation;
@@ -58,6 +41,11 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Column;
 import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
 
 import static java.util.Collections.singletonList;
 import static org.jboss.hal.client.runtime.configurationchanges.ConfigurationChangesPresenter.HOST_CONFIGURATION_CHANGES_ADDRESS;

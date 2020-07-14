@@ -15,19 +15,8 @@
  */
 package org.jboss.hal.client.configuration.subsystem.security;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.core.CrudOperations;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
@@ -36,13 +25,14 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.SECURITY_DOMAIN_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.SECURITY_DOMAIN_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.SECURITY_SUBSYSTEM_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CACHE_TYPE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SECURITY_DOMAIN;
+import static org.jboss.hal.client.configuration.subsystem.security.AddressTemplates.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 @AsyncColumn(Ids.SECURITY_DOMAIN)
 @Requires(value = SECURITY_DOMAIN_ADDRESS, recursive = false)

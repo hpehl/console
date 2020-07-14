@@ -15,10 +15,10 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.function.Consumer;
-
 import org.jboss.hal.core.runtime.server.Server;
 import org.jboss.hal.core.runtime.server.ServerActions;
+
+import java.util.function.Consumer;
 
 /**
  * Function used to evaluate the server(-config) status. Implemented in a central place to ensure the right order of

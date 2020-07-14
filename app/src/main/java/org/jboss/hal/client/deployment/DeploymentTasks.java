@@ -15,15 +15,6 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.inject.Provider;
-
 import com.google.common.collect.Lists;
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.File;
@@ -35,12 +26,7 @@ import org.jboss.hal.core.deployment.ServerGroupDeployment;
 import org.jboss.hal.core.finder.FinderColumn;
 import org.jboss.hal.core.runtime.TopologyTasks;
 import org.jboss.hal.core.runtime.server.Server;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.flow.Outcome;
@@ -53,10 +39,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Completable;
 
+import javax.inject.Provider;
+import java.util.*;
+
 import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
-import static java.util.stream.Collectors.toSet;
+import static java.util.stream.Collectors.*;
 import static org.jboss.hal.core.finder.FinderColumn.RefreshMode.RESTORE_SELECTION;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.flow.Flow.series;

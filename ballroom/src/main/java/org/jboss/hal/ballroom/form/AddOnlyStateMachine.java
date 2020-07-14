@@ -15,13 +15,11 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-
 import org.jboss.hal.ballroom.form.Form.Operation;
 
-import static org.jboss.hal.ballroom.form.Form.Operation.CANCEL;
-import static org.jboss.hal.ballroom.form.Form.Operation.EDIT;
-import static org.jboss.hal.ballroom.form.Form.Operation.SAVE;
+import java.util.EnumSet;
+
+import static org.jboss.hal.ballroom.form.Form.Operation.*;
 import static org.jboss.hal.ballroom.form.Form.State.EDITING;
 
 /**

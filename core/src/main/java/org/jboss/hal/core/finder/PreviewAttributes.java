@@ -22,14 +22,14 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLAnchorElement;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLLIElement;
 import elemental2.dom.HTMLUListElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.builder.ElementsBuilder;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.ElementsBuilder;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.form.ResolveExpressionEvent;
 import org.jboss.hal.core.Core;
@@ -40,8 +40,8 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.resources.CSS.*;
 
 /** Element to show the basic attributes of a resource inside the preview pane. */

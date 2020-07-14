@@ -15,10 +15,10 @@
  */
 package org.jboss.hal.client.runtime.subsystem.messaging;
 
-import java.util.Date;
-
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.NamedNode;
+
+import java.util.Date;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 

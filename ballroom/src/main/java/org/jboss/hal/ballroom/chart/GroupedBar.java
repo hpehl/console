@@ -15,26 +15,20 @@
  */
 package org.jboss.hal.ballroom.chart;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import com.google.common.collect.ArrayListMultimap;
 import elemental2.core.JsArray;
 import elemental2.dom.HTMLElement;
 import jsinterop.base.JsPropertyMap;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.js.JsHelper;
 import org.jboss.hal.resources.UIConstants;
 
+import java.util.*;
+
 import static elemental2.dom.DomGlobal.window;
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.div;
+import static org.jboss.elemento.Elements.div;
 import static org.jboss.hal.ballroom.JQuery.$;
 import static org.jboss.hal.resources.UIConstants.HASH;
 

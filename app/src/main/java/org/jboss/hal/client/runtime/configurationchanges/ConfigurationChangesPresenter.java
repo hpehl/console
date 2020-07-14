@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.runtime.configurationchanges;
 
-import java.util.Optional;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -57,17 +52,19 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.pre;
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.Optional;
+
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.pre;
 import static org.jboss.hal.ballroom.Skeleton.MARGIN_BIG;
 import static org.jboss.hal.ballroom.Skeleton.applicationHeight;
 import static org.jboss.hal.ballroom.dialog.Dialog.Size.LARGE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.meta.AddressTemplate.OPTIONAL;
 import static org.jboss.hal.meta.token.NameTokens.CONFIGURATION_CHANGES;
-import static org.jboss.hal.resources.CSS.formControlStatic;
-import static org.jboss.hal.resources.CSS.px;
-import static org.jboss.hal.resources.CSS.wrap;
+import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.Ids.ADD;
 
 public class ConfigurationChangesPresenter extends

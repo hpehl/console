@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.deployment;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.deployment.Content;
@@ -25,6 +23,8 @@ import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.MetadataRegistry;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
 
 public class BrowseContentView extends HalViewImpl implements BrowseContentPresenter.MyView {
 

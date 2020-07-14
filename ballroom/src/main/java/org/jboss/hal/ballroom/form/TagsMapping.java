@@ -15,9 +15,9 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.List;
-
 import org.jboss.hal.ballroom.form.TagsManager.Validator;
+
+import java.util.List;
 
 /**
  * Maps tags from and to the specified type

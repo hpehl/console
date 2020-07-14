@@ -20,9 +20,7 @@ import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.dmr.Property;
 import org.jboss.hal.resources.Names;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.ARCHIVE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MODULE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.TRANSACTION_SUPPORT;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class ResourceAdapter extends NamedNode {
 

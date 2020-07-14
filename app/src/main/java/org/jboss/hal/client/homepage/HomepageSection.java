@@ -15,19 +15,19 @@
  */
 package org.jboss.hal.client.homepage;
 
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLLIElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.i;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.i;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.UIConstants.*;
 

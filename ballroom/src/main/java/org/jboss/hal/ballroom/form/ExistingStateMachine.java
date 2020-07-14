@@ -15,9 +15,9 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-
 import org.jboss.hal.ballroom.form.Form.Operation;
+
+import java.util.EnumSet;
 
 import static org.jboss.hal.ballroom.form.Form.Operation.*;
 import static org.jboss.hal.ballroom.form.Form.State.EDITING;

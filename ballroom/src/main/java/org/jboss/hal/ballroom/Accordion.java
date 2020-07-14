@@ -20,16 +20,14 @@ import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsType;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.UIConstants;
 
 import static elemental2.dom.DomGlobal.document;
 import static jsinterop.annotations.JsPackage.GLOBAL;
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.h;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.resources.CSS.*;
 
 public class Accordion implements IsElement {

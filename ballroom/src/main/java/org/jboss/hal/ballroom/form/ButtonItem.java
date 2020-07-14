@@ -15,26 +15,22 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-
 import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.MouseEvent;
-import org.jboss.gwt.elemento.core.EventCallbackFn;
+import org.jboss.elemento.EventCallbackFn;
 import org.jboss.hal.ballroom.Button;
 import org.jboss.hal.dmr.Deprecation;
 
-import static org.jboss.gwt.elemento.core.Elements.button;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import java.util.EnumSet;
+
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.ballroom.form.Decoration.DEPRECATED;
 import static org.jboss.hal.ballroom.form.Decoration.ENABLED;
-import static org.jboss.hal.resources.CSS.controlLabel;
-import static org.jboss.hal.resources.CSS.formGroup;
-import static org.jboss.hal.resources.CSS.halFormInput;
-import static org.jboss.hal.resources.CSS.halFormLabel;
+import static org.jboss.hal.resources.CSS.*;
 
 public class ButtonItem extends AbstractFormItem<Void> {
 

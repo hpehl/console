@@ -15,12 +15,12 @@
  */
 package org.jboss.hal.ballroom.autocomplete;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.jboss.hal.dmr.CompositeResult;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.ResourceAddress;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.ADDRESS;
 

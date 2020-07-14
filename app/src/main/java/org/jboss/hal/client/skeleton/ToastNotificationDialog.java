@@ -16,13 +16,13 @@
 package org.jboss.hal.client.skeleton;
 
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
-import org.jboss.gwt.elemento.core.builder.ElementsBuilder;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
+import org.jboss.elemento.ElementsBuilder;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.resources.Constants;
 import org.jboss.hal.spi.Message;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.resources.CSS.*;
 
 class ToastNotificationDialog {

@@ -25,9 +25,7 @@ import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
-import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
-import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
-import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;
+import static org.jboss.hal.dmr.ModelNodeHelper.*;
 
 @MbuiView
 @SuppressWarnings({"HardCodedStringLiteral", "WeakerAccess", "unused", "DuplicateStringLiteralInspection"})

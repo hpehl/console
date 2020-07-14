@@ -15,17 +15,8 @@
  */
 package org.jboss.hal.client.configuration;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.core.CrudOperations;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.dmr.ResourceAddress;
@@ -36,11 +27,12 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.Column;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.List;
+
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.INET_ADDRESS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.INTERFACE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
 
 @Column(Ids.INTERFACE)

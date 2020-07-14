@@ -15,32 +15,16 @@
  */
 package org.jboss.hal.client.runtime.group;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.config.Environment;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
-import org.jboss.hal.core.finder.ItemMonitor;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.core.runtime.TopologyTasks;
-import org.jboss.hal.core.runtime.group.ServerGroup;
-import org.jboss.hal.core.runtime.group.ServerGroupActionEvent;
+import org.jboss.hal.core.runtime.group.*;
 import org.jboss.hal.core.runtime.group.ServerGroupActionEvent.ServerGroupActionHandler;
-import org.jboss.hal.core.runtime.group.ServerGroupActions;
-import org.jboss.hal.core.runtime.group.ServerGroupResultEvent;
 import org.jboss.hal.core.runtime.group.ServerGroupResultEvent.ServerGroupResultHandler;
-import org.jboss.hal.core.runtime.group.ServerGroupSelectionEvent;
 import org.jboss.hal.core.runtime.server.Server;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
@@ -56,6 +40,11 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Column;
 import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.jboss.hal.core.finder.FinderColumn.RefreshMode.RESTORE_SELECTION;
 import static org.jboss.hal.core.runtime.TopologyTasks.serverGroups;

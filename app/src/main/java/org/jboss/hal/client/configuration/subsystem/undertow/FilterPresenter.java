@@ -15,13 +15,7 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -56,13 +50,14 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
+import javax.inject.Inject;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.FILTER_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.FILTER_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.RESPONSE_HEADER_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.HEADER_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.REMOVE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.UNDERTOW;
+import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 public class FilterPresenter
         extends MbuiPresenter<FilterPresenter.MyView, FilterPresenter.MyProxy>

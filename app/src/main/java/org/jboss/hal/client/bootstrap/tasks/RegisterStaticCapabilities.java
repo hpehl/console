@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import javax.inject.Inject;
-
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.meta.AddressTemplate;
@@ -25,6 +23,8 @@ import org.jboss.hal.meta.capabilitiy.Capabilities;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Completable;
+
+import javax.inject.Inject;
 
 import static org.jboss.hal.meta.StatementContext.Expression.SELECTED_PROFILE;
 

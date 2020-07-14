@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.elytron;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.table.Button;
 import org.jboss.hal.core.mvp.HalViewImpl;
@@ -30,13 +26,13 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import javax.inject.Inject;
+import java.util.List;
+
 import static java.util.Arrays.asList;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
-import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.CREDENTIAL_STORE_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.FILTERING_KEY_STORE_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.KEY_STORE_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.LDAP_KEY_STORE_TEMPLATE;
+import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.pfIcon;
 import static org.jboss.hal.resources.Ids.ELYTRON_LDAP_KEY_STORE;

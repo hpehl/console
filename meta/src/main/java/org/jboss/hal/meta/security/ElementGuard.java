@@ -21,7 +21,7 @@ import java.util.function.Predicate;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.NodeList;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.resources.UIConstants;
 
 import static elemental2.dom.DomGlobal.document;

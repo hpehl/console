@@ -15,10 +15,10 @@
  */
 package org.jboss.hal.client.patching.wizard;
 
-import java.util.List;
-
 import elemental2.dom.File;
 import org.jboss.hal.dmr.Property;
+
+import java.util.List;
 
 public class PatchContext {
 

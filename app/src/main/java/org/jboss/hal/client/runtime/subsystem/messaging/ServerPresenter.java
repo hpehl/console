@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.messaging;
 
-import java.util.Date;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.common.collect.ImmutableMap;
 import com.google.gwt.core.client.GWT;
 import com.google.web.bindery.event.shared.EventBus;
@@ -35,11 +30,7 @@ import org.jboss.hal.core.mvp.ApplicationFinderPresenter;
 import org.jboss.hal.core.mvp.HalView;
 import org.jboss.hal.core.mvp.HasPresenter;
 import org.jboss.hal.core.mvp.SupportsExpertMode;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.MetadataRegistry;
@@ -51,6 +42,10 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import java.util.Date;
+import java.util.List;
 
 import static org.jboss.hal.ballroom.Format.mediumDateTime;
 import static org.jboss.hal.client.runtime.subsystem.messaging.AddressTemplates.MESSAGING_SERVER_ADDRESS;

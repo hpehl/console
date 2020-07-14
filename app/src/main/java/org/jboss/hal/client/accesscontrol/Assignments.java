@@ -15,13 +15,13 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
+import org.jboss.hal.config.Role;
+
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 import java.util.stream.Stream;
-
-import org.jboss.hal.config.Role;
 
 class Assignments implements Iterable<Assignment> {
 

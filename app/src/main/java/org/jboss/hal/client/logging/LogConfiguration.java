@@ -15,15 +15,15 @@
  */
 package org.jboss.hal.client.logging;
 
-import java.util.Map;
-import java.util.logging.Handler;
-import java.util.logging.Level;
-
 import com.google.common.base.Strings;
 import com.google.common.collect.ImmutableMap;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.logging.client.DefaultLevel;
 import com.google.gwt.user.client.Window;
+
+import java.util.Map;
+import java.util.logging.Handler;
+import java.util.logging.Level;
 
 import static elemental2.dom.DomGlobal.console;
 import static java.util.logging.Level.*;

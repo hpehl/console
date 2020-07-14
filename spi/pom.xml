@@ -36,6 +36,10 @@
             <groupId>com.google.gwt.inject</groupId>
             <artifactId>gin</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.gwtproject.safehtml</groupId>
+            <artifactId>gwt-safehtml</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

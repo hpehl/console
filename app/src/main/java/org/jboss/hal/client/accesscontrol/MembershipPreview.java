@@ -20,9 +20,7 @@ import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import static org.jboss.elemento.Elements.*;
 
 class MembershipPreview extends PreviewContent<Assignment> {
 

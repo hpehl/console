@@ -15,10 +15,10 @@
  */
 package org.jboss.hal.client.runtime.subsystem.undertow;
 
-import java.util.Date;
-
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.NamedNode;
+
+import java.util.Date;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.CREATION_TIME;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.LAST_ACCESSED_TIME;

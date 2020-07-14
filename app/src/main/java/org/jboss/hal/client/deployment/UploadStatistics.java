@@ -15,18 +15,18 @@
  */
 package org.jboss.hal.client.deployment;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.SortedSet;
-import java.util.TreeSet;
-
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.resources.Messages;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.Message.Level;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeSet;
 
 /**
  * Holds information about added, replaced and failed uploads and provides a message which summarizes the upload of one

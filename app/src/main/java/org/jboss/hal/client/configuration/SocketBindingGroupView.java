@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.Pages;
 import org.jboss.hal.ballroom.VerticalNavigation;
@@ -37,9 +33,10 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import javax.annotation.PostConstruct;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.SocketBinding.INBOUND;
 import static org.jboss.hal.client.configuration.SocketBindingGroupPresenter.ROOT_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

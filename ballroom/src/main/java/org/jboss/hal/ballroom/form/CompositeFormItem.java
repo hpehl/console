@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-
 import com.google.common.base.Strings;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
@@ -28,8 +24,12 @@ import elemental2.dom.HTMLHRElement;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.resources.Ids;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.hr;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.hr;
 import static org.jboss.hal.ballroom.form.Form.State.EDITING;
 import static org.jboss.hal.ballroom.form.Form.State.READONLY;
 import static org.jboss.hal.resources.CSS.separator;

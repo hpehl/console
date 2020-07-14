@@ -17,7 +17,7 @@ package org.jboss.hal.client.bootstrap;
 
 import com.google.gwt.core.client.GWT;
 import com.gwtplatform.mvp.client.PreBootstrapper;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.client.logging.LogConfiguration;
 import org.jboss.hal.config.Endpoints;
 import org.jboss.hal.resources.Names;

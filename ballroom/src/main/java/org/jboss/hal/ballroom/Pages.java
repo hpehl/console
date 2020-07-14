@@ -15,21 +15,17 @@
  */
 package org.jboss.hal.ballroom;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Supplier;
-
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.resources.Ids;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
+import java.util.*;
+import java.util.function.Supplier;
+
+import static org.jboss.elemento.Elements.div;
 import static org.jboss.hal.resources.CSS.page;
 
 /**

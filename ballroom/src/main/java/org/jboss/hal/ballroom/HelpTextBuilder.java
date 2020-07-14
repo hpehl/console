@@ -15,14 +15,10 @@
  */
 package org.jboss.hal.ballroom;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.Property;
 import org.jboss.hal.resources.Constants;
@@ -31,11 +27,12 @@ import org.jboss.hal.resources.Names;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.hal.ballroom.HelpTextBuilder.RestartMode.ALL_SERVICES;
-import static org.jboss.hal.ballroom.HelpTextBuilder.RestartMode.NO_SERVICES;
-import static org.jboss.hal.ballroom.HelpTextBuilder.RestartMode.RESOURCE_SERVICES;
-import static org.jboss.hal.ballroom.HelpTextBuilder.RestartMode.UNKNOWN;
+import static org.jboss.hal.ballroom.HelpTextBuilder.RestartMode.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 /**

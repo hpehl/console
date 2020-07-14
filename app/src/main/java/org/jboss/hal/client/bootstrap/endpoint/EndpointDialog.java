@@ -20,7 +20,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.form.ButtonItem;
@@ -37,16 +37,14 @@ import org.jboss.hal.resources.Icons;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Messages;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.p;
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.p;
 import static org.jboss.hal.ballroom.dialog.Dialog.PRIMARY_POSITION;
 import static org.jboss.hal.ballroom.table.RefreshMode.HOLD;
 import static org.jboss.hal.client.bootstrap.endpoint.Endpoint.SCHEME;
 import static org.jboss.hal.client.bootstrap.endpoint.EndpointDialog.Mode.ADD;
 import static org.jboss.hal.client.bootstrap.endpoint.EndpointDialog.Mode.SELECT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.HOST;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PORT;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 /**
  * Modal dialog to manage bootstrap servers. The dialog offers a page to connect to an existing server and a page to

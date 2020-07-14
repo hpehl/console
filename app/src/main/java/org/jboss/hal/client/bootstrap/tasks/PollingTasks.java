@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.config.Settings;
@@ -32,6 +27,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Observable;
 import rx.Single;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.List;
 
 import static java.util.Collections.singletonList;
 import static java.util.concurrent.TimeUnit.SECONDS;

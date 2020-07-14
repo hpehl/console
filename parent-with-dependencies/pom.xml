@@ -34,28 +34,28 @@
 
     <properties>
         <apt-tools.version>0.0.3</apt-tools.version>
-        <auto-service.version>1.0-rc4</auto-service.version>
-        <compile-testing.version>0.15</compile-testing.version>
-        <elemental.version>1.0.0-RC1</elemental.version>
-        <elemento.version>0.9.6-gwt2</elemento.version>
+        <auto-service.version>1.0-rc7</auto-service.version>
+        <compile-testing.version>0.18</compile-testing.version>
+        <elemental2.version>1.1.0</elemental2.version>
+        <elemento.version>1.0.1</elemento.version>
         <gin.version>2.1.2</gin.version>
-        <guava.version>25.0-jre</guava.version>
-        <gwt.version>2.8.2</gwt.version>
+        <guava.version>29.0-jre</guava.version>
+        <gwt.version>2.9.0</gwt.version>
+        <gwt-safehtml.version>1.0-SNAPSHOT</gwt-safehtml.version>
         <gwtp.version>1.6</gwtp.version>
         <javax.enterprise.version>1.2</javax.enterprise.version>
         <javax.inject.version>1</javax.inject.version>
         <jaxen.version>1.1.6</jaxen.version>
         <jboss.dmr.version>1.5.0.Final</jboss.dmr.version>
         <jdom.version>2.0.2</jdom.version>
-        <jetbrains.annotations.version>16.0.1</jetbrains.annotations.version>
         <junit.version>4.12</junit.version>
         <mockito.version>2.18.3</mockito.version>
-        <node.version>v8.16.0</node.version>
-        <npm.version>6.9.0</npm.version>
+        <node.version>v12.18.2</node.version>
+        <npm.version>6.14.6</npm.version>
         <rx.gwt>0.4</rx.gwt>
         <slf4j.version>1.7.25</slf4j.version>
         <slf4j-gwt.version>1.7.7.1</slf4j-gwt.version>
-        <undertow.version>2.0.28.Final</undertow.version>
+        <undertow.version>2.1.3.Final</undertow.version>
         <validation.version>1.0.0.GA</validation.version>
     </properties>
 
@@ -84,17 +84,17 @@
             <dependency>
                 <groupId>com.google.elemental2</groupId>
                 <artifactId>elemental2-core</artifactId>
-                <version>${elemental.version}</version>
+                <version>${elemental2.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.elemental2</groupId>
                 <artifactId>elemental2-dom</artifactId>
-                <version>${elemental.version}</version>
+                <version>${elemental2.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.elemental2</groupId>
                 <artifactId>elemental2-webstorage</artifactId>
-                <version>${elemental.version}</version>
+                <version>${elemental2.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.gwtplatform</groupId>
@@ -117,14 +117,14 @@
                 <version>${rx.gwt}</version>
             </dependency>
             <dependency>
-                <groupId>org.jboss.gwt.elemento</groupId>
+                <groupId>org.jboss.elemento</groupId>
                 <artifactId>elemento-core</artifactId>
                 <version>${elemento.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.jboss.gwt.elemento</groupId>
-                <artifactId>elemento-widget</artifactId>
-                <version>${elemento.version}</version>
+                <groupId>org.gwtproject.safehtml</groupId>
+                <artifactId>gwt-safehtml</artifactId>
+                <version>${gwt-safehtml.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.google.guava</groupId>

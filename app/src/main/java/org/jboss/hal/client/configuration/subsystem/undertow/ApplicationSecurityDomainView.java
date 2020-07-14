@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.Tabs;
@@ -30,14 +28,12 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import javax.inject.Inject;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.APPLICATION_SECURITY_DOMAIN_TEMPLATE;
 import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.SINGLE_SIGN_ON_TEMPLATE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CREDENTIAL_REFERENCE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SETTING;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SINGLE_SIGN_ON;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
 import static org.jboss.hal.resources.CSS.fontAwesome;
 

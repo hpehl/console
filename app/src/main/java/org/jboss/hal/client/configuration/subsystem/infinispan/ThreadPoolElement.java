@@ -16,7 +16,7 @@
 package org.jboss.hal.client.configuration.subsystem.infinispan;
 
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
@@ -26,9 +26,7 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.MetadataRegistry;
 import org.jboss.hal.resources.Ids;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.*;
 
 /**
  * Element to manage the {@linkplain ThreadPool thread pool} singletons of a cache container. The element contains a

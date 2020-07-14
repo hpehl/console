@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.meta.ManagementModel;
@@ -26,6 +24,8 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.inject.Inject;
 
 import static elemental2.dom.DomGlobal.setTimeout;
 

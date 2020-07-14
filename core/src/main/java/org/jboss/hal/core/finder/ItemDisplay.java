@@ -19,14 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.HasTitle;
 import org.jboss.hal.core.mvp.ApplicationFinderPresenter;
 import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Ids;
 
-import static org.jboss.gwt.elemento.core.Elements.small;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import static org.jboss.elemento.Elements.small;
+import static org.jboss.elemento.Elements.span;
 import static org.jboss.hal.resources.CSS.itemText;
 
 /**

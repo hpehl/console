@@ -15,14 +15,8 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import java.util.EnumMap;
-import java.util.Map;
-import java.util.function.Function;
-
-import javax.inject.Inject;
-
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import elemental2.dom.HTMLElement;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.autocomplete.ReadChildrenAutoComplete;
@@ -42,17 +36,18 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import javax.inject.Inject;
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.function.Function;
+
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
 import static org.jboss.hal.client.configuration.subsystem.undertow.AddressTemplates.SERVLET_CONTAINER_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.undertow.ServletContainerSetting.COOKIE;
-import static org.jboss.hal.client.configuration.subsystem.undertow.ServletContainerSetting.CRAWLER;
-import static org.jboss.hal.client.configuration.subsystem.undertow.ServletContainerSetting.SESSIONS;
+import static org.jboss.hal.client.configuration.subsystem.undertow.ServletContainerSetting.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;

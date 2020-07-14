@@ -15,30 +15,21 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-
-import org.jboss.hal.config.Environment;
-import org.jboss.hal.config.OperationMode;
-import org.jboss.hal.config.Role;
-import org.jboss.hal.config.User;
-import org.jboss.hal.config.Version;
+import org.jboss.hal.config.*;
 import org.jboss.hal.config.keycloak.Keycloak;
 import org.jboss.hal.config.keycloak.KeycloakHolder;
 import org.jboss.hal.core.runtime.server.Server;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.flow.FlowContext;
 import org.jboss.hal.meta.ManagementModel;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Completable;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asEnumValue;

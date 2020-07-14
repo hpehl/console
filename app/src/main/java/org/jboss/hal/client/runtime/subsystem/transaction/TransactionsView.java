@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.transaction;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.Pages;
 import org.jboss.hal.ballroom.form.Form;
@@ -34,9 +30,10 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import javax.inject.Inject;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
 import static org.jboss.hal.client.runtime.subsystem.transaction.AddressTemplates.PARTICIPANTS_LOGSTORE_RUNTIME_TEMPLATE;
@@ -44,10 +41,7 @@ import static org.jboss.hal.client.runtime.subsystem.transaction.AddressTemplate
 import static org.jboss.hal.dmr.ModelDescriptionConstants.PARTICIPANTS;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.TRANSACTIONS;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
-import static org.jboss.hal.resources.Ids.FORM;
-import static org.jboss.hal.resources.Ids.PAGE;
-import static org.jboss.hal.resources.Ids.PAGES;
-import static org.jboss.hal.resources.Ids.TABLE;
+import static org.jboss.hal.resources.Ids.*;
 
 public class TransactionsView extends HalViewImpl implements TransactionsPresenter.MyView {
 

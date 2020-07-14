@@ -19,17 +19,17 @@ import com.google.common.base.Strings;
 import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.resources.Constants;
 import org.jboss.hal.resources.UIConstants;
 import org.jboss.hal.spi.Callback;
 
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
-import static org.jboss.gwt.elemento.core.EventType.keyup;
-import static org.jboss.gwt.elemento.core.InputType.search;
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.elemento.EventType.keyup;
+import static org.jboss.elemento.InputType.search;
 import static org.jboss.hal.resources.CSS.*;
 
 public class Search implements IsElement<HTMLElement> {

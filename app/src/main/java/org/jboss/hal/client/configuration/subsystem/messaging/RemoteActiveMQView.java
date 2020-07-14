@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.VerticalNavigation;
@@ -42,10 +38,11 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
+import javax.annotation.PostConstruct;
+import java.util.List;
+
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;

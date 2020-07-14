@@ -15,13 +15,13 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.Map;
-
 import com.google.common.collect.ImmutableMap;
 import org.jboss.hal.core.finder.PreviewAttributes;
 import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.core.finder.StaticItem;
 import org.jboss.hal.dmr.ModelNode;
+
+import java.util.Map;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;

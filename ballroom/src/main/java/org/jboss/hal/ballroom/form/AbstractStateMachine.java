@@ -15,11 +15,11 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-
 import com.google.common.base.Joiner;
 import org.jboss.hal.ballroom.form.Form.Operation;
 import org.jboss.hal.ballroom.form.Form.State;
+
+import java.util.EnumSet;
 
 public abstract class AbstractStateMachine implements StateMachine {
 

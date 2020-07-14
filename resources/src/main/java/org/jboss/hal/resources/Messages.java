@@ -15,7 +15,7 @@
  */
 package org.jboss.hal.resources;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 
 public interface Messages extends com.google.gwt.i18n.client.Messages {
 

@@ -15,13 +15,10 @@
  */
 package org.jboss.hal.client.runtime.subsystem.datasource;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.chart.Utilization;
@@ -33,12 +30,7 @@ import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.core.runtime.server.Server;
 import org.jboss.hal.core.runtime.server.ServerActions;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.ModelNodeHelper;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
@@ -49,16 +41,15 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.meta.StatementContext.Expression.SELECTED_HOST;
 import static org.jboss.hal.meta.StatementContext.Expression.SELECTED_SERVER;
-import static org.jboss.hal.resources.CSS.fontAwesome;
-import static org.jboss.hal.resources.CSS.hidden;
-import static org.jboss.hal.resources.CSS.underline;
+import static org.jboss.hal.resources.CSS.*;
 
 /**
  * TODO The empty state action to enable statistics makes only sense in standalone mode or w/o RBAC enabled.

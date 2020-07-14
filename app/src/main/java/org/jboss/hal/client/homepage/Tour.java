@@ -15,22 +15,19 @@
  */
 package org.jboss.hal.client.homepage;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.safehtml.client.SafeHtmlTemplates;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.web.bindery.event.shared.EventBus;
-import com.google.web.bindery.event.shared.HandlerRegistration;
 import com.gwtplatform.mvp.client.proxy.NavigationEvent;
 import com.gwtplatform.mvp.client.proxy.NavigationHandler;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLButtonElement;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import org.jboss.hal.ballroom.Popover;
 import org.jboss.hal.ballroom.Popover.Placement;
 import org.jboss.hal.resources.Ids;
@@ -39,10 +36,11 @@ import org.jboss.hal.resources.UIConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import static elemental2.dom.DomGlobal.clearInterval;
-import static elemental2.dom.DomGlobal.document;
-import static elemental2.dom.DomGlobal.setInterval;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import java.util.ArrayList;
+import java.util.List;
+
+import static elemental2.dom.DomGlobal.*;
+import static org.jboss.elemento.Elements.setVisible;
 import static org.jboss.hal.ballroom.Popover.Trigger.MANUAL;
 import static org.jboss.hal.resources.CSS.disabled;
 import static org.jboss.hal.resources.CSS.pfIcon;

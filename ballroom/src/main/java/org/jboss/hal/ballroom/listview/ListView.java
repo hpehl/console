@@ -15,24 +15,22 @@
  */
 package org.jboss.hal.ballroom.listview;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.HtmlContentBuilder;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.dataprovider.DataProvider;
 import org.jboss.hal.ballroom.dataprovider.Display;
 import org.jboss.hal.ballroom.dataprovider.PageInfo;
 import org.jboss.hal.ballroom.dataprovider.SelectionInfo;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.hal.resources.CSS.active;
-import static org.jboss.hal.resources.CSS.listPf;
-import static org.jboss.hal.resources.CSS.listPfStacked;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.hal.resources.CSS.*;
 
 /**
  * PatternFly list view. The list view does not manage data by itself. Instead you have to use a {@link DataProvider}

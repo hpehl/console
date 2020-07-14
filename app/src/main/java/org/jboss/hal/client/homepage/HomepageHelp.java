@@ -17,12 +17,12 @@ package org.jboss.hal.client.homepage;
 
 import elemental2.dom.HTMLDivElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.config.Build;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.Urls.*;
 

@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
-import javax.inject.Inject;
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.config.User;
 import org.jboss.hal.core.finder.ColumnActionFactory;
@@ -29,6 +26,9 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.AsyncColumn;
 import org.jboss.hal.spi.Footer;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
 
 import static org.jboss.hal.client.accesscontrol.AddressTemplates.EXCLUDE_ADDRESS;
 import static org.jboss.hal.client.accesscontrol.AddressTemplates.INCLUDE_ADDRESS;

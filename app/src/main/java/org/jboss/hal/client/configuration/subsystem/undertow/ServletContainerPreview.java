@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import java.util.Iterator;
-import java.util.List;
-
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.core.finder.PreviewAttributes;
@@ -27,11 +24,12 @@ import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.dmr.Property;
 import org.jboss.hal.resources.Names;
 
+import java.util.Iterator;
+import java.util.List;
+
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.joining;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.MIME_MAPPING;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.VALUE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.WELCOME_FILE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;
 
 class ServletContainerPreview extends PreviewContent<NamedNode> {

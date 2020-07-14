@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.NavigationEvent;
 import elemental2.dom.HTMLScriptElement;
@@ -32,6 +30,8 @@ import org.jboss.hal.js.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Completable;
+
+import javax.inject.Inject;
 
 import static elemental2.dom.DomGlobal.document;
 import static elemental2.dom.DomGlobal.window;

@@ -24,7 +24,7 @@ import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Icons;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.runtime.subsystem.logging.LogFiles.LOG_FILE_SIZE_THRESHOLD;
 import static org.jboss.hal.resources.CSS.*;
 

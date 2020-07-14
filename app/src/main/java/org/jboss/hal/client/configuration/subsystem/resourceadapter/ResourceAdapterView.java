@@ -15,9 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.resourceadapter;
 
-import java.util.Collections;
-import java.util.Map;
-
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.Form.FinishReset;
@@ -27,18 +24,16 @@ import org.jboss.hal.core.OperationFactory;
 import org.jboss.hal.core.mbui.MbuiContext;
 import org.jboss.hal.core.mbui.MbuiViewImpl;
 import org.jboss.hal.core.mbui.dialog.AddResourceDialog;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.NamedNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.SelectionAwareStatementContext;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
+
+import java.util.Collections;
+import java.util.Map;
 
 import static java.util.stream.Collectors.toMap;
 import static org.jboss.hal.client.configuration.subsystem.resourceadapter.AddressTemplates.*;

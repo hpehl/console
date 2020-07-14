@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.Date;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.common.base.Splitter;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.Format;
@@ -29,11 +24,7 @@ import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.PreListItem;
 import org.jboss.hal.ballroom.form.PreTextItem;
 import org.jboss.hal.ballroom.form.TextBoxItem;
-import org.jboss.hal.ballroom.table.ColumnBuilder;
-import org.jboss.hal.ballroom.table.DataTable;
-import org.jboss.hal.ballroom.table.Options;
-import org.jboss.hal.ballroom.table.OptionsBuilder;
-import org.jboss.hal.ballroom.table.Table;
+import org.jboss.hal.ballroom.table.*;
 import org.jboss.hal.core.mbui.form.ModelNodeForm;
 import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.dmr.ModelNode;
@@ -44,9 +35,11 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import javax.inject.Inject;
+import java.util.Date;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

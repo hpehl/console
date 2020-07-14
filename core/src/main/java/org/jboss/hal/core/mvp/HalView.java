@@ -18,7 +18,7 @@ package org.jboss.hal.core.mvp;
 import com.gwtplatform.mvp.client.View;
 import com.gwtplatform.mvp.client.ViewImpl;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 
 /** Adapter between GWTPs views which are based on widgets and HAL views which are based on elements. */
 public interface HalView extends View, IsElement, Iterable<HTMLElement> {

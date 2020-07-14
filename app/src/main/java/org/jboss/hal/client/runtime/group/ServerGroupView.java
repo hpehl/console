@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.runtime.group;
 
-import java.util.List;
-
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.table.Table;
@@ -26,6 +24,8 @@ import org.jboss.hal.core.runtime.group.ServerGroup;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
+
+import java.util.List;
 
 @MbuiView
 @SuppressWarnings({"DuplicateStringLiteralInspection", "HardCodedStringLiteral", "unused", "WeakerAccess"})

@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.remoting;
 
-import java.util.Map;
-
-import javax.annotation.Nullable;
-import javax.annotation.PostConstruct;
-
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
@@ -38,14 +33,14 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
+import javax.annotation.Nullable;
+import javax.annotation.PostConstruct;
+import java.util.Map;
+
 import static java.util.stream.Collectors.toMap;
 import static org.jboss.hal.client.configuration.subsystem.remoting.AddressTemplates.*;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PROPERTY;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.READ_RESOURCE_OPERATION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.VALUE;
-import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
-import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
-import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
+import static org.jboss.hal.dmr.ModelNodeHelper.*;
 
 /**
  * This view is half generated, half hand written. The navigation, tables and outbound forms are generated using MBUI

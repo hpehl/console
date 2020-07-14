@@ -15,14 +15,14 @@
  */
 package org.jboss.hal.core.finder;
 
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import org.gwtproject.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.core.subsystem.SubsystemMetadata;
 import org.jboss.hal.dmr.Operation;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.section;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.DESCRIPTION;
 
 /** Preview which shows the description of a {@code :read-resource-description} operation. */

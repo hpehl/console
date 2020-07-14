@@ -15,11 +15,11 @@
  */
 package org.jboss.hal.client;
 
-import javax.inject.Inject;
-
 import org.jboss.hal.core.modelbrowser.ModelBrowser;
 import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.dmr.ResourceAddress;
+
+import javax.inject.Inject;
 
 public class GenericSubsystemView extends HalViewImpl implements GenericSubsystemPresenter.MyView {
 

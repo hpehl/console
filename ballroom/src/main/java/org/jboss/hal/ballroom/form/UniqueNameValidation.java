@@ -15,11 +15,11 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import com.google.gwt.core.client.GWT;
 import org.jboss.hal.resources.Constants;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import static java.util.Arrays.asList;
 

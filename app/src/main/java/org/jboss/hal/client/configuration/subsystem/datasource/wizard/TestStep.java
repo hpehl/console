@@ -15,14 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource.wizard;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Provider;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import org.jboss.hal.ballroom.wizard.WizardStep;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.runtime.TopologyTasks;
@@ -31,28 +26,25 @@ import org.jboss.hal.dmr.CompositeResult;
 import org.jboss.hal.dmr.Operation;
 import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
-import org.jboss.hal.flow.FlowContext;
-import org.jboss.hal.flow.FlowException;
-import org.jboss.hal.flow.Outcome;
-import org.jboss.hal.flow.Progress;
-import org.jboss.hal.flow.Task;
+import org.jboss.hal.flow.*;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 import rx.Completable;
 
-import static org.jboss.gwt.elemento.core.Elements.button;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.button;
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.client.configuration.subsystem.datasource.wizard.DataSourceWizard.addOperation;
 import static org.jboss.hal.core.runtime.TopologyTasks.runningServers;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.properties;
 import static org.jboss.hal.flow.Flow.series;
-import static org.jboss.hal.resources.CSS.blankSlatePf;
-import static org.jboss.hal.resources.CSS.btn;
-import static org.jboss.hal.resources.CSS.btnLg;
-import static org.jboss.hal.resources.CSS.btnPrimary;
+import static org.jboss.hal.resources.CSS.*;
 
 class TestStep extends WizardStep<Context, State> {
 

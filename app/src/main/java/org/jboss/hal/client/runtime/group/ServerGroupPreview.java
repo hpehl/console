@@ -25,10 +25,7 @@ import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PROFILE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SOCKET_BINDING_DEFAULT_INTERFACE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SOCKET_BINDING_GROUP;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SOCKET_BINDING_PORT_OFFSET;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class ServerGroupPreview extends PreviewContent<ServerGroup> {
 

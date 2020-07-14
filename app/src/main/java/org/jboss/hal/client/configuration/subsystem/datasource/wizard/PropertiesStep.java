@@ -15,14 +15,8 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource.wizard;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.function.Consumer;
-
-import javax.inject.Provider;
-
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import elemental2.dom.HTMLElement;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
 import org.jboss.hal.ballroom.autocomplete.StaticAutoComplete;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.PropertiesItem;
@@ -42,10 +36,13 @@ import org.jboss.hal.resources.Resources;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Provider;
+import java.util.Collections;
+import java.util.List;
+import java.util.function.Consumer;
+
 import static org.jboss.hal.client.configuration.subsystem.datasource.JdbcDriverTasks.jdbcDriverProperties;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DRIVER_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.VALUE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.XA_DATASOURCE_CLASS;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
 import static org.jboss.hal.flow.Flow.series;
 

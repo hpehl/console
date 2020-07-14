@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.modcluster;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.Alert;
@@ -37,7 +33,10 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
+import javax.annotation.PostConstruct;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.modcluster.AddressTemplates.LOAD_PROVIDER_DYNAMIC_TEMPLATE;
 import static org.jboss.hal.client.configuration.subsystem.modcluster.AddressTemplates.LOAD_PROVIDER_SIMPLE_TEMPLATE;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;

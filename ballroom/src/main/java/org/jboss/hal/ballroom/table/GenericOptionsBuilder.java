@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.ballroom.table;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import com.google.gwt.core.client.GWT;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.config.Settings;
@@ -28,6 +23,11 @@ import org.jboss.hal.meta.security.Constraints;
 import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Constants;
 import org.jboss.hal.resources.Ids;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.util.Collections.singletonList;
 import static org.jboss.hal.config.Settings.Key.PAGE_SIZE;

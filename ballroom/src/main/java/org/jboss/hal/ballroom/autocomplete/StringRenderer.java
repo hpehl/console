@@ -15,9 +15,9 @@
  */
 package org.jboss.hal.ballroom.autocomplete;
 
-import java.util.function.Function;
-
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
+
+import java.util.function.Function;
 
 import static org.jboss.hal.ballroom.autocomplete.ItemRenderer.highlight;
 import static org.jboss.hal.resources.CSS.autocompleteSuggestion;

@@ -19,7 +19,7 @@ import com.google.gwt.core.client.GWT;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLHRElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.form.FormItem;
 import org.jboss.hal.ballroom.wizard.WizardStep;
@@ -33,10 +33,7 @@ import org.jboss.hal.meta.description.ResourceDescription;
 import org.jboss.hal.meta.description.StaticResourceDescription;
 import org.jboss.hal.resources.Ids;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.KEY_STORE;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SECURE_PORT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SECURE_SOCKET_BINDING;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.TRUST_MANAGER;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.meta.security.SecurityContext.RWX;
 import static org.jboss.hal.resources.Ids.MANAGEMENT;
 

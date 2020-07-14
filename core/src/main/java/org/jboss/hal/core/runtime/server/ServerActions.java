@@ -27,11 +27,11 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 
 import com.google.common.base.Strings;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.web.bindery.event.shared.EventBus;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.ballroom.dialog.BlockingDialog;
 import org.jboss.hal.ballroom.dialog.Dialog;
@@ -83,9 +83,9 @@ import rx.CompletableSubscriber;
 import rx.Subscription;
 
 import static elemental2.dom.DomGlobal.setTimeout;
-import static org.jboss.gwt.elemento.core.Elements.a;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import static org.jboss.elemento.Elements.a;
+import static org.jboss.elemento.Elements.p;
+import static org.jboss.elemento.Elements.span;
 import static org.jboss.hal.core.runtime.RunningState.RUNNING;
 import static org.jboss.hal.core.runtime.SuspendState.SUSPENDED;
 import static org.jboss.hal.core.runtime.server.ServerConfigStatus.DISABLED;

@@ -15,17 +15,15 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.EnumSet;
-
 import com.google.common.base.Strings;
 import elemental2.dom.HTMLInputElement;
 import org.jboss.hal.ballroom.LabelBuilder;
 
-import static org.jboss.gwt.elemento.core.Elements.input;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.change;
-import static org.jboss.gwt.elemento.core.EventType.keyup;
-import static org.jboss.gwt.elemento.core.InputType.text;
+import java.util.EnumSet;
+
+import static org.jboss.elemento.Elements.input;
+import static org.jboss.elemento.EventType.*;
+import static org.jboss.elemento.InputType.text;
 import static org.jboss.hal.ballroom.form.Decoration.*;
 import static org.jboss.hal.ballroom.form.Form.State.EDITING;
 import static org.jboss.hal.resources.CSS.formControl;

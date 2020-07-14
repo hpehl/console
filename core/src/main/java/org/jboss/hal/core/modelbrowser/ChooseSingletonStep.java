@@ -21,18 +21,18 @@ import java.util.TreeSet;
 
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
-import org.jboss.gwt.elemento.core.InputType;
+import org.jboss.elemento.InputType;
 import org.jboss.hal.ballroom.tree.Node;
 import org.jboss.hal.ballroom.wizard.WizardStep;
 import org.jboss.hal.resources.CSS;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.input;
-import static org.jboss.gwt.elemento.core.Elements.label;
-import static org.jboss.gwt.elemento.core.Elements.span;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.input;
+import static org.jboss.elemento.Elements.label;
+import static org.jboss.elemento.Elements.span;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
 
 class ChooseSingletonStep extends WizardStep<SingletonContext, SingletonState> {
 

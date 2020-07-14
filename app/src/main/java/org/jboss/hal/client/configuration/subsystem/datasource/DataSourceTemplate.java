@@ -15,11 +15,11 @@
  */
 package org.jboss.hal.client.configuration.subsystem.datasource;
 
-import java.util.Map;
-import java.util.function.Supplier;
-
 import org.jboss.hal.core.datasource.DataSource;
 import org.jboss.hal.core.datasource.JdbcDriver;
+
+import java.util.Map;
+import java.util.function.Supplier;
 
 import static java.util.Collections.emptyMap;
 

@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.deploymentscanner;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-
 import org.jboss.hal.ballroom.form.Form;
 import org.jboss.hal.ballroom.table.Table;
 import org.jboss.hal.core.configuration.PathsAutoComplete;
@@ -27,6 +23,9 @@ import org.jboss.hal.core.mbui.MbuiViewImpl;
 import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
+
+import javax.annotation.PostConstruct;
+import java.util.List;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.RELATIVE_TO;
 

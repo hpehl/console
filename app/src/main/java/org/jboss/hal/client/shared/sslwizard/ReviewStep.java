@@ -26,8 +26,8 @@ import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.p;
+import static org.jboss.elemento.Elements.section;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 public class ReviewStep extends AbstractConfiguration implements AsyncStep<EnableSSLContext> {

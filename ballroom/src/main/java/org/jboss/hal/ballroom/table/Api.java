@@ -15,17 +15,13 @@
  */
 package org.jboss.hal.ballroom.table;
 
-import java.util.Collections;
-import java.util.List;
-
 import elemental2.dom.HTMLElement;
-import jsinterop.annotations.JsFunction;
-import jsinterop.annotations.JsMethod;
-import jsinterop.annotations.JsOverlay;
-import jsinterop.annotations.JsProperty;
-import jsinterop.annotations.JsType;
+import jsinterop.annotations.*;
 import jsinterop.base.Js;
 import org.jboss.hal.ballroom.JQuery;
+
+import java.util.Collections;
+import java.util.List;
 
 import static java.util.Arrays.asList;
 import static jsinterop.annotations.JsPackage.GLOBAL;

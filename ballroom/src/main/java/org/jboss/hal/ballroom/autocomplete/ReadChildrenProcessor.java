@@ -15,11 +15,6 @@
  */
 package org.jboss.hal.ballroom.autocomplete;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
-
 import com.google.common.base.Strings;
 import org.jboss.hal.ballroom.form.SuggestHandler;
 import org.jboss.hal.dmr.Property;
@@ -27,6 +22,11 @@ import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.js.JsonObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 abstract class ReadChildrenProcessor extends AbstractResultProcessor<ReadChildrenResult> implements ResultProcessor {
 

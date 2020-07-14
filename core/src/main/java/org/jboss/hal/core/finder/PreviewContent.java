@@ -22,10 +22,10 @@ import java.util.List;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.resources.client.ExternalTextResource;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.builder.ElementsBuilder;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.ElementsBuilder;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.PatternFly;
 import org.jboss.hal.resources.CSS;
@@ -34,8 +34,8 @@ import org.jboss.hal.resources.Previews;
 import org.jboss.hal.resources.Strings;
 import org.jboss.hal.spi.Callback;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.resources.CSS.*;
 
 /** Wrapper for the preview content which consists of a header (mandatory) and one or more optional elements. */

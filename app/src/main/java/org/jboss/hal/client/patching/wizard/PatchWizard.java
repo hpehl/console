@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.patching.wizard;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.function.Consumer;
-
-import javax.inject.Provider;
-
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.runtime.server.Server;
 import org.jboss.hal.core.runtime.server.ServerActions;
@@ -33,6 +27,11 @@ import org.jboss.hal.meta.Metadata;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Callback;
+
+import javax.inject.Provider;
+import java.util.Iterator;
+import java.util.List;
+import java.util.function.Consumer;
 
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 

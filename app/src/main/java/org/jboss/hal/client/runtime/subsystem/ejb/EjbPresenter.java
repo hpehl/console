@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.ejb;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -38,9 +36,9 @@ import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.client.runtime.subsystem.ejb.AddressTemplates.EJB3_DEPLOYMENT_ADDRESS;
-import static org.jboss.hal.client.runtime.subsystem.ejb.AddressTemplates.EJB3_DEPLOYMENT_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.ejb.AddressTemplates.EJB3_SUBDEPLOYMENT_TEMPLATE;
+import javax.inject.Inject;
+
+import static org.jboss.hal.client.runtime.subsystem.ejb.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.meta.token.NameTokens.EJB3_RUNTIME;
 

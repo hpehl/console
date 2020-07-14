@@ -15,24 +15,13 @@
  */
 package org.jboss.hal.client.patching;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Inject;
-import javax.inject.Provider;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.ballroom.dialog.DialogFactory;
 import org.jboss.hal.client.patching.wizard.ApplyPatchWizard;
 import org.jboss.hal.client.patching.wizard.RollbackWizard;
 import org.jboss.hal.config.Environment;
-import org.jboss.hal.core.finder.ColumnAction;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemDisplay;
+import org.jboss.hal.core.finder.*;
 import org.jboss.hal.core.runtime.host.Host;
 import org.jboss.hal.core.runtime.host.HostActions;
 import org.jboss.hal.core.runtime.server.Server;
@@ -53,11 +42,12 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Messages;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
-import org.jboss.hal.spi.Callback;
-import org.jboss.hal.spi.Column;
-import org.jboss.hal.spi.Footer;
-import org.jboss.hal.spi.Message;
-import org.jboss.hal.spi.MessageEvent;
+import org.jboss.hal.spi.*;
+
+import javax.inject.Inject;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.jboss.hal.core.finder.FinderColumn.RefreshMode.RESTORE_SELECTION;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

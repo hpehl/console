@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.logging;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.LabelBuilder;
@@ -46,20 +42,20 @@ import org.jboss.hal.spi.MbuiView;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 
+import javax.annotation.PostConstruct;
+import java.util.List;
+
 import static elemental2.dom.DomGlobal.document;
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
-import static org.jboss.gwt.elemento.core.Elements.setVisible;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.client.configuration.subsystem.logging.AddressTemplates.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.ADD;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.ATTRIBUTES;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.TABLE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
 import static org.jboss.hal.resources.CSS.marginTopLarge;
-import static org.jboss.hal.resources.Ids.FORM;
-import static org.jboss.hal.resources.Ids.LOGGING_FORMATTER_ITEM;
-import static org.jboss.hal.resources.Ids.TAB;
-import static org.jboss.hal.resources.Ids.TAB_CONTAINER;
+import static org.jboss.hal.resources.Ids.*;
 
 @MbuiView
 @SuppressWarnings({"DuplicateStringLiteralInspection", "HardCodedStringLiteral", "WeakerAccess"})

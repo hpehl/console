@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.messaging;
 
-import java.util.Map;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.ProxyPlace;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
@@ -34,6 +32,8 @@ import org.jboss.hal.meta.MetadataRegistry;
 import org.jboss.hal.meta.SelectionAwareStatementContext;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.resources.Resources;
+
+import java.util.Map;
 
 import static org.jboss.hal.client.configuration.subsystem.messaging.AddressTemplates.SELECTED_SERVER_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.SERVER;

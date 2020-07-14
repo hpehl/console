@@ -15,13 +15,13 @@
  */
 package org.jboss.hal.client.logging;
 
-import java.util.Date;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-
 import com.google.gwt.logging.impl.FormatterImpl;
 import com.google.gwt.logging.impl.StackTracePrintStream;
 import org.jboss.hal.ballroom.Format;
+
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
 
 import static com.google.common.base.Strings.padEnd;
 import static org.jboss.hal.resources.Strings.abbreviate;

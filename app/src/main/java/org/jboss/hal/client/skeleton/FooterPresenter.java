@@ -15,14 +15,12 @@
  */
 package org.jboss.hal.client.skeleton;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.PresenterWidget;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.PatternFly;
 import org.jboss.hal.client.bootstrap.tasks.VersionUpdateEvent;
 import org.jboss.hal.client.bootstrap.tasks.VersionUpdateEvent.VersionUpdateHandler;
@@ -46,6 +44,8 @@ import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
+
+import javax.inject.Inject;
 
 public class FooterPresenter extends PresenterWidget<FooterPresenter.MyView>
         implements IsElement, MacroOperationHandler, MacroFinishedHandler, VersionUpdateHandler {

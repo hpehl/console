@@ -15,12 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.elytron;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.ballroom.VerticalNavigation;
@@ -40,16 +34,16 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import javax.inject.Inject;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
-import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.CERTIFICATE_AUTHORITY_ACCOUNT_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.KEY_MANAGER_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.SECURITY_DOMAIN_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.TRUST_MANAGER_TEMPLATE;
+import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.fontAwesome;
 import static org.jboss.hal.resources.CSS.pfIcon;

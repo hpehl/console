@@ -15,9 +15,9 @@
  */
 package org.jboss.hal.client.configuration.subsystem.undertow;
 
-import java.util.List;
-
 import org.jboss.hal.meta.AddressTemplate;
+
+import java.util.List;
 
 import static java.util.Arrays.asList;
 import static org.jboss.hal.meta.SelectionAwareStatementContext.SELECTION_EXPRESSION;

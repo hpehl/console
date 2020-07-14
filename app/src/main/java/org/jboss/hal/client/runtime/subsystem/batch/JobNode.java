@@ -15,24 +15,17 @@
  */
 package org.jboss.hal.client.runtime.subsystem.batch;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
-
 import org.jboss.hal.client.runtime.subsystem.batch.ExecutionNode.BatchStatus;
 import org.jboss.hal.core.deployment.DeploymentResource;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.ResourceAddress;
 
+import java.util.*;
+
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.collectingAndThen;
 import static java.util.stream.Collectors.groupingBy;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.EXECUTION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.INSTANCE_COUNT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RUNNING_EXECUTIONS;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;
 
 class JobNode extends DeploymentResource {

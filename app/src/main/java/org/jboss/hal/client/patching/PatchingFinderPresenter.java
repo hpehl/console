@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.patching;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyStandard;
@@ -30,6 +28,8 @@ import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
 
 public class PatchingFinderPresenter
         extends FinderPresenter<PatchingFinderPresenter.MyView, PatchingFinderPresenter.MyProxy> {

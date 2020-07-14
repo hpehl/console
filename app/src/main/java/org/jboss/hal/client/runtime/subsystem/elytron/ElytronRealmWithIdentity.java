@@ -15,14 +15,10 @@
  */
 package org.jboss.hal.client.runtime.subsystem.elytron;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.ballroom.Attachable;
 import org.jboss.hal.ballroom.Button;
 import org.jboss.hal.ballroom.LabelBuilder;
@@ -40,15 +36,19 @@ import org.jboss.hal.meta.security.Constraint;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.ATTRIBUTES;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.TABLE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.pullRight;
-import static org.jboss.hal.resources.Ids.FORM;
-import static org.jboss.hal.resources.Ids.PAGE;
-import static org.jboss.hal.resources.Ids.PAGES;
+import static org.jboss.hal.resources.Ids.*;
 
 public class ElytronRealmWithIdentity implements IsElement<HTMLElement>, Attachable {
 

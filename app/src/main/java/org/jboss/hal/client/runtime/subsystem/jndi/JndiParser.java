@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.jndi;
 
-import java.util.List;
-
 import com.google.common.base.Strings;
 import elemental2.core.JsArray;
 import org.jboss.hal.ballroom.tree.Node;
@@ -25,9 +23,9 @@ import org.jboss.hal.dmr.ModelType;
 import org.jboss.hal.dmr.Property;
 import org.jboss.hal.resources.Ids;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CHILDREN;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CLASS_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.VALUE;
+import java.util.List;
+
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.fontAwesome;
 
 class JndiParser {

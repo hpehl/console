@@ -25,7 +25,7 @@ import javax.inject.Inject;
 import javax.inject.Provider;
 
 import com.google.common.collect.Iterables;
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.web.bindery.event.shared.EventBus;
 import jsinterop.annotations.JsFunction;
 import jsinterop.annotations.JsIgnore;

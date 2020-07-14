@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.elytron;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
@@ -34,19 +30,18 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
+import javax.inject.Inject;
+import java.util.List;
+
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
 import static org.jboss.hal.client.runtime.subsystem.elytron.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.pfIcon;
-import static org.jboss.hal.resources.Ids.ELYTRON_LDAP_REALM;
-import static org.jboss.hal.resources.Ids.ELYTRON_PROPERTIES_REALM;
-import static org.jboss.hal.resources.Ids.FORM;
 import static org.jboss.hal.resources.Ids.TABLE;
+import static org.jboss.hal.resources.Ids.*;
 
 public class RealmsView extends HalViewImpl implements RealmsPresenter.MyView {
 

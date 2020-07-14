@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.configuration;
 
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.configuration.PathsAutoComplete;
@@ -26,6 +24,8 @@ import org.jboss.hal.core.runtime.server.ServerResultEvent;
 import org.jboss.hal.core.runtime.server.ServerResultEvent.ServerResultHandler;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.StatementContext;
+
+import javax.inject.Inject;
 
 /** Updates the {@link PathsAutoComplete} upon profile selections and server stop / start. */
 public class UpdatePathAutoComplete implements ProfileSelectionHandler, ServerResultHandler {

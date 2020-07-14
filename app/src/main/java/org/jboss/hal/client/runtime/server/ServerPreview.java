@@ -15,17 +15,12 @@
  */
 package org.jboss.hal.client.runtime.server;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.inject.Provider;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLLIElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.LabelBuilder;
 import org.jboss.hal.client.runtime.RuntimePreview;
 import org.jboss.hal.core.SuccessfulOutcome;
@@ -49,14 +44,14 @@ import org.jboss.hal.meta.AddressTemplate;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.security.Constraint;
 import org.jboss.hal.meta.token.NameTokens;
-import org.jboss.hal.resources.Icons;
-import org.jboss.hal.resources.Ids;
-import org.jboss.hal.resources.Names;
-import org.jboss.hal.resources.Resources;
-import org.jboss.hal.resources.UIConstants;
+import org.jboss.hal.resources.*;
 
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import javax.inject.Provider;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.client.runtime.server.ServerColumn.serverConfigTemplate;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.flow.Flow.series;

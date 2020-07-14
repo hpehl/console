@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.deploymentscanner;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -37,10 +33,10 @@ import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.token.NameTokens;
 import org.jboss.hal.spi.Requires;
 
-import static org.jboss.hal.client.configuration.subsystem.deploymentscanner.AddressTemplates.DEPLOYMENTSCANNER_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.deploymentscanner.AddressTemplates.DEPLOYMENTSCANNER_SUBSYSTEM_ADDRESS;
-import static org.jboss.hal.client.configuration.subsystem.deploymentscanner.AddressTemplates.DEPLOYMENTSCANNER_SUBSYSTEM_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.deploymentscanner.AddressTemplates.DEPLOYMENTSCANNER_TEMPLATE;
+import javax.inject.Inject;
+import java.util.List;
+
+import static org.jboss.hal.client.configuration.subsystem.deploymentscanner.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;
 

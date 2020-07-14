@@ -20,7 +20,7 @@ import javax.inject.Inject;
 import com.google.gwt.core.client.GWT;
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.proxy.PlaceManager;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.flow.Progress;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;

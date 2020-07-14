@@ -19,18 +19,7 @@ import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.inject.Singleton;
 import org.jboss.hal.client.bootstrap.endpoint.EndpointManager;
 import org.jboss.hal.client.bootstrap.endpoint.EndpointStorage;
-import org.jboss.hal.client.bootstrap.tasks.BootstrapTasks;
-import org.jboss.hal.client.bootstrap.tasks.CheckForUpdate;
-import org.jboss.hal.client.bootstrap.tasks.CheckTargetVersion;
-import org.jboss.hal.client.bootstrap.tasks.InitializationTasks;
-import org.jboss.hal.client.bootstrap.tasks.LoadSettings;
-import org.jboss.hal.client.bootstrap.tasks.ReadAuthentication;
-import org.jboss.hal.client.bootstrap.tasks.ReadEnvironment;
-import org.jboss.hal.client.bootstrap.tasks.ReadExtensions;
-import org.jboss.hal.client.bootstrap.tasks.ReadHostNames;
-import org.jboss.hal.client.bootstrap.tasks.RegisterStaticCapabilities;
-import org.jboss.hal.client.bootstrap.tasks.SetTitle;
-import org.jboss.hal.client.bootstrap.tasks.StartAnalytics;
+import org.jboss.hal.client.bootstrap.tasks.*;
 import org.jboss.hal.spi.GinModule;
 
 @GinModule

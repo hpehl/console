@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.mail;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.ballroom.Tabs;
 import org.jboss.hal.ballroom.VerticalNavigation;
@@ -42,18 +38,15 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.section;
+import javax.inject.Inject;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.ballroom.LayoutBuilder.column;
 import static org.jboss.hal.ballroom.LayoutBuilder.row;
-import static org.jboss.hal.client.configuration.subsystem.mail.AddressTemplates.MAIL_SESSION_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.mail.AddressTemplates.SERVER_TEMPLATE;
-import static org.jboss.hal.client.configuration.subsystem.mail.AddressTemplates.SOCKET_BINDING_TEMPLATE;
+import static org.jboss.hal.client.configuration.subsystem.mail.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
-import static org.jboss.hal.dmr.ModelNodeHelper.asNamedNodes;
-import static org.jboss.hal.dmr.ModelNodeHelper.failSafeGet;
-import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;
+import static org.jboss.hal.dmr.ModelNodeHelper.*;
 import static org.jboss.hal.resources.CSS.fontAwesome;
 import static org.jboss.hal.resources.CSS.pfIcon;
 

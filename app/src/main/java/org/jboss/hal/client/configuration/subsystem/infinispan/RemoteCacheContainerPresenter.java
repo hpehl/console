@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.configuration.subsystem.infinispan;
 
-import java.util.Map;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -50,6 +46,9 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import java.util.Map;
 
 import static org.jboss.hal.client.configuration.subsystem.infinispan.AddressTemplates.*;
 import static org.jboss.hal.client.configuration.subsystem.infinispan.NearCache.INVALIDATION;

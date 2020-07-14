@@ -15,31 +15,17 @@
  */
 package org.jboss.hal.client.skeleton;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import javax.inject.Inject;
-
 import com.google.common.base.Strings;
-import com.google.gwt.safehtml.shared.SafeHtmlUtils;
-import com.google.web.bindery.event.shared.HandlerRegistration;
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.Element;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLLIElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.gwtproject.event.shared.HandlerRegistration;
+import org.gwtproject.safehtml.shared.SafeHtmlUtils;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.ballroom.Tooltip;
-import org.jboss.hal.config.Endpoints;
-import org.jboss.hal.config.Environment;
-import org.jboss.hal.config.Role;
-import org.jboss.hal.config.Roles;
-import org.jboss.hal.config.Settings;
-import org.jboss.hal.config.User;
+import org.jboss.hal.config.*;
 import org.jboss.hal.core.accesscontrol.AccessControl;
 import org.jboss.hal.core.finder.FinderContext;
 import org.jboss.hal.core.finder.FinderPath;
@@ -52,23 +38,22 @@ import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.core.mvp.Places;
 import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.meta.token.NameTokens;
-import org.jboss.hal.resources.CSS;
-import org.jboss.hal.resources.Ids;
-import org.jboss.hal.resources.Names;
-import org.jboss.hal.resources.Resources;
-import org.jboss.hal.resources.UIConstants;
+import org.jboss.hal.resources.*;
 import org.jboss.hal.spi.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
+import java.util.*;
+
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.StreamSupport.stream;
-import static org.jboss.gwt.elemento.core.Elements.i;
-import static org.jboss.gwt.elemento.core.Elements.nav;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.i;
+import static org.jboss.elemento.Elements.nav;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.client.skeleton.HeaderPresenter.MAX_BREADCRUMB_VALUE_LENGTH;
 import static org.jboss.hal.config.AccessControlProvider.RBAC;
 import static org.jboss.hal.config.Settings.Key.RUN_AS;

@@ -15,13 +15,10 @@
  */
 package org.jboss.hal.client.deployment.dialog;
 
-import java.util.List;
-import java.util.Set;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import elemental2.dom.HTMLElement;
 import elemental2.dom.HTMLInputElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Alert;
 import org.jboss.hal.ballroom.dialog.Dialog;
 import org.jboss.hal.ballroom.form.SwitchBridge;
@@ -30,16 +27,15 @@ import org.jboss.hal.ballroom.table.Options;
 import org.jboss.hal.ballroom.table.OptionsBuilder;
 import org.jboss.hal.ballroom.table.Table;
 import org.jboss.hal.core.deployment.Content;
-import org.jboss.hal.resources.CSS;
-import org.jboss.hal.resources.Icons;
-import org.jboss.hal.resources.Ids;
-import org.jboss.hal.resources.Names;
-import org.jboss.hal.resources.Resources;
+import org.jboss.hal.resources.*;
+
+import java.util.List;
+import java.util.Set;
 
 import static java.util.Comparator.naturalOrder;
 import static java.util.stream.Collectors.toList;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.InputType.checkbox;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.InputType.checkbox;
 import static org.jboss.hal.resources.CSS.marginTopLarge;
 
 /** Dialog used to deploy and undeploy content to one or more server groups. */

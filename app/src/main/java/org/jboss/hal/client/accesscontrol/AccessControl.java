@@ -15,25 +15,10 @@
  */
 package org.jboss.hal.client.accesscontrol;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import org.jboss.hal.ballroom.dialog.DialogFactory;
-import org.jboss.hal.config.AccessControlProvider;
-import org.jboss.hal.config.Environment;
-import org.jboss.hal.config.Role;
-import org.jboss.hal.config.Roles;
-import org.jboss.hal.config.User;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.ModelNodeHelper;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
+import org.jboss.hal.config.*;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
@@ -42,6 +27,11 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.inject.Inject;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 import static java.util.stream.Collectors.toSet;
 import static org.jboss.hal.config.AccessControlProvider.RBAC;

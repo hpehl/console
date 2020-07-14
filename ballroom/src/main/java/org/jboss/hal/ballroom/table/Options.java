@@ -15,9 +15,9 @@
  */
 package org.jboss.hal.ballroom.table;
 
-import java.util.Map;
-
 import jsinterop.annotations.JsType;
+
+import java.util.Map;
 
 import static jsinterop.annotations.JsPackage.GLOBAL;
 import static org.jboss.hal.resources.UIConstants.OBJECT;

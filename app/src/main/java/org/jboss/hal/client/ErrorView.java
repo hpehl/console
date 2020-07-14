@@ -19,8 +19,8 @@ import elemental2.dom.HTMLDivElement;
 import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.resources.UIConstants;
 
-import static org.jboss.gwt.elemento.core.Elements.nav;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.nav;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.resources.CSS.*;
 
 public class ErrorView extends HalViewImpl implements ErrorPresenter.MyView {

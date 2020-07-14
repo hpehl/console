@@ -15,26 +15,11 @@
  */
 package org.jboss.hal.client.runtime.subsystem.logging;
 
-import java.util.Comparator;
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.gwtplatform.mvp.shared.proxy.PlaceRequest;
 import elemental2.dom.HTMLElement;
 import org.jboss.hal.client.runtime.BrowseByColumn;
-import org.jboss.hal.core.finder.ColumnActionFactory;
-import org.jboss.hal.core.finder.Finder;
-import org.jboss.hal.core.finder.FinderColumn;
-import org.jboss.hal.core.finder.ItemAction;
-import org.jboss.hal.core.finder.ItemActionFactory;
-import org.jboss.hal.core.finder.ItemDisplay;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.Property;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.core.finder.*;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.meta.token.NameTokens;
@@ -43,6 +28,10 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.resources.UIConstants;
 import org.jboss.hal.spi.Column;
 import org.jboss.hal.spi.Requires;
+
+import javax.inject.Inject;
+import java.util.Comparator;
+import java.util.List;
 
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;

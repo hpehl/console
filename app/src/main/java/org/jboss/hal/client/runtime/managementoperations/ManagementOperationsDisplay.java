@@ -15,13 +15,10 @@
  */
 package org.jboss.hal.client.runtime.managementoperations;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.google.gwt.safehtml.shared.SafeHtml;
+import org.gwtproject.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.builder.HtmlContentBuilder;
+import org.jboss.elemento.HtmlContentBuilder;
 import org.jboss.hal.ballroom.Format;
 import org.jboss.hal.ballroom.listview.ItemAction;
 import org.jboss.hal.ballroom.listview.ItemDisplay;
@@ -29,10 +26,10 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Messages;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.collect;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.p;
-import static org.jboss.gwt.elemento.core.Elements.span;
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.CANCEL_OPERATION;
 import static org.jboss.hal.resources.CSS.*;
 import static org.jboss.hal.resources.Ids.ACTIVE_OPERATION;

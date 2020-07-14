@@ -22,10 +22,7 @@ import org.jboss.hal.core.finder.PreviewContent;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.IMAP;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.JNDI_NAME;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.POP3;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SMTP;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 
 class MailSessionPreview extends PreviewContent<MailSession> {
 

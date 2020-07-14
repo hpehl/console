@@ -15,20 +15,18 @@
  */
 package org.jboss.hal.ballroom.form;
 
+import elemental2.dom.HTMLInputElement;
+import org.jboss.hal.ballroom.LabelBuilder;
+
 import java.util.ArrayList;
 import java.util.EnumSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 
-import elemental2.dom.HTMLInputElement;
-import org.jboss.hal.ballroom.LabelBuilder;
-
-import static org.jboss.gwt.elemento.core.Elements.input;
-import static org.jboss.gwt.elemento.core.EventType.change;
-import static org.jboss.gwt.elemento.core.InputType.radio;
-import static org.jboss.hal.ballroom.form.Decoration.DEFAULT;
-import static org.jboss.hal.ballroom.form.Decoration.DEPRECATED;
-import static org.jboss.hal.ballroom.form.Decoration.RESTRICTED;
+import static org.jboss.elemento.Elements.input;
+import static org.jboss.elemento.EventType.change;
+import static org.jboss.elemento.InputType.radio;
+import static org.jboss.hal.ballroom.form.Decoration.*;
 
 public class RadioItem extends AbstractFormItem<String> {
 

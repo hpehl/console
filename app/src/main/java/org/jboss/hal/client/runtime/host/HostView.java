@@ -15,14 +15,10 @@
  */
 package org.jboss.hal.client.runtime.host;
 
-import java.util.List;
-
-import javax.annotation.PostConstruct;
-
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import elemental2.dom.HTMLButtonElement;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
+import org.jboss.elemento.Elements;
 import org.jboss.hal.ballroom.Button;
 import org.jboss.hal.ballroom.VerticalNavigation;
 import org.jboss.hal.ballroom.form.Form;
@@ -40,10 +36,13 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.spi.MbuiElement;
 import org.jboss.hal.spi.MbuiView;
 
+import javax.annotation.PostConstruct;
+import java.util.List;
+
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.*;
-import static org.jboss.gwt.elemento.core.EventType.bind;
-import static org.jboss.gwt.elemento.core.EventType.click;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.elemento.EventType.bind;
+import static org.jboss.elemento.EventType.click;
 import static org.jboss.hal.client.runtime.host.AddressTemplates.HTTP_INTERFACE_TEMPLATE;
 import static org.jboss.hal.client.runtime.host.AddressTemplates.NATIVE_INTERFACE_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;

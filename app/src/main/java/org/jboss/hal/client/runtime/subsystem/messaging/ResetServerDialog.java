@@ -31,12 +31,8 @@ import org.jboss.hal.resources.Resources;
 import org.jboss.hal.resources.Strings;
 
 import static java.util.Arrays.asList;
-import static org.jboss.gwt.elemento.core.Elements.asHtmlElement;
-import static org.jboss.gwt.elemento.core.Elements.htmlElements;
-import static org.jboss.gwt.elemento.core.Elements.stream;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.DESCRIPTION;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RESET_ALL_MESSAGE_COUNTERS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.RESET_ALL_MESSAGE_COUNTER_HISTORIES;
+import static org.jboss.elemento.Elements.*;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.halFormInput;
 import static org.jboss.hal.resources.CSS.halFormLabel;
 

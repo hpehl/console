@@ -18,7 +18,7 @@ package org.jboss.hal.core.finder;
 import javax.inject.Inject;
 
 import com.google.web.bindery.event.shared.EventBus;
-import com.google.web.bindery.event.shared.HandlerRegistration;
+import org.gwtproject.event.shared.HandlerRegistration;
 import com.gwtplatform.mvp.client.proxy.NavigationEvent;
 import org.jboss.hal.spi.Callback;
 

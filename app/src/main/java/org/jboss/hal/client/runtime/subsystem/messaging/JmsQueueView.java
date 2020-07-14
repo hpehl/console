@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.messaging;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import org.jboss.hal.ballroom.EmptyState;
 import org.jboss.hal.ballroom.Toolbar;
 import org.jboss.hal.ballroom.Toolbar.Attribute;
@@ -31,6 +27,9 @@ import org.jboss.hal.meta.security.Constraint;
 import org.jboss.hal.resources.Icons;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Resources;
+
+import javax.inject.Inject;
+import java.util.List;
 
 import static java.util.Comparator.comparing;
 import static org.jboss.hal.client.runtime.subsystem.messaging.AddressTemplates.MESSAGING_CORE_QUEUE_TEMPLATE;

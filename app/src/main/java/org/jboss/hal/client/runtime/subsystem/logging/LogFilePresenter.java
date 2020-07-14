@@ -15,10 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.logging;
 
-import java.util.List;
-
-import javax.inject.Inject;
-
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.annotations.NameToken;
 import com.gwtplatform.mvp.client.annotations.ProxyCodeSplit;
@@ -30,11 +26,7 @@ import org.jboss.hal.core.finder.FinderPathFactory;
 import org.jboss.hal.core.mvp.ApplicationFinderPresenter;
 import org.jboss.hal.core.mvp.HalView;
 import org.jboss.hal.core.mvp.HasPresenter;
-import org.jboss.hal.dmr.Composite;
-import org.jboss.hal.dmr.CompositeResult;
-import org.jboss.hal.dmr.ModelNode;
-import org.jboss.hal.dmr.Operation;
-import org.jboss.hal.dmr.ResourceAddress;
+import org.jboss.hal.dmr.*;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
 import org.jboss.hal.meta.StatementContext;
 import org.jboss.hal.resources.Ids;
@@ -44,14 +36,12 @@ import org.jboss.hal.spi.Message;
 import org.jboss.hal.spi.MessageEvent;
 import org.jboss.hal.spi.Requires;
 
-import static elemental2.dom.DomGlobal.clearInterval;
-import static elemental2.dom.DomGlobal.clearTimeout;
-import static elemental2.dom.DomGlobal.setInterval;
-import static elemental2.dom.DomGlobal.setTimeout;
+import javax.inject.Inject;
+import java.util.List;
+
+import static elemental2.dom.DomGlobal.*;
 import static java.util.stream.Collectors.joining;
-import static org.jboss.hal.client.runtime.subsystem.logging.AddressTemplates.LOG_FILE_ADDRESS;
-import static org.jboss.hal.client.runtime.subsystem.logging.AddressTemplates.LOG_FILE_TEMPLATE;
-import static org.jboss.hal.client.runtime.subsystem.logging.AddressTemplates.PROFILE_LOG_FILE_TEMPLATE;
+import static org.jboss.hal.client.runtime.subsystem.logging.AddressTemplates.*;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.meta.token.NameTokens.LOG_FILE;
 

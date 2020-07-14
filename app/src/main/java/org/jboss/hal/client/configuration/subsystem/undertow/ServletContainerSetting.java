@@ -19,9 +19,7 @@ import org.jboss.hal.dmr.ModelDescriptionConstants;
 import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 
-import static org.jboss.hal.dmr.ModelDescriptionConstants.CRAWLER_SESSION_MANAGEMENT;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.PERSISTENT_SESSIONS;
-import static org.jboss.hal.dmr.ModelDescriptionConstants.SESSION_COOKIE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.resources.CSS.fontAwesome;
 
 enum ServletContainerSetting {

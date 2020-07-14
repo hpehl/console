@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.runtime.subsystem.ejb;
 
-import java.util.List;
-
 import com.google.common.collect.ImmutableMap;
 import elemental2.dom.CSSProperties.MarginTopUnionType;
 import org.jboss.hal.ballroom.LabelBuilder;
@@ -36,7 +34,9 @@ import org.jboss.hal.resources.Ids;
 import org.jboss.hal.resources.Names;
 import org.jboss.hal.resources.Resources;
 
-import static org.jboss.gwt.elemento.core.Elements.h;
+import java.util.List;
+
+import static org.jboss.elemento.Elements.h;
 import static org.jboss.hal.client.runtime.subsystem.ejb.AddressTemplates.EJB3_SUBSYSTEM_TEMPLATE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
 import static org.jboss.hal.dmr.ModelNodeHelper.failSafePropertyList;

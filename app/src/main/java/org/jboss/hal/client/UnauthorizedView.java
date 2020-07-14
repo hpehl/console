@@ -21,8 +21,8 @@ import org.jboss.hal.core.mvp.HalViewImpl;
 import org.jboss.hal.resources.UIConstants;
 
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.nav;
-import static org.jboss.gwt.elemento.core.Elements.*;
+import static org.jboss.elemento.Elements.nav;
+import static org.jboss.elemento.Elements.*;
 import static org.jboss.hal.resources.CSS.*;
 
 public class UnauthorizedView extends HalViewImpl implements UnauthorizedPresenter.MyView {

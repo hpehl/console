@@ -17,15 +17,14 @@ package org.jboss.hal.client.deployment;
 
 import com.google.gwt.core.client.GWT;
 import elemental2.dom.HTMLElement;
-import org.jboss.gwt.elemento.core.Elements;
-import org.jboss.gwt.elemento.core.IsElement;
+import org.jboss.elemento.Elements;
+import org.jboss.elemento.IsElement;
 import org.jboss.hal.resources.Constants;
+
 import static elemental2.dom.DomGlobal.document;
-import static org.jboss.gwt.elemento.core.Elements.div;
-import static org.jboss.gwt.elemento.core.Elements.h;
-import static org.jboss.hal.resources.CSS.loading;
-import static org.jboss.hal.resources.CSS.loadingContainer;
-import static org.jboss.hal.resources.CSS.spinner;
+import static org.jboss.elemento.Elements.div;
+import static org.jboss.elemento.Elements.h;
+import static org.jboss.hal.resources.CSS.*;
 
 public class ReplaceDeploymentPanel implements IsElement {
     private static final Constants CONSTANTS = GWT.create(Constants.class);

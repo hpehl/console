@@ -15,8 +15,6 @@
  */
 package org.jboss.hal.client.bootstrap.tasks;
 
-import javax.inject.Inject;
-
 import org.jboss.hal.core.extension.ExtensionRegistry;
 import org.jboss.hal.core.extension.ExtensionStorage;
 import org.jboss.hal.core.extension.InstalledExtension;
@@ -24,6 +22,8 @@ import org.jboss.hal.flow.FlowContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rx.Completable;
+
+import javax.inject.Inject;
 
 public class ReadExtensions implements BootstrapTask {
 

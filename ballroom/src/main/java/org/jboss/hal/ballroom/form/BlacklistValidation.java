@@ -15,12 +15,12 @@
  */
 package org.jboss.hal.ballroom.form;
 
-import java.util.SortedSet;
-
 import com.google.common.base.Joiner;
 import com.google.common.collect.Sets;
 import com.google.gwt.core.client.GWT;
 import org.jboss.hal.resources.Messages;
+
+import java.util.SortedSet;
 
 import static java.util.Arrays.asList;
 

@@ -15,16 +15,16 @@
  */
 package org.jboss.hal.client.runtime.subsystem.jaxrs;
 
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
-
 import com.google.common.base.Splitter;
 import com.google.common.collect.Sets;
 import org.jboss.hal.core.deployment.DeploymentResource;
 import org.jboss.hal.dmr.ModelNode;
 import org.jboss.hal.dmr.ResourceAddress;
+
+import java.util.Collection;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 
 import static java.util.stream.Collectors.toSet;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.*;
