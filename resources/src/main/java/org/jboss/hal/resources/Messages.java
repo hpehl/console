@@ -154,6 +154,8 @@ public interface Messages extends com.google.gwt.i18n.client.Messages {
 
     SafeHtml dataSourceDisabledNoStatistics(String name);
 
+    SafeHtml dataSourceDoesntExist(String wrongDS);
+
     SafeHtml dataSourceEnabled(String name);
 
     SafeHtml dataSourceStatisticsDisabled(String name);

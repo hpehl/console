@@ -36,6 +36,7 @@ import org.jboss.hal.client.deployment.wizard.UploadDeploymentStep;
 import org.jboss.hal.client.shared.uploadwizard.UploadElement;
 import org.jboss.hal.config.Environment;
 import org.jboss.hal.core.CrudOperations;
+import org.jboss.hal.core.datasource.DataSource;
 import org.jboss.hal.core.deployment.Deployment;
 import org.jboss.hal.core.deployment.Deployment.Status;
 import org.jboss.hal.core.finder.ColumnAction;
@@ -51,6 +52,7 @@ import org.jboss.hal.core.runtime.server.ServerActions;
 import org.jboss.hal.dmr.Composite;
 import org.jboss.hal.dmr.CompositeResult;
 import org.jboss.hal.dmr.ModelNode;
+import org.jboss.hal.dmr.NamedNode;
 import org.jboss.hal.dmr.Operation;
 import org.jboss.hal.dmr.ResourceAddress;
 import org.jboss.hal.dmr.dispatch.Dispatcher;
@@ -83,8 +85,10 @@ import elemental2.promise.Promise;
 
 import static java.util.Arrays.asList;
 import static java.util.Collections.singletonList;
+import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 import static org.jboss.elemento.Elements.span;
+import static org.jboss.hal.client.configuration.subsystem.datasource.AddressTemplates.DATA_SOURCE_SUBSYSTEM_TEMPLATE;
 import static org.jboss.hal.client.deployment.StandaloneDeploymentColumn.DEPLOYMENT_ADDRESS;
 import static org.jboss.hal.client.deployment.wizard.DeploymentState.NAMES;
 import static org.jboss.hal.client.deployment.wizard.DeploymentState.UPLOAD;
@@ -93,6 +97,7 @@ import static org.jboss.hal.core.finder.FinderColumn.RefreshMode.RESTORE_SELECTI
 import static org.jboss.hal.dmr.ModelDescriptionConstants.ADD;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.CHILD_TYPE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.CONTENT;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.DATA_SOURCE;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.DEPLOY;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.DEPLOYMENT;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.DISABLED;
@@ -106,7 +111,9 @@ import static org.jboss.hal.dmr.ModelDescriptionConstants.PATH;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.READ_CHILDREN_RESOURCES_OPERATION;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.RECURSIVE_DEPTH;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.REMOVE;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.RESULT;
 import static org.jboss.hal.dmr.ModelDescriptionConstants.UNDEPLOY;
+import static org.jboss.hal.dmr.ModelDescriptionConstants.XA_DATA_SOURCE;
 import static org.jboss.hal.flow.Flow.sequential;
 import static org.jboss.hal.resources.CSS.fontAwesome;
 import static org.jboss.hal.resources.CSS.pfIcon;
@@ -146,10 +153,10 @@ public class StandaloneDeploymentColumn extends FinderColumn<Deployment> {
                 .itemsProvider(context -> {
                     Operation operation = new Operation.Builder(ResourceAddress.root(),
                             READ_CHILDREN_RESOURCES_OPERATION)
-                            .param(CHILD_TYPE, DEPLOYMENT)
-                            .param(INCLUDE_RUNTIME, true)
-                            .param(RECURSIVE_DEPTH, 2)
-                            .build();
+                                    .param(CHILD_TYPE, DEPLOYMENT)
+                                    .param(INCLUDE_RUNTIME, true)
+                                    .param(RECURSIVE_DEPTH, 2)
+                                    .build();
                     return dispatcher.execute(operation)
                             .then(result -> Promise.resolve(result.asPropertyList().stream()
                                     .map(property -> new Deployment(Server.STANDALONE, property.getValue()))
@@ -297,41 +304,87 @@ public class StandaloneDeploymentColumn extends FinderColumn<Deployment> {
         Wizard<DeploymentContext, DeploymentState> wizard = new Wizard.Builder<DeploymentContext, DeploymentState>(
                 resources.messages().addResourceTitle(Names.DEPLOYMENT), new DeploymentContext())
 
-                .addStep(UPLOAD, new UploadDeploymentStep(resources))
-                .addStep(NAMES, new NamesStep(environment, metadata, resources))
+                        .addStep(UPLOAD, new UploadDeploymentStep(resources))
+                        .addStep(NAMES, new NamesStep(environment, metadata, resources))
 
-                .onBack((context, currentState) -> currentState == NAMES ? UPLOAD : null)
-                .onNext((context, currentState) -> currentState == UPLOAD ? NAMES : null)
+                        .onBack((context, currentState) -> currentState == NAMES ? UPLOAD : null)
+                        .onNext((context, currentState) -> currentState == UPLOAD ? NAMES : null)
 
-                .stayOpenAfterFinish()
-                .onFinish((wzd, wizardContext) -> {
-                    String name = wizardContext.name;
-                    String runtimeName = wizardContext.runtimeName;
-                    wzd.showProgress(resources.constants().deploymentInProgress(),
-                            resources.messages().deploymentInProgress(name));
+                        .stayOpenAfterFinish()
+                        .onFinish((wzd, wizardContext) -> {
+                            String name = wizardContext.name;
+                            String runtimeName = wizardContext.runtimeName;
+                            wzd.showProgress(resources.constants().deploymentInProgress(),
+                                    resources.messages().deploymentInProgress(name));
 
-                    List<Task<FlowContext>> tasks = asList(new CheckDeployment(dispatcher, name),
-                            new UploadOrReplace(environment, dispatcher, name, runtimeName, wizardContext.file,
-                                    wizardContext.enabled));
-                    sequential(new FlowContext(progress.get()), tasks)
-                            .subscribe(flowContext -> {
-                                if (flowContext.successful()) {
-                                    refresh(Ids.deployment(name));
-                                    wzd.showSuccess(resources.constants().uploadSuccessful(),
-                                            resources.messages().uploadSuccessful(name),
-                                            resources.messages().view(Names.DEPLOYMENT),
-                                            cxt -> {
-                                                /* nothing to do, deployment is already selected */
+                            List<Task<FlowContext>> tasks = asList(new CheckDeployment(dispatcher, name),
+                                    new UploadOrReplace(environment, dispatcher, name, runtimeName, wizardContext.file,
+                                            wizardContext.enabled));
+                            sequential(new FlowContext(progress.get()), tasks)
+                                    .subscribe(flowContext -> {
+                                        if (flowContext.successful()) {
+                                            refresh(Ids.deployment(name));
+                                            wzd.showSuccess(resources.constants().uploadSuccessful(),
+                                                    resources.messages().uploadSuccessful(name),
+                                                    resources.messages().view(Names.DEPLOYMENT),
+                                                    cxt -> {
+                                                        /* nothing to do, deployment is already selected */
+                                                    });
+                                        } else {
+                                            getDataSources().then(dataSources -> {
+                                                // I don't know exactly how to show the error,
+                                                // but please don't introduce a new method in
+                                                // class Wizard to show a data source specific error
+                                                SafeHtml message = resources.messages().dataSourceDoesntExist(
+                                                        returnDataSourceName(flowContext.failureReason()) + dataSources);
+                                                wzd.showError(resources.constants().deploymentError(), message,
+                                                        flowContext.failureReason());
+                                                return null;
                                             });
-                                } else {
-                                    wzd.showError(resources.constants().deploymentError(),
-                                            resources.messages().deploymentError(name),
-                                            flowContext.failureReason());
-                                }
-                            });
-                })
-                .build();
+                                        }
+                                    });
+                        })
+                        .build();
         wizard.show();
+    }
+
+    private Promise<String> getDataSources() {
+        ResourceAddress dataSourceAddress = DATA_SOURCE_SUBSYSTEM_TEMPLATE.resolve(statementContext);
+        Operation dataSourceOperation = new Operation.Builder(dataSourceAddress, READ_CHILDREN_RESOURCES_OPERATION)
+                .param(CHILD_TYPE, DATA_SOURCE).build();
+        Operation xaDataSourceOperation = new Operation.Builder(dataSourceAddress, READ_CHILDREN_RESOURCES_OPERATION)
+                .param(CHILD_TYPE, XA_DATA_SOURCE).build();
+
+        return dispatcher.execute(new Composite(dataSourceOperation, xaDataSourceOperation)).then(result -> {
+            List<DataSource> combined = new ArrayList<>();
+            combined.addAll(result.step(0).get(RESULT).asPropertyList().stream()
+                    .map(property -> new DataSource(property, false)).collect(toList()));
+            combined.addAll(result.step(1).get(RESULT).asPropertyList().stream()
+                    .map(property -> new DataSource(property, true)).collect(toList()));
+            combined.sort(comparing(NamedNode::getName));
+            return Promise.resolve(extractDataSources(combined));
+        });
+    }
+
+    private String extractDataSources(List<DataSource> combined) {
+        StringBuilder dataSources = new StringBuilder();
+        for (DataSource dataSource : combined) {
+            String help = dataSource.asString().substring(dataSource.asString().indexOf("jndi-name"),
+                    dataSource.asString().indexOf("jta"));
+            dataSources.append(help, 14, help.length() - 2).append(", ");
+        }
+        return dataSources.substring(0, dataSources.length() - 2);
+    }
+
+    private String returnDataSourceName(String error) {
+        // be careful if that can stay like that because after the error message changes
+        // that is not going to work!!!
+        if (error != null && error.contains("WFLYCTL0412") && error.contains("datasources")
+                && error.contains("persistenceunit")) {
+            String wrongDS = error.substring(error.indexOf("[\""), error.indexOf("\"],"));
+            return wrongDS.substring(2);
+        }
+        return null;
     }
 
     private void replace(Deployment deployment) {
@@ -376,13 +429,13 @@ public class StandaloneDeploymentColumn extends FinderColumn<Deployment> {
         AddUnmanagedDialog dialog = new AddUnmanagedDialog(metadata, resources,
                 (name, model) -> sequential(new FlowContext(progress.get()),
                         singletonList(new AddUnmanagedDeployment(dispatcher, name, model)))
-                        .then(__ -> {
-                            refresh(Ids.deployment(name));
-                            MessageEvent.fire(eventBus, Message.success(
-                                    resources.messages()
-                                            .addResourceSuccess(Names.UNMANAGED_DEPLOYMENT, name)));
-                            return null;
-                        }));
+                                .then(__ -> {
+                                    refresh(Ids.deployment(name));
+                                    MessageEvent.fire(eventBus, Message.success(
+                                            resources.messages()
+                                                    .addResourceSuccess(Names.UNMANAGED_DEPLOYMENT, name)));
+                                    return null;
+                                }));
         dialog.getForm().<String> getFormItem(NAME).addValidationHandler(createUniqueValidation());
         dialog.show();
     }
